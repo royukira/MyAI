@@ -1,0 +1,49 @@
+"""
+A simple example for Reinforcement Learning using table lookup Q-learning method.
+An agent "o" is on the left of a 1 dimensional world, the treasure is on the rightmost location.
+Run this program and to see how the agent will improve its strategy of finding the treasure.
+
+The initial position is random in my version.
+
+Reference:  https://morvanzhou.github.io/tutorials
+"""
+import time
+
+def update_env(S, episode, step_counter, numState):
+    env_list = ['-'] * (numState - 1) + ['T']  # example:'---------T' our environment
+    if S == 'terminal':
+        interaction = '==> Episode %s: total_steps = %s' % (episode + 1, step_counter)
+        print('\r{}'.format(interaction), end='')
+        time.sleep(2)
+        print('\r                                ', end='')
+    else:
+        env_list[S] = 'O'
+        interaction = ''.join(env_list)
+        print('\r{}'.format(interaction), end='')
+        time.sleep(0.3)
+        return interaction
+
+
+def get_env_feedback(S, A,numState):
+    """
+    The rule of rewarding
+    :param S: Now State
+    :param A: Action
+    :return: Next state S_ (according to what Action it take), Reward R
+    """
+    # This is how agent will interact with the environment
+    if A == 'right':  # move right
+        if S == numState - 2:  # terminate; 因为 numState-1 是 Treasure 的 position
+            S_ = 'terminal'    # 因此再向右移一个就是terminal
+            R = 1              # 到达terminal即找到treasure，获得奖励 R=1
+        else:
+            S_ = S + 1         # 如果没到terminal，根据 Action 到 Next State ， 往右移
+            R = 0              # 无奖励
+    else:  # move left
+        R = 0                  # 因为这个环境中 Treasure是在最右边 所以不管怎么往左移 都是无奖励 R=0
+        if S == 0:
+            S_ = S  # reach the wall
+        else:
+            S_ = S - 1         # 往左移
+
+    return S_, R

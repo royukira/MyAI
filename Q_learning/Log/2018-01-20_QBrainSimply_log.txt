@@ -1,0 +1,1520 @@
+--O---T
+--> Episode: 0                                    
+--> Step: 1                                     
+--> State: 2                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 0                                    
+--> Step: 2                                     
+--> State: 1                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 0                                    
+--> Step: 3                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 0                                    
+--> Step: 4                                     
+--> State: 1                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 0                                    
+--> Step: 5                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 0                                    
+--> Step: 6                                     
+--> State: 1                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 0                                    
+--> Step: 7                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+---O--T
+--> Episode: 0                                    
+--> Step: 8                                     
+--> State: 3                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+----O-T
+--> Episode: 0                                    
+--> Step: 9                                     
+--> State: 4                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-----OT
+--> Episode: 0                                    
+--> Step: 10                                     
+--> State: 5                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 1                                     
+--> State: 1                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 2                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 3                                     
+--> State: 1                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 4                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 5                                     
+--> State: 1                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 6                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 7                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 8                                     
+--> State: 1                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 9                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 10                                     
+--> State: 1                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 11                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 12                                     
+--> State: 1                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 13                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 14                                     
+--> State: 1                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 15                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 16                                     
+--> State: 1                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 17                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 18                                     
+--> State: 1                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 19                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+---O--T
+--> Episode: 1                                    
+--> Step: 20                                     
+--> State: 3                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+----O-T
+--> Episode: 1                                    
+--> Step: 21                                     
+--> State: 4                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+---O--T
+--> Episode: 1                                    
+--> Step: 22                                     
+--> State: 3                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 23                                     
+--> State: 2                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+---O--T
+--> Episode: 1                                    
+--> Step: 24                                     
+--> State: 3                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 25                                     
+--> State: 2                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 26                                     
+--> State: 1                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 27                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 28                                     
+--> State: 1                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 29                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 30                                     
+--> State: 1                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 31                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 32                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 33                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 34                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 35                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 36                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 37                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 38                                     
+--> State: 1                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 39                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 40                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 41                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 42                                     
+--> State: 1                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 43                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+---O--T
+--> Episode: 1                                    
+--> Step: 44                                     
+--> State: 3                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+----O-T
+--> Episode: 1                                    
+--> Step: 45                                     
+--> State: 4                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-----OT
+--> Episode: 1                                    
+--> Step: 46                                     
+--> Next State: 5                                     
+--> Action: right                                     
+--> [S_next,A] = 0.1000000                                    
+--> Dis: 0.0900000                                     
+--> Q_target: 0.0900000                                     
+--> Q_predict: 0.0000000                                     
+===========
+----O-T
+--> Episode: 1                                    
+--> Step: 47                                     
+--> next_State: 4                                     
+--> Action: left                                     
+--> [S_next,A] = 0.0000000                                    
+--> Dis: 0.0081000                                     
+--> Q_target: 0.0081000                                     
+--> Q_predict: 0.0000000                                     
+===========
+---O--T
+--> Episode: 1                                    
+--> Step: 48                                     
+--> State: 3                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 49                                     
+--> State: 2                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+---O--T
+--> Episode: 1                                    
+--> Step: 50                                     
+--> State: 3                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 51                                     
+--> State: 2                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 52                                     
+--> State: 1                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 53                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 54                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 55                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 56                                     
+--> State: 1                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 57                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 58                                     
+--> State: 1                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 59                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 60                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 61                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 62                                     
+--> State: 1                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 63                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 64                                     
+--> State: 1                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 65                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+---O--T
+--> Episode: 1                                    
+--> Step: 66                                     
+--> State: 3                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 67                                     
+--> State: 2                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 68                                     
+--> State: 1                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 69                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 70                                     
+--> State: 1                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 71                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 72                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 73                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 74                                     
+--> State: 1                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 1                                    
+--> Step: 75                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 76                                     
+--> State: 1                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 77                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 78                                     
+--> State: 1                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 79                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+---O--T
+--> Episode: 1                                    
+--> Step: 80                                     
+--> State: 3                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+----O-T
+--> Episode: 1                                    
+--> Step: 81                                     
+--> State: 4                                     
+--> Action: right                                     
+--> [S,A] = 0.0090000                                    
+--> Dis: 0.0081000                                     
+--> Q_target: 0.0081000                                     
+--> Q_predict: 0.0000000                                     
+===========
+---O--T
+--> Episode: 1                                    
+--> Step: 82                                     
+--> State: 3                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0007290                                     
+--> Q_target: 0.0007290                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 83                                     
+--> State: 2                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 1                                    
+--> Step: 84                                     
+--> State: 1                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 85                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+---O--T
+--> Episode: 1                                    
+--> Step: 86                                     
+--> State: 3                                     
+--> Action: right                                     
+--> [S,A] = 0.0008100                                    
+--> Dis: 0.0007290                                     
+--> Q_target: 0.0007290                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 1                                    
+--> Step: 87                                     
+--> State: 2                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000656                                     
+--> Q_target: 0.0000656                                     
+--> Q_predict: 0.0000000                                     
+===========
+---O--T
+--> Episode: 1                                    
+--> Step: 88                                     
+--> State: 3                                     
+--> Action: right                                     
+--> [S,A] = 0.0008100                                    
+--> Dis: 0.0006561                                     
+--> Q_target: 0.0007290                                     
+--> Q_predict: 0.0000729                                     
+===========
+----O-T
+--> Episode: 1                                    
+--> Step: 89                                     
+--> State: 4                                     
+--> Action: right                                     
+--> [S,A] = 0.0090000                                    
+--> Dis: 0.0072900                                     
+--> Q_target: 0.0081000                                     
+--> Q_predict: 0.0008100                                     
+===========
+-----OT
+--> Episode: 1                                    
+--> Step: 90                                     
+--> State: 5                                     
+--> Action: right                                     
+--> [S,A] = 0.1000000                                    
+--> Dis: 0.0810000                                     
+--> Q_target: 0.0900000                                     
+--> Q_predict: 0.0090000                                     
+===========
+O-----T
+--> Episode: 3                                    
+--> Step: 1                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 3                                    
+--> Step: 2                                     
+--> State: 1                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 3                                    
+--> Step: 3                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 3                                    
+--> Step: 4                                     
+--> State: 1                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 3                                    
+--> Step: 5                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 3                                    
+--> Step: 6                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 3                                    
+--> Step: 7                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 3                                    
+--> Step: 8                                     
+--> State: 1                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 3                                    
+--> Step: 9                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 3                                    
+--> Step: 10                                     
+--> State: 1                                     
+--> Action: right                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 3                                    
+--> Step: 11                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0001385                                    
+--> Dis: 0.0001247                                     
+--> Q_target: 0.0001247                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 3                                    
+--> Step: 12                                     
+--> State: 1                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000112                                     
+--> Q_target: 0.0000112                                     
+--> Q_predict: 0.0000000                                     
+===========
+--O---T
+--> Episode: 3                                    
+--> Step: 13                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0001385                                    
+--> Dis: 0.0001122                                     
+--> Q_target: 0.0001247                                     
+--> Q_predict: 0.0000125                                     
+===========
+---O--T
+--> Episode: 3                                    
+--> Step: 14                                     
+--> State: 3                                     
+--> Action: right                                     
+--> [S,A] = 0.0015390                                    
+--> Dis: 0.0012466                                     
+--> Q_target: 0.0013851                                     
+--> Q_predict: 0.0001385                                     
+===========
+----O-T
+--> Episode: 3                                    
+--> Step: 15                                     
+--> State: 4                                     
+--> Action: right                                     
+--> [S,A] = 0.0171000                                    
+--> Dis: 0.0138510                                     
+--> Q_target: 0.0153900                                     
+--> Q_predict: 0.0015390                                     
+===========
+-----OT
+--> Episode: 3                                    
+--> Step: 16                                     
+--> State: 5                                     
+--> Action: right                                     
+--> [S,A] = 0.2710000                                    
+--> Dis: 0.2268000                                     
+--> Q_target: 0.2439000                                     
+--> Q_predict: 0.0171000                                     
+===========
+---O--T
+--> Episode: 4                                    
+--> Step: 1                                     
+--> State: 3                                     
+--> Action: right                                     
+--> [S,A] = 0.0029241                                    
+--> Dis: 0.0023685                                     
+--> Q_target: 0.0026317                                     
+--> Q_predict: 0.0002632                                     
+===========
+--O---T
+--> Episode: 4                                    
+--> Step: 2                                     
+--> State: 2                                     
+--> Action: left                                     
+--> [S,A] = 0.0000011                                    
+--> Dis: 0.0004435                                     
+--> Q_target: 0.0004500                                     
+--> Q_predict: 0.0000066                                     
+===========
+---O--T
+--> Episode: 4                                    
+--> Step: 3                                     
+--> State: 3                                     
+--> Action: right                                     
+--> [S,A] = 0.0029241                                    
+--> Dis: 0.0021317                                     
+--> Q_target: 0.0026317                                     
+--> Q_predict: 0.0005000                                     
+===========
+----O-T
+--> Episode: 4                                    
+--> Step: 4                                     
+--> State: 4                                     
+--> Action: right                                     
+--> [S,A] = 0.0397800                                    
+--> Dis: 0.0328779                                     
+--> Q_target: 0.0358020                                     
+--> Q_predict: 0.0029241                                     
+===========
+-----OT
+--> Episode: 4                                    
+--> Step: 5                                     
+--> State: 5                                     
+--> Action: right                                     
+--> [S,A] = 0.3439000                                    
+--> Dis: 0.2697300                                     
+--> Q_target: 0.3095100                                     
+--> Q_predict: 0.0397800                                     
+===========
+-----OT
+--> Episode: 5                                    
+--> Step: 1                                     
+--> State: 5                                     
+--> Action: right                                     
+--> [S,A] = 0.4095100                                    
+--> Dis: 0.3018060                                     
+--> Q_target: 0.3685590                                     
+--> Q_predict: 0.0667530                                     
+===========
+---O--T
+--> Episode: 6                                    
+--> Step: 1                                     
+--> State: 3                                     
+--> Action: right                                     
+--> [S,A] = 0.0062119                                    
+--> Dis: 0.0048775                                     
+--> Q_target: 0.0055907                                     
+--> Q_predict: 0.0007132                                     
+===========
+----O-T
+--> Episode: 6                                    
+--> Step: 2                                     
+--> State: 4                                     
+--> Action: right                                     
+--> [S,A] = 0.0969336                                    
+--> Dis: 0.0810284                                     
+--> Q_target: 0.0872402                                     
+--> Q_predict: 0.0062119                                     
+===========
+-----OT
+--> Episode: 6                                    
+--> Step: 3                                     
+--> State: 5                                     
+--> Action: right                                     
+--> [S,A] = 0.4685590                                    
+--> Dis: 0.3247695                                     
+--> Q_target: 0.4217031                                     
+--> Q_predict: 0.0969336                                     
+===========
+---O--T
+--> Episode: 7                                    
+--> Step: 1                                     
+--> State: 3                                     
+--> Action: right                                     
+--> [S,A] = 0.0143147                                    
+--> Dis: 0.0116823                                     
+--> Q_target: 0.0128833                                     
+--> Q_predict: 0.0012009                                     
+===========
+----O-T
+--> Episode: 7                                    
+--> Step: 2                                     
+--> State: 4                                     
+--> Action: right                                     
+--> [S,A] = 0.1294106                                    
+--> Dis: 0.1021548                                     
+--> Q_target: 0.1164695                                     
+--> Q_predict: 0.0143147                                     
+===========
+-----OT
+--> Episode: 7                                    
+--> Step: 3                                     
+--> State: 5                                     
+--> Action: right                                     
+--> [S,A] = 0.5217031                                    
+--> Dis: 0.3401222                                     
+--> Q_target: 0.4695328                                     
+--> Q_predict: 0.1294106                                     
+===========
+---O--T
+--> Episode: 8                                    
+--> Step: 1                                     
+--> State: 3                                     
+--> Action: right                                     
+--> [S,A] = 0.0245302                                    
+--> Dis: 0.0197080                                     
+--> Q_target: 0.0220772                                     
+--> Q_predict: 0.0023692                                     
+===========
+----O-T
+--> Episode: 8                                    
+--> Step: 2                                     
+--> State: 4                                     
+--> Action: right                                     
+--> [S,A] = 0.1634228                                    
+--> Dis: 0.1225503                                     
+--> Q_target: 0.1470805                                     
+--> Q_predict: 0.0245302                                     
+===========
+-----OT
+--> Episode: 8                                    
+--> Step: 3                                     
+--> State: 5                                     
+--> Action: right                                     
+--> [S,A] = 0.5695328                                    
+--> Dis: 0.3491567                                     
+--> Q_target: 0.5125795                                     
+--> Q_predict: 0.1634228                                     
+===========
+O-----T
+--> Episode: 9                                    
+--> Step: 1                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 9                                    
+--> Step: 2                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 9                                    
+--> Step: 3                                     
+--> State: 1                                     
+--> Action: right                                     
+--> [S,A] = 0.0000237                                    
+--> Dis: 0.0000213                                     
+--> Q_target: 0.0000213                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 9                                    
+--> Step: 4                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000000                                    
+--> Dis: 0.0000019                                     
+--> Q_target: 0.0000019                                     
+--> Q_predict: 0.0000000                                     
+===========
+O-----T
+--> Episode: 9                                    
+--> Step: 5                                     
+--> State: 0                                     
+--> Action: left                                     
+--> [S,A] = 0.0000002                                    
+--> Dis: 0.0000019                                     
+--> Q_target: 0.0000019                                     
+--> Q_predict: 0.0000000                                     
+===========
+-O----T
+--> Episode: 9                                    
+--> Step: 6                                     
+--> State: 1                                     
+--> Action: right                                     
+--> [S,A] = 0.0000237                                    
+--> Dis: 0.0000192                                     
+--> Q_target: 0.0000213                                     
+--> Q_predict: 0.0000021                                     
+===========
+--O---T
+--> Episode: 9                                    
+--> Step: 7                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0043400                                    
+--> Dis: 0.0038823                                     
+--> Q_target: 0.0039060                                     
+--> Q_predict: 0.0000237                                     
+===========
+---O--T
+--> Episode: 9                                    
+--> Step: 8                                     
+--> State: 3                                     
+--> Action: right                                     
+--> [S,A] = 0.0367852                                    
+--> Dis: 0.0287667                                     
+--> Q_target: 0.0331067                                     
+--> Q_predict: 0.0043400                                     
+===========
+----O-T
+--> Episode: 9                                    
+--> Step: 9                                     
+--> State: 4                                     
+--> Action: right                                     
+--> [S,A] = 0.1983384                                    
+--> Dis: 0.1417194                                     
+--> Q_target: 0.1785046                                     
+--> Q_predict: 0.0367852                                     
+===========
+-----OT
+--> Episode: 9                                    
+--> Step: 10                                     
+--> State: 5                                     
+--> Action: right                                     
+--> [S,A] = 0.6125795                                    
+--> Dis: 0.3529831                                     
+--> Q_target: 0.5513216                                     
+--> Q_predict: 0.1983384                                     
+===========
+-O----T
+--> Episode: 10                                    
+--> Step: 1                                     
+--> State: 1                                     
+--> Action: right                                     
+--> [S,A] = 0.0004119                                    
+--> Dis: 0.0003667                                     
+--> Q_target: 0.0003707                                     
+--> Q_predict: 0.0000041                                     
+===========
+--O---T
+--> Episode: 10                                    
+--> Step: 2                                     
+--> State: 2                                     
+--> Action: right                                     
+--> [S,A] = 0.0072166                                    
+--> Dis: 0.0060831                                     
+--> Q_target: 0.0064950                                     
+--> Q_predict: 0.0004119                                     
+===========
+---O--T
+--> Episode: 10                                    
+--> Step: 3                                     
+--> State: 3                                     
+--> Action: right                                     
+--> [S,A] = 0.0509572                                    
+--> Dis: 0.0386448                                     
+--> Q_target: 0.0458615                                     
+--> Q_predict: 0.0072166                                     
+===========
+----O-T
+--> Episode: 10                                    
+--> Step: 4                                     
+--> State: 4                                     
+--> Action: right                                     
+--> [S,A] = 0.2336368                                    
+--> Dis: 0.1593159                                     
+--> Q_target: 0.2102731                                     
+--> Q_predict: 0.0509572                                     
+===========
+-----OT
+--> Episode: 10                                    
+--> Step: 5                                     
+--> State: 5                                     
+--> Action: right                                     
+--> [S,A] = 0.6513216                                    
+--> Dis: 0.3525526                                     
+--> Q_target: 0.5861894                                     
+--> Q_predict: 0.2336368                                     
+===========
+-----OT
+--> Episode: 11                                    
+--> Step: 1                                     
+--> State: 5                                     
+--> Action: right                                     
+--> [S,A] = 0.6861894                                    
+--> Dis: 0.3486784                                     
+--> Q_target: 0.6175705                                     
+--> Q_predict: 0.2688920                                     
+===========
+----O-T
+--> Episode: 11                                    
+--> Step: 2                                     
+--> State: 4                                     
+--> Action: left                                     
+--> [S,A] = 0.0000729                                    
+--> Dis: 0.2725739                                     
+--> Q_target: 0.2733839                                     
+--> Q_predict: 0.0008100                                     
+===========
+-----OT
+--> Episode: 11                                    
+--> Step: 3                                     
+--> State: 5                                     
+--> Action: right                                     
+--> [S,A] = 0.6861894                                    
+--> Dis: 0.3138106                                     
+--> Q_target: 0.6175705                                     
+--> Q_predict: 0.3037599                                     
+===========
+---O--T
+--> Episode: 12                                    
+--> Step: 1                                     
+--> State: 3                                     
+--> Action: right                                     
+--> [S,A] = 0.0668888                                    
+--> Dis: 0.0491188                                     
+--> Q_target: 0.0601999                                     
+--> Q_predict: 0.0110811                                     
+===========
+----O-T
+--> Episode: 12                                    
+--> Step: 2                                     
+--> State: 4                                     
+--> Action: right                                     
+--> [S,A] = 0.3351409                                    
+--> Dis: 0.2347381                                     
+--> Q_target: 0.3016268                                     
+--> Q_predict: 0.0668888                                     
+===========
+-----OT
+--> Episode: 12                                    
+--> Step: 3                                     
+--> State: 5                                     
+--> Action: right                                     
+--> [S,A] = 0.7175705                                    
+--> Dis: 0.3106725                                     
+--> Q_target: 0.6458134                                     
+--> Q_predict: 0.3351409                                     
+===========
