@@ -75,7 +75,7 @@ class QBrainSimply:
             """
             step_count = 0  # count the #episode
             is_terminal = False  # ending signal
-            S = random.randint(0, self.numState-2)  # S不能等于treasure的position
+            S = random.randint(0, self.numState-4)  # S不能等于treasure的position
             update_env(S, episode, step_count, self.numState)  # update the environment /
 
             """
@@ -113,6 +113,8 @@ class QBrainSimply:
                 New Q[S,A] is updated
                 """
                 self.Q_table.loc[S,A] += self.learnRate * q_dis  # [S,A] in Q table is updated
+                new_Q = self.Q_table.loc[S,A]
+                old_S = S
                 S = S_Next
                 step_count += 1
                 interaction = update_env(S, episode, step_count,self.numState)
@@ -127,13 +129,47 @@ class QBrainSimply:
                                     \n--> Step: %s \
                                     \n--> Next State: %s \
                                     \n--> Chosen Action by current state: %s \
-                                    \n--> MAX[S_next,A] = %.7f\
+                                    \n--> New Q[%d,%s] = %.7f\
+                                    \n--> MAX Q[S_next,A] = %.7f\
                                     \n--> Reward: %d \
                                     \n--> Target-Predict: %.7f \
                                     \n--> Q_target: %.7f \
                                     \n--> Q_predict: %.7f \
                                     \n===========\n"
-                                    % (episode,step_count, S, str(A), self.Q_table.iloc[S,:].max(), R, q_dis, q_target, q_predict))
+                                    % (episode,
+                                       step_count,
+                                       S,
+                                       str(A),
+                                       old_S, str(A),
+                                       new_Q,
+                                       self.Q_table.iloc[S,:].max(),
+                                       R,
+                                       q_dis,
+                                       q_target,
+                                       q_predict))
+                    train_log.close()
+                else:
+                    train_log = open("./Log/%s_QBrainSimply_log.txt" % now_time, 'a+')
+                    train_log.write("Update to Terminal")
+                    train_log.write("\n--> Episode: %s\
+                                                        \n--> Step: %s \
+                                                        \n--> Chosen Action by current state: %s \
+                                                        \n--> Reward: %d \
+                                                        \n--> New Q[%s,%s] = %.7f\
+                                                        \n--> Target-Predict: %.7f \
+                                                        \n--> Q_target: %.7f \
+                                                        \n--> Q_predict: %.7f \
+                                                        \n===========\n"
+                                    % (
+                                    episode,
+                                    step_count,
+                                    str(A),
+                                    R,
+                                    str(old_S), str(A),
+                                    new_Q,
+                                    q_dis,
+                                    q_target,
+                                    q_predict))
                     train_log.close()
 
             print(self.Q_table)

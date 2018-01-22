@@ -1,53 +1,22 @@
-Update to -O----T
+Update to --O---T
 --> Episode: 0                                    
 --> Step: 1                                     
---> Next State: 1                                     
+--> Next State: 2                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[1,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
 --> Q_predict: 0.0000000                                     
 ===========
-Update to O-----T
+Update to -O----T
 --> Episode: 0                                    
 --> Step: 2                                     
---> Next State: 0                                     
---> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0000000                                    
---> Reward: 0                                     
---> Target-Predict: 0.0000000                                     
---> Q_target: 0.0000000                                     
---> Q_predict: 0.0000000                                     
-===========
-Update to -O----T
---> Episode: 0                                    
---> Step: 3                                     
 --> Next State: 1                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
---> Reward: 0                                     
---> Target-Predict: 0.0000000                                     
---> Q_target: 0.0000000                                     
---> Q_predict: 0.0000000                                     
-===========
-Update to O-----T
---> Episode: 0                                    
---> Step: 4                                     
---> Next State: 0                                     
 --> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0000000                                    
---> Reward: 0                                     
---> Target-Predict: 0.0000000                                     
---> Q_target: 0.0000000                                     
---> Q_predict: 0.0000000                                     
-===========
-Update to -O----T
---> Episode: 0                                    
---> Step: 5                                     
---> Next State: 1                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[2,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -55,10 +24,35 @@ Update to -O----T
 ===========
 Update to --O---T
 --> Episode: 0                                    
---> Step: 6                                     
+--> Step: 3                                     
 --> Next State: 2                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[1,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 0                                    
+--> Step: 4                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: left                                     
+--> New Q[2,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to --O---T
+--> Episode: 0                                    
+--> Step: 5                                     
+--> Next State: 2                                     
+--> Chosen Action by current state: right                                     
+--> New Q[1,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -66,10 +60,11 @@ Update to --O---T
 ===========
 Update to ---O--T
 --> Episode: 0                                    
---> Step: 7                                     
+--> Step: 6                                     
 --> Next State: 3                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[2,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -77,54 +72,71 @@ Update to ---O--T
 ===========
 Update to --O---T
 --> Episode: 0                                    
---> Step: 8                                     
+--> Step: 7                                     
 --> Next State: 2                                     
 --> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[3,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
 --> Q_predict: 0.0000000                                     
 ===========
-Update to -O----T
+Update to ---O--T
+--> Episode: 0                                    
+--> Step: 8                                     
+--> Next State: 3                                     
+--> Chosen Action by current state: right                                     
+--> New Q[2,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to ----O-T
 --> Episode: 0                                    
 --> Step: 9                                     
---> Next State: 1                                     
---> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> Next State: 4                                     
+--> Chosen Action by current state: right                                     
+--> New Q[3,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
 --> Q_predict: 0.0000000                                     
 ===========
-Update to O-----T
+Update to ---O--T
 --> Episode: 0                                    
 --> Step: 10                                     
---> Next State: 0                                     
+--> Next State: 3                                     
 --> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[4,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
 --> Q_predict: 0.0000000                                     
 ===========
-Update to O-----T
+Update to ----O-T
 --> Episode: 0                                    
 --> Step: 11                                     
---> Next State: 0                                     
---> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> Next State: 4                                     
+--> Chosen Action by current state: right                                     
+--> New Q[3,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
 --> Q_predict: 0.0000000                                     
 ===========
-Update to -O----T
+Update to ---O--T
 --> Episode: 0                                    
 --> Step: 12                                     
---> Next State: 1                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> Next State: 3                                     
+--> Chosen Action by current state: left                                     
+--> New Q[4,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -134,8 +146,9 @@ Update to --O---T
 --> Episode: 0                                    
 --> Step: 13                                     
 --> Next State: 2                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> Chosen Action by current state: left                                     
+--> New Q[3,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -146,7 +159,8 @@ Update to -O----T
 --> Step: 14                                     
 --> Next State: 1                                     
 --> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[2,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -157,18 +171,20 @@ Update to --O---T
 --> Step: 15                                     
 --> Next State: 2                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[1,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
 --> Q_predict: 0.0000000                                     
 ===========
-Update to ---O--T
+Update to -O----T
 --> Episode: 0                                    
 --> Step: 16                                     
---> Next State: 3                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> Next State: 1                                     
+--> Chosen Action by current state: left                                     
+--> New Q[2,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -178,8 +194,333 @@ Update to --O---T
 --> Episode: 0                                    
 --> Step: 17                                     
 --> Next State: 2                                     
+--> Chosen Action by current state: right                                     
+--> New Q[1,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 0                                    
+--> Step: 18                                     
+--> Next State: 1                                     
 --> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[2,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to --O---T
+--> Episode: 0                                    
+--> Step: 19                                     
+--> Next State: 2                                     
+--> Chosen Action by current state: right                                     
+--> New Q[1,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 0                                    
+--> Step: 20                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: left                                     
+--> New Q[2,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to --O---T
+--> Episode: 0                                    
+--> Step: 21                                     
+--> Next State: 2                                     
+--> Chosen Action by current state: right                                     
+--> New Q[1,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 0                                    
+--> Step: 22                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: left                                     
+--> New Q[2,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 0                                    
+--> Step: 23                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 0                                    
+--> Step: 24                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 0                                    
+--> Step: 25                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 0                                    
+--> Step: 26                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[0,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 0                                    
+--> Step: 27                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[0,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 0                                    
+--> Step: 28                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[0,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 0                                    
+--> Step: 29                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 0                                    
+--> Step: 30                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 0                                    
+--> Step: 31                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[0,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 0                                    
+--> Step: 32                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 0                                    
+--> Step: 33                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 0                                    
+--> Step: 34                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 0                                    
+--> Step: 35                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 0                                    
+--> Step: 36                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[0,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 0                                    
+--> Step: 37                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 0                                    
+--> Step: 38                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 0                                    
+--> Step: 39                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 0                                    
+--> Step: 40                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 0                                    
+--> Step: 41                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 0                                    
+--> Step: 42                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 0                                    
+--> Step: 43                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to --O---T
+--> Episode: 0                                    
+--> Step: 44                                     
+--> Next State: 2                                     
+--> Chosen Action by current state: right                                     
+--> New Q[1,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -187,10 +528,11 @@ Update to --O---T
 ===========
 Update to ---O--T
 --> Episode: 0                                    
---> Step: 18                                     
+--> Step: 45                                     
 --> Next State: 3                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[2,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -198,10 +540,11 @@ Update to ---O--T
 ===========
 Update to ----O-T
 --> Episode: 0                                    
---> Step: 19                                     
+--> Step: 46                                     
 --> Next State: 4                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[3,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -209,21 +552,57 @@ Update to ----O-T
 ===========
 Update to -----OT
 --> Episode: 0                                    
---> Step: 20                                     
+--> Step: 47                                     
 --> Next State: 5                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[4,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
 --> Q_predict: 0.0000000                                     
 ===========
+Update to ----O-T
+--> Episode: 0                                    
+--> Step: 48                                     
+--> Next State: 4                                     
+--> Chosen Action by current state: left                                     
+--> New Q[5,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -----OT
+--> Episode: 0                                    
+--> Step: 49                                     
+--> Next State: 5                                     
+--> Chosen Action by current state: right                                     
+--> New Q[4,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to Terminal
+--> Episode: 0                                                        
+--> Step: 50                                                         
+--> Chosen Action by current state: right                                                         
+--> Reward: 1                                                         
+--> New Q[5,right] = 0.1000000                                                        
+--> Target-Predict: 1.0000000                                                         
+--> Q_target: 1.0000000                                                         
+--> Q_predict: 0.0000000                                                         
+===========
 Update to -O----T
 --> Episode: 1                                    
 --> Step: 1                                     
 --> Next State: 1                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> Chosen Action by current state: left                                     
+--> New Q[2,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -234,29 +613,32 @@ Update to O-----T
 --> Step: 2                                     
 --> Next State: 0                                     
 --> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
 --> Q_predict: 0.0000000                                     
 ===========
-Update to O-----T
+Update to -O----T
 --> Episode: 1                                    
 --> Step: 3                                     
---> Next State: 0                                     
---> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
 --> Q_predict: 0.0000000                                     
 ===========
-Update to O-----T
+Update to --O---T
 --> Episode: 1                                    
 --> Step: 4                                     
---> Next State: 0                                     
---> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> Next State: 2                                     
+--> Chosen Action by current state: right                                     
+--> New Q[1,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -266,8 +648,9 @@ Update to -O----T
 --> Episode: 1                                    
 --> Step: 5                                     
 --> Next State: 1                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> Chosen Action by current state: left                                     
+--> New Q[2,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -278,40 +661,116 @@ Update to --O---T
 --> Step: 6                                     
 --> Next State: 2                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[1,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
 --> Q_predict: 0.0000000                                     
 ===========
-Update to ---O--T
+Update to -O----T
 --> Episode: 1                                    
 --> Step: 7                                     
---> Next State: 3                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> Next State: 1                                     
+--> Chosen Action by current state: left                                     
+--> New Q[2,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
 --> Q_predict: 0.0000000                                     
 ===========
-Update to --O---T
+Update to O-----T
 --> Episode: 1                                    
 --> Step: 8                                     
---> Next State: 2                                     
+--> Next State: 0                                     
 --> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
 --> Q_predict: 0.0000000                                     
 ===========
-Update to ---O--T
+Update to -O----T
 --> Episode: 1                                    
 --> Step: 9                                     
---> Next State: 3                                     
+--> Next State: 1                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 1                                    
+--> Step: 10                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 1                                    
+--> Step: 11                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[0,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 1                                    
+--> Step: 12                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[0,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 1                                    
+--> Step: 13                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[0,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 1                                    
+--> Step: 14                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[0,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 1                                    
+--> Step: 15                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -319,10 +778,11 @@ Update to ---O--T
 ===========
 Update to --O---T
 --> Episode: 1                                    
---> Step: 10                                     
+--> Step: 16                                     
 --> Next State: 2                                     
---> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> Chosen Action by current state: right                                     
+--> New Q[1,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -330,10 +790,83 @@ Update to --O---T
 ===========
 Update to ---O--T
 --> Episode: 1                                    
---> Step: 11                                     
+--> Step: 17                                     
 --> Next State: 3                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[2,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to --O---T
+--> Episode: 1                                    
+--> Step: 18                                     
+--> Next State: 2                                     
+--> Chosen Action by current state: left                                     
+--> New Q[3,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 1                                    
+--> Step: 19                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: left                                     
+--> New Q[2,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to --O---T
+--> Episode: 1                                    
+--> Step: 20                                     
+--> Next State: 2                                     
+--> Chosen Action by current state: right                                     
+--> New Q[1,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 1                                    
+--> Step: 21                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: left                                     
+--> New Q[2,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to --O---T
+--> Episode: 1                                    
+--> Step: 22                                     
+--> Next State: 2                                     
+--> Chosen Action by current state: right                                     
+--> New Q[1,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to ---O--T
+--> Episode: 1                                    
+--> Step: 23                                     
+--> Next State: 3                                     
+--> Chosen Action by current state: right                                     
+--> New Q[2,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -341,10 +874,191 @@ Update to ---O--T
 ===========
 Update to ----O-T
 --> Episode: 1                                    
---> Step: 12                                     
+--> Step: 24                                     
 --> Next State: 4                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[3,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to ---O--T
+--> Episode: 1                                    
+--> Step: 25                                     
+--> Next State: 3                                     
+--> Chosen Action by current state: left                                     
+--> New Q[4,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to --O---T
+--> Episode: 1                                    
+--> Step: 26                                     
+--> Next State: 2                                     
+--> Chosen Action by current state: left                                     
+--> New Q[3,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to ---O--T
+--> Episode: 1                                    
+--> Step: 27                                     
+--> Next State: 3                                     
+--> Chosen Action by current state: right                                     
+--> New Q[2,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to --O---T
+--> Episode: 1                                    
+--> Step: 28                                     
+--> Next State: 2                                     
+--> Chosen Action by current state: left                                     
+--> New Q[3,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 1                                    
+--> Step: 29                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: left                                     
+--> New Q[2,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 1                                    
+--> Step: 30                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 1                                    
+--> Step: 31                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[0,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 1                                    
+--> Step: 32                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[0,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 1                                    
+--> Step: 33                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[0,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 1                                    
+--> Step: 34                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 1                                    
+--> Step: 35                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 1                                    
+--> Step: 36                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to --O---T
+--> Episode: 1                                    
+--> Step: 37                                     
+--> Next State: 2                                     
+--> Chosen Action by current state: right                                     
+--> New Q[1,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to ---O--T
+--> Episode: 1                                    
+--> Step: 38                                     
+--> Next State: 3                                     
+--> Chosen Action by current state: right                                     
+--> New Q[2,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to ----O-T
+--> Episode: 1                                    
+--> Step: 39                                     
+--> Next State: 4                                     
+--> Chosen Action by current state: right                                     
+--> New Q[3,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -352,76 +1066,223 @@ Update to ----O-T
 ===========
 Update to -----OT
 --> Episode: 1                                    
---> Step: 13                                     
+--> Step: 40                                     
 --> Next State: 5                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.1000000                                    
+--> New Q[4,right] = 0.0090000                                    
+--> MAX Q[S_next,A] = 0.1000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0900000                                     
 --> Q_target: 0.0900000                                     
 --> Q_predict: 0.0000000                                     
 ===========
-Update to ---O--T
---> Episode: 2                                    
---> Step: 1                                     
---> Next State: 3                                     
---> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0000000                                    
---> Reward: 0                                     
---> Target-Predict: 0.0000000                                     
---> Q_target: 0.0000000                                     
---> Q_predict: 0.0000000                                     
-===========
 Update to ----O-T
---> Episode: 2                                    
---> Step: 2                                     
+--> Episode: 1                                    
+--> Step: 41                                     
 --> Next State: 4                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0090000                                    
+--> Chosen Action by current state: left                                     
+--> New Q[5,left] = 0.0008100                                    
+--> MAX Q[S_next,A] = 0.0090000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0081000                                     
 --> Q_target: 0.0081000                                     
 --> Q_predict: 0.0000000                                     
 ===========
-Update to ---O--T
+Update to -----OT
+--> Episode: 1                                    
+--> Step: 42                                     
+--> Next State: 5                                     
+--> Chosen Action by current state: right                                     
+--> New Q[4,right] = 0.0171000                                    
+--> MAX Q[S_next,A] = 0.1000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0810000                                     
+--> Q_target: 0.0900000                                     
+--> Q_predict: 0.0090000                                     
+===========
+Update to Terminal
+--> Episode: 1                                                        
+--> Step: 43                                                         
+--> Chosen Action by current state: right                                                         
+--> Reward: 1                                                         
+--> New Q[5,right] = 0.1900000                                                        
+--> Target-Predict: 0.9000000                                                         
+--> Q_target: 1.0000000                                                         
+--> Q_predict: 0.1000000                                                         
+===========
+Update to -O----T
+--> Episode: 2                                    
+--> Step: 1                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 2                                    
+--> Step: 2                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
 --> Episode: 2                                    
 --> Step: 3                                     
---> Next State: 3                                     
---> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0008100                                    
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
---> Target-Predict: 0.0007290                                     
---> Q_target: 0.0007290                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 2                                    
+--> Step: 4                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 2                                    
+--> Step: 5                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 2                                    
+--> Step: 6                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 2                                    
+--> Step: 7                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[0,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 2                                    
+--> Step: 8                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[0,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 2                                    
+--> Step: 9                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to --O---T
+--> Episode: 2                                    
+--> Step: 10                                     
+--> Next State: 2                                     
+--> Chosen Action by current state: right                                     
+--> New Q[1,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to ---O--T
+--> Episode: 2                                    
+--> Step: 11                                     
+--> Next State: 3                                     
+--> Chosen Action by current state: right                                     
+--> New Q[2,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
 --> Q_predict: 0.0000000                                     
 ===========
 Update to ----O-T
 --> Episode: 2                                    
---> Step: 4                                     
+--> Step: 12                                     
 --> Next State: 4                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0090000                                    
+--> New Q[3,right] = 0.0015390                                    
+--> MAX Q[S_next,A] = 0.0171000                                    
 --> Reward: 0                                     
---> Target-Predict: 0.0072900                                     
---> Q_target: 0.0081000                                     
---> Q_predict: 0.0008100                                     
+--> Target-Predict: 0.0153900                                     
+--> Q_target: 0.0153900                                     
+--> Q_predict: 0.0000000                                     
 ===========
 Update to -----OT
 --> Episode: 2                                    
---> Step: 5                                     
+--> Step: 13                                     
 --> Next State: 5                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.1900000                                    
+--> New Q[4,right] = 0.0324900                                    
+--> MAX Q[S_next,A] = 0.1900000                                    
 --> Reward: 0                                     
---> Target-Predict: 0.1620000                                     
+--> Target-Predict: 0.1539000                                     
 --> Q_target: 0.1710000                                     
---> Q_predict: 0.0090000                                     
+--> Q_predict: 0.0171000                                     
 ===========
-Update to O-----T
+Update to Terminal
+--> Episode: 2                                                        
+--> Step: 14                                                         
+--> Chosen Action by current state: right                                                         
+--> Reward: 1                                                         
+--> New Q[5,right] = 0.2710000                                                        
+--> Target-Predict: 0.8100000                                                         
+--> Q_target: 1.0000000                                                         
+--> Q_predict: 0.1900000                                                         
+===========
+Update to --O---T
 --> Episode: 3                                    
 --> Step: 1                                     
---> Next State: 0                                     
+--> Next State: 2                                     
 --> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[3,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -431,8 +1292,69 @@ Update to -O----T
 --> Episode: 3                                    
 --> Step: 2                                     
 --> Next State: 1                                     
+--> Chosen Action by current state: left                                     
+--> New Q[2,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 3                                    
+--> Step: 3                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 3                                    
+--> Step: 4                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[0,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 3                                    
+--> Step: 5                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[0,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 3                                    
+--> Step: 6                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[0,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 3                                    
+--> Step: 7                                     
+--> Next State: 1                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -440,10 +1362,107 @@ Update to -O----T
 ===========
 Update to --O---T
 --> Episode: 3                                    
---> Step: 3                                     
+--> Step: 8                                     
 --> Next State: 2                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[1,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 3                                    
+--> Step: 9                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: left                                     
+--> New Q[2,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 3                                    
+--> Step: 10                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 3                                    
+--> Step: 11                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 3                                    
+--> Step: 12                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 3                                    
+--> Step: 13                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 3                                    
+--> Step: 14                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 3                                    
+--> Step: 15                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to --O---T
+--> Episode: 3                                    
+--> Step: 16                                     
+--> Next State: 2                                     
+--> Chosen Action by current state: right                                     
+--> New Q[1,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
@@ -451,463 +1470,689 @@ Update to --O---T
 ===========
 Update to ---O--T
 --> Episode: 3                                    
---> Step: 4                                     
+--> Step: 17                                     
 --> Next State: 3                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0015390                                    
+--> New Q[2,right] = 0.0001385                                    
+--> MAX Q[S_next,A] = 0.0015390                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0013851                                     
 --> Q_target: 0.0013851                                     
 --> Q_predict: 0.0000000                                     
 ===========
-Update to --O---T
+Update to ----O-T
 --> Episode: 3                                    
---> Step: 5                                     
---> Next State: 2                                     
---> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0001385                                    
+--> Step: 18                                     
+--> Next State: 4                                     
+--> Chosen Action by current state: right                                     
+--> New Q[3,right] = 0.0043092                                    
+--> MAX Q[S_next,A] = 0.0324900                                    
 --> Reward: 0                                     
---> Target-Predict: 0.0001247                                     
---> Q_target: 0.0001247                                     
+--> Target-Predict: 0.0277020                                     
+--> Q_target: 0.0292410                                     
+--> Q_predict: 0.0015390                                     
+===========
+Update to -----OT
+--> Episode: 3                                    
+--> Step: 19                                     
+--> Next State: 5                                     
+--> Chosen Action by current state: right                                     
+--> New Q[4,right] = 0.0536310                                    
+--> MAX Q[S_next,A] = 0.2710000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.2114100                                     
+--> Q_target: 0.2439000                                     
+--> Q_predict: 0.0324900                                     
+===========
+Update to Terminal
+--> Episode: 3                                                        
+--> Step: 20                                                         
+--> Chosen Action by current state: right                                                         
+--> Reward: 1                                                         
+--> New Q[5,right] = 0.3439000                                                        
+--> Target-Predict: 0.7290000                                                         
+--> Q_target: 1.0000000                                                         
+--> Q_predict: 0.2710000                                                         
+===========
+Update to ----O-T
+--> Episode: 4                                    
+--> Step: 1                                     
+--> Next State: 4                                     
+--> Chosen Action by current state: right                                     
+--> New Q[3,right] = 0.0087051                                    
+--> MAX Q[S_next,A] = 0.0536310                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0439587                                     
+--> Q_target: 0.0482679                                     
+--> Q_predict: 0.0043092                                     
+===========
+Update to ---O--T
+--> Episode: 4                                    
+--> Step: 2                                     
+--> Next State: 3                                     
+--> Chosen Action by current state: left                                     
+--> New Q[4,left] = 0.0007835                                    
+--> MAX Q[S_next,A] = 0.0087051                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0078346                                     
+--> Q_target: 0.0078346                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to ----O-T
+--> Episode: 4                                    
+--> Step: 3                                     
+--> Next State: 4                                     
+--> Chosen Action by current state: right                                     
+--> New Q[3,right] = 0.0126614                                    
+--> MAX Q[S_next,A] = 0.0536310                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0395628                                     
+--> Q_target: 0.0482679                                     
+--> Q_predict: 0.0087051                                     
+===========
+Update to -----OT
+--> Episode: 4                                    
+--> Step: 4                                     
+--> Next State: 5                                     
+--> Chosen Action by current state: right                                     
+--> New Q[4,right] = 0.0792189                                    
+--> MAX Q[S_next,A] = 0.3439000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.2558790                                     
+--> Q_target: 0.3095100                                     
+--> Q_predict: 0.0536310                                     
+===========
+Update to Terminal
+--> Episode: 4                                                        
+--> Step: 5                                                         
+--> Chosen Action by current state: right                                                         
+--> Reward: 1                                                         
+--> New Q[5,right] = 0.4095100                                                        
+--> Target-Predict: 0.6561000                                                         
+--> Q_target: 1.0000000                                                         
+--> Q_predict: 0.3439000                                                         
+===========
+Update to O-----T
+--> Episode: 5                                    
+--> Step: 1                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 5                                    
+--> Step: 2                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[0,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
 --> Q_predict: 0.0000000                                     
 ===========
 Update to -O----T
---> Episode: 3                                    
---> Step: 6                                     
+--> Episode: 5                                    
+--> Step: 3                                     
 --> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 5                                    
+--> Step: 4                                     
+--> Next State: 0                                     
 --> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0000000                                    
+--> New Q[1,left] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000000                                     
+--> Q_target: 0.0000000                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 5                                    
+--> Step: 5                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000000                                    
+--> MAX Q[S_next,A] = 0.0000000                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000000                                     
 --> Q_target: 0.0000000                                     
 --> Q_predict: 0.0000000                                     
 ===========
 Update to --O---T
---> Episode: 3                                    
---> Step: 7                                     
+--> Episode: 5                                    
+--> Step: 6                                     
 --> Next State: 2                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0001385                                    
+--> New Q[1,right] = 0.0000125                                    
+--> MAX Q[S_next,A] = 0.0001385                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0001247                                     
 --> Q_target: 0.0001247                                     
 --> Q_predict: 0.0000000                                     
 ===========
 Update to ---O--T
---> Episode: 3                                    
---> Step: 8                                     
+--> Episode: 5                                    
+--> Step: 7                                     
 --> Next State: 3                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0015390                                    
+--> New Q[2,right] = 0.0012642                                    
+--> MAX Q[S_next,A] = 0.0126614                                    
 --> Reward: 0                                     
---> Target-Predict: 0.0012466                                     
---> Q_target: 0.0013851                                     
+--> Target-Predict: 0.0112567                                     
+--> Q_target: 0.0113952                                     
 --> Q_predict: 0.0001385                                     
 ===========
 Update to ----O-T
---> Episode: 3                                    
---> Step: 9                                     
+--> Episode: 5                                    
+--> Step: 8                                     
 --> Next State: 4                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0252000                                    
+--> New Q[3,right] = 0.0185249                                    
+--> MAX Q[S_next,A] = 0.0792189                                    
 --> Reward: 0                                     
---> Target-Predict: 0.0211410                                     
---> Q_target: 0.0226800                                     
---> Q_predict: 0.0015390                                     
+--> Target-Predict: 0.0586357                                     
+--> Q_target: 0.0712970                                     
+--> Q_predict: 0.0126614                                     
 ===========
 Update to -----OT
---> Episode: 3                                    
---> Step: 10                                     
+--> Episode: 5                                    
+--> Step: 9                                     
 --> Next State: 5                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.2710000                                    
+--> New Q[4,right] = 0.1081529                                    
+--> MAX Q[S_next,A] = 0.4095100                                    
 --> Reward: 0                                     
---> Target-Predict: 0.2187000                                     
---> Q_target: 0.2439000                                     
---> Q_predict: 0.0252000                                     
+--> Target-Predict: 0.2893401                                     
+--> Q_target: 0.3685590                                     
+--> Q_predict: 0.0792189                                     
+===========
+Update to Terminal
+--> Episode: 5                                                        
+--> Step: 10                                                         
+--> Chosen Action by current state: right                                                         
+--> Reward: 1                                                         
+--> New Q[5,right] = 0.4685590                                                        
+--> Target-Predict: 0.5904900                                                         
+--> Q_target: 1.0000000                                                         
+--> Q_predict: 0.4095100                                                         
 ===========
 Update to -O----T
---> Episode: 5                                    
+--> Episode: 6                                    
 --> Step: 1                                     
 --> Next State: 1                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000125                                    
+--> Chosen Action by current state: left                                     
+--> New Q[2,left] = 0.0000011                                    
+--> MAX Q[S_next,A] = 0.0000125                                    
 --> Reward: 0                                     
 --> Target-Predict: 0.0000112                                     
 --> Q_target: 0.0000112                                     
 --> Q_predict: 0.0000000                                     
 ===========
 Update to --O---T
---> Episode: 5                                    
+--> Episode: 6                                    
 --> Step: 2                                     
 --> Next State: 2                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0002632                                    
+--> New Q[1,right] = 0.0001250                                    
+--> MAX Q[S_next,A] = 0.0012642                                    
 --> Reward: 0                                     
---> Target-Predict: 0.0002244                                     
---> Q_target: 0.0002369                                     
+--> Target-Predict: 0.0011253                                     
+--> Q_target: 0.0011378                                     
 --> Q_predict: 0.0000125                                     
 ===========
-Update to -O----T
---> Episode: 5                                    
+Update to ---O--T
+--> Episode: 6                                    
 --> Step: 3                                     
---> Next State: 1                                     
---> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0000349                                    
+--> Next State: 3                                     
+--> Chosen Action by current state: right                                     
+--> New Q[2,right] = 0.0028050                                    
+--> MAX Q[S_next,A] = 0.0185249                                    
 --> Reward: 0                                     
---> Target-Predict: 0.0000314                                     
---> Q_target: 0.0000314                                     
---> Q_predict: 0.0000000                                     
+--> Target-Predict: 0.0154082                                     
+--> Q_target: 0.0166724                                     
+--> Q_predict: 0.0012642                                     
 ===========
-Update to O-----T
---> Episode: 5                                    
+Update to ----O-T
+--> Episode: 6                                    
 --> Step: 4                                     
---> Next State: 0                                     
---> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0000011                                    
+--> Next State: 4                                     
+--> Chosen Action by current state: right                                     
+--> New Q[3,right] = 0.0264062                                    
+--> MAX Q[S_next,A] = 0.1081529                                    
 --> Reward: 0                                     
---> Target-Predict: 0.0000010                                     
---> Q_target: 0.0000010                                     
---> Q_predict: 0.0000000                                     
+--> Target-Predict: 0.0788127                                     
+--> Q_target: 0.0973376                                     
+--> Q_predict: 0.0185249                                     
 ===========
-Update to O-----T
---> Episode: 5                                    
+Update to -----OT
+--> Episode: 6                                    
 --> Step: 5                                     
---> Next State: 0                                     
---> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0000011                                    
+--> Next State: 5                                     
+--> Chosen Action by current state: right                                     
+--> New Q[4,right] = 0.1395079                                    
+--> MAX Q[S_next,A] = 0.4685590                                    
 --> Reward: 0                                     
---> Target-Predict: 0.0000010                                     
---> Q_target: 0.0000010                                     
---> Q_predict: 0.0000000                                     
+--> Target-Predict: 0.3135502                                     
+--> Q_target: 0.4217031                                     
+--> Q_predict: 0.1081529                                     
+===========
+Update to Terminal
+--> Episode: 6                                                        
+--> Step: 6                                                         
+--> Chosen Action by current state: right                                                         
+--> Reward: 1                                                         
+--> New Q[5,right] = 0.5217031                                                        
+--> Target-Predict: 0.5314410                                                         
+--> Q_target: 1.0000000                                                         
+--> Q_predict: 0.4685590                                                         
 ===========
 Update to -O----T
---> Episode: 5                                    
---> Step: 6                                     
+--> Episode: 7                                    
+--> Step: 1                                     
 --> Next State: 1                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000349                                    
+--> New Q[0,right] = 0.0000112                                    
+--> MAX Q[S_next,A] = 0.0001250                                    
 --> Reward: 0                                     
---> Target-Predict: 0.0000303                                     
---> Q_target: 0.0000314                                     
---> Q_predict: 0.0000011                                     
+--> Target-Predict: 0.0001125                                     
+--> Q_target: 0.0001125                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to O-----T
+--> Episode: 7                                    
+--> Step: 2                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[1,left] = 0.0000010                                    
+--> MAX Q[S_next,A] = 0.0000112                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000101                                     
+--> Q_target: 0.0000101                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to -O----T
+--> Episode: 7                                    
+--> Step: 3                                     
+--> Next State: 1                                     
+--> Chosen Action by current state: right                                     
+--> New Q[0,right] = 0.0000214                                    
+--> MAX Q[S_next,A] = 0.0001250                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0001012                                     
+--> Q_target: 0.0001125                                     
+--> Q_predict: 0.0000112                                     
 ===========
 Update to --O---T
---> Episode: 5                                    
---> Step: 7                                     
---> Next State: 2                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0002632                                    
---> Reward: 0                                     
---> Target-Predict: 0.0002019                                     
---> Q_target: 0.0002369                                     
---> Q_predict: 0.0000349                                     
-===========
-Update to ---O--T
---> Episode: 5                                    
---> Step: 8                                     
---> Next State: 3                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0036531                                    
---> Reward: 0                                     
---> Target-Predict: 0.0030246                                     
---> Q_target: 0.0032878                                     
---> Q_predict: 0.0002632                                     
-===========
-Update to ----O-T
---> Episode: 5                                    
---> Step: 9                                     
---> Next State: 4                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0470700                                    
---> Reward: 0                                     
---> Target-Predict: 0.0387099                                     
---> Q_target: 0.0423630                                     
---> Q_predict: 0.0036531                                     
-===========
-Update to -----OT
---> Episode: 5                                    
---> Step: 10                                     
---> Next State: 5                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.4095100                                    
---> Reward: 0                                     
---> Target-Predict: 0.3214890                                     
---> Q_target: 0.3685590                                     
---> Q_predict: 0.0470700                                     
-===========
-Update to ---O--T
---> Episode: 7                                    
---> Step: 1                                     
---> Next State: 3                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0075241                                    
---> Reward: 0                                     
---> Target-Predict: 0.0062060                                     
---> Q_target: 0.0067717                                     
---> Q_predict: 0.0005656                                     
-===========
-Update to ----O-T
---> Episode: 7                                    
---> Step: 2                                     
---> Next State: 4                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0792189                                    
---> Reward: 0                                     
---> Target-Predict: 0.0637729                                     
---> Q_target: 0.0712970                                     
---> Q_predict: 0.0075241                                     
-===========
-Update to -----OT
---> Episode: 7                                    
---> Step: 3                                     
---> Next State: 5                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.5217031                                    
---> Reward: 0                                     
---> Target-Predict: 0.3903139                                     
---> Q_target: 0.4695328                                     
---> Q_predict: 0.0792189                                     
-===========
-Update to ----O-T
 --> Episode: 7                                    
 --> Step: 4                                     
---> Next State: 4                                     
---> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.1182503                                    
+--> Next State: 2                                     
+--> Chosen Action by current state: right                                     
+--> New Q[1,right] = 0.0003649                                    
+--> MAX Q[S_next,A] = 0.0028050                                    
 --> Reward: 0                                     
---> Target-Predict: 0.1064253                                     
---> Q_target: 0.1064253                                     
---> Q_predict: 0.0000000                                     
+--> Target-Predict: 0.0023995                                     
+--> Q_target: 0.0025245                                     
+--> Q_predict: 0.0001250                                     
+===========
+Update to ---O--T
+--> Episode: 7                                    
+--> Step: 5                                     
+--> Next State: 3                                     
+--> Chosen Action by current state: right                                     
+--> New Q[2,right] = 0.0049011                                    
+--> MAX Q[S_next,A] = 0.0264062                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0209606                                     
+--> Q_target: 0.0237656                                     
+--> Q_predict: 0.0028050                                     
+===========
+Update to ----O-T
+--> Episode: 7                                    
+--> Step: 6                                     
+--> Next State: 4                                     
+--> Chosen Action by current state: right                                     
+--> New Q[3,right] = 0.0363213                                    
+--> MAX Q[S_next,A] = 0.1395079                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0991509                                     
+--> Q_target: 0.1255571                                     
+--> Q_predict: 0.0264062                                     
 ===========
 Update to -----OT
 --> Episode: 7                                    
---> Step: 5                                     
+--> Step: 7                                     
 --> Next State: 5                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.5217031                                    
+--> New Q[4,right] = 0.1725104                                    
+--> MAX Q[S_next,A] = 0.5217031                                    
 --> Reward: 0                                     
---> Target-Predict: 0.3512825                                     
+--> Target-Predict: 0.3300249                                     
 --> Q_target: 0.4695328                                     
---> Q_predict: 0.1182503                                     
+--> Q_predict: 0.1395079                                     
+===========
+Update to ----O-T
+--> Episode: 7                                    
+--> Step: 8                                     
+--> Next State: 4                                     
+--> Chosen Action by current state: left                                     
+--> New Q[5,left] = 0.0162549                                    
+--> MAX Q[S_next,A] = 0.1725104                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.1544494                                     
+--> Q_target: 0.1552594                                     
+--> Q_predict: 0.0008100                                     
+===========
+Update to -----OT
+--> Episode: 7                                    
+--> Step: 9                                     
+--> Next State: 5                                     
+--> Chosen Action by current state: right                                     
+--> New Q[4,right] = 0.2022127                                    
+--> MAX Q[S_next,A] = 0.5217031                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.2970224                                     
+--> Q_target: 0.4695328                                     
+--> Q_predict: 0.1725104                                     
+===========
+Update to Terminal
+--> Episode: 7                                                        
+--> Step: 10                                                         
+--> Chosen Action by current state: right                                                         
+--> Reward: 1                                                         
+--> New Q[5,right] = 0.5695328                                                        
+--> Target-Predict: 0.4782969                                                         
+--> Q_target: 1.0000000                                                         
+--> Q_predict: 0.5217031                                                         
+===========
+Update to --O---T
+--> Episode: 8                                    
+--> Step: 1                                     
+--> Next State: 2                                     
+--> Chosen Action by current state: left                                     
+--> New Q[3,left] = 0.0004411                                    
+--> MAX Q[S_next,A] = 0.0049011                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0044110                                     
+--> Q_target: 0.0044110                                     
+--> Q_predict: 0.0000000                                     
+===========
+Update to ---O--T
+--> Episode: 8                                    
+--> Step: 2                                     
+--> Next State: 3                                     
+--> Chosen Action by current state: right                                     
+--> New Q[2,right] = 0.0076799                                    
+--> MAX Q[S_next,A] = 0.0363213                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0277881                                     
+--> Q_target: 0.0326892                                     
+--> Q_predict: 0.0049011                                     
 ===========
 Update to ----O-T
 --> Episode: 8                                    
---> Step: 1                                     
+--> Step: 3                                     
 --> Next State: 4                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.1533785                                    
+--> New Q[3,right] = 0.0508883                                    
+--> MAX Q[S_next,A] = 0.2022127                                    
 --> Reward: 0                                     
---> Target-Predict: 0.1241393                                     
---> Q_target: 0.1380407                                     
---> Q_predict: 0.0139014                                     
+--> Target-Predict: 0.1456701                                     
+--> Q_target: 0.1819914                                     
+--> Q_predict: 0.0363213                                     
 ===========
 Update to -----OT
 --> Episode: 8                                    
---> Step: 2                                     
+--> Step: 4                                     
 --> Next State: 5                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.5695328                                    
+--> New Q[4,right] = 0.2332493                                    
+--> MAX Q[S_next,A] = 0.5695328                                    
 --> Reward: 0                                     
---> Target-Predict: 0.3592010                                     
+--> Target-Predict: 0.3103669                                     
 --> Q_target: 0.5125795                                     
---> Q_predict: 0.1533785                                     
+--> Q_predict: 0.2022127                                     
+===========
+Update to Terminal
+--> Episode: 8                                                        
+--> Step: 5                                                         
+--> Chosen Action by current state: right                                                         
+--> Reward: 1                                                         
+--> New Q[5,right] = 0.6125795                                                        
+--> Target-Predict: 0.4304672                                                         
+--> Q_target: 1.0000000                                                         
+--> Q_predict: 0.5695328                                                         
 ===========
 Update to ---O--T
 --> Episode: 9                                    
 --> Step: 1                                     
 --> Next State: 3                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0263153                                    
+--> New Q[2,right] = 0.0114918                                    
+--> MAX Q[S_next,A] = 0.0508883                                    
 --> Reward: 0                                     
---> Target-Predict: 0.0224975                                     
---> Q_target: 0.0236838                                     
---> Q_predict: 0.0011862                                     
+--> Target-Predict: 0.0381196                                     
+--> Q_target: 0.0457995                                     
+--> Q_predict: 0.0076799                                     
 ===========
 Update to ----O-T
 --> Episode: 9                                    
 --> Step: 2                                     
 --> Next State: 4                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.1892986                                    
+--> New Q[3,right] = 0.0667919                                    
+--> MAX Q[S_next,A] = 0.2332493                                    
 --> Reward: 0                                     
---> Target-Predict: 0.1440535                                     
---> Q_target: 0.1703688                                     
---> Q_predict: 0.0263153                                     
+--> Target-Predict: 0.1590361                                     
+--> Q_target: 0.2099244                                     
+--> Q_predict: 0.0508883                                     
 ===========
 Update to -----OT
 --> Episode: 9                                    
 --> Step: 3                                     
 --> Next State: 5                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.6125795                                    
+--> New Q[4,right] = 0.2650566                                    
+--> MAX Q[S_next,A] = 0.6125795                                    
 --> Reward: 0                                     
---> Target-Predict: 0.3620229                                     
+--> Target-Predict: 0.3180722                                     
 --> Q_target: 0.5513216                                     
---> Q_predict: 0.1892986                                     
+--> Q_predict: 0.2332493                                     
+===========
+Update to Terminal
+--> Episode: 9                                                        
+--> Step: 4                                                         
+--> Chosen Action by current state: right                                                         
+--> Reward: 1                                                         
+--> New Q[5,right] = 0.6513216                                                        
+--> Target-Predict: 0.3874205                                                         
+--> Q_target: 1.0000000                                                         
+--> Q_predict: 0.6125795                                                         
+===========
+Update to O-----T
+--> Episode: 10                                    
+--> Step: 1                                     
+--> Next State: 0                                     
+--> Chosen Action by current state: left                                     
+--> New Q[0,left] = 0.0000019                                    
+--> MAX Q[S_next,A] = 0.0000214                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0000192                                     
+--> Q_target: 0.0000192                                     
+--> Q_predict: 0.0000000                                     
 ===========
 Update to -O----T
 --> Episode: 10                                    
---> Step: 1                                     
+--> Step: 2                                     
 --> Next State: 1                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0000551                                    
+--> New Q[0,right] = 0.0000521                                    
+--> MAX Q[S_next,A] = 0.0003649                                    
 --> Reward: 0                                     
---> Target-Predict: 0.0000454                                     
---> Q_target: 0.0000496                                     
---> Q_predict: 0.0000042                                     
+--> Target-Predict: 0.0003071                                     
+--> Q_target: 0.0003285                                     
+--> Q_predict: 0.0000214                                     
 ===========
 Update to --O---T
---> Episode: 10                                    
---> Step: 2                                     
---> Next State: 2                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0034360                                    
---> Reward: 0                                     
---> Target-Predict: 0.0030373                                     
---> Q_target: 0.0030924                                     
---> Q_predict: 0.0000551                                     
-===========
-Update to ---O--T
 --> Episode: 10                                    
 --> Step: 3                                     
---> Next State: 3                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0407207                                    
---> Reward: 0                                     
---> Target-Predict: 0.0332126                                     
---> Q_target: 0.0366486                                     
---> Q_predict: 0.0034360                                     
-===========
-Update to --O---T
---> Episode: 10                                    
---> Step: 4                                     
 --> Next State: 2                                     
---> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.0067573                                    
+--> Chosen Action by current state: right                                     
+--> New Q[1,right] = 0.0013627                                    
+--> MAX Q[S_next,A] = 0.0114918                                    
 --> Reward: 0                                     
---> Target-Predict: 0.0060691                                     
---> Q_target: 0.0060815                                     
---> Q_predict: 0.0000125                                     
+--> Target-Predict: 0.0099777                                     
+--> Q_target: 0.0103426                                     
+--> Q_predict: 0.0003649                                     
 ===========
 Update to ---O--T
+--> Episode: 10                                    
+--> Step: 4                                     
+--> Next State: 3                                     
+--> Chosen Action by current state: right                                     
+--> New Q[2,right] = 0.0163539                                    
+--> MAX Q[S_next,A] = 0.0667919                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.0486209                                     
+--> Q_target: 0.0601127                                     
+--> Q_predict: 0.0114918                                     
+===========
+Update to ----O-T
 --> Episode: 10                                    
 --> Step: 5                                     
---> Next State: 3                                     
+--> Next State: 4                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0407207                                    
+--> New Q[3,right] = 0.0839678                                    
+--> MAX Q[S_next,A] = 0.2650566                                    
 --> Reward: 0                                     
---> Target-Predict: 0.0298913                                     
---> Q_target: 0.0366486                                     
---> Q_predict: 0.0067573                                     
+--> Target-Predict: 0.1717590                                     
+--> Q_target: 0.2385509                                     
+--> Q_predict: 0.0667919                                     
 ===========
-Update to ----O-T
+Update to -----OT
 --> Episode: 10                                    
 --> Step: 6                                     
---> Next State: 4                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.2255009                                    
---> Reward: 0                                     
---> Target-Predict: 0.1622302                                     
---> Q_target: 0.2029508                                     
---> Q_predict: 0.0407207                                     
-===========
-Update to -----OT
---> Episode: 10                                    
---> Step: 7                                     
 --> Next State: 5                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.6513216                                    
+--> New Q[4,right] = 0.2971698                                    
+--> MAX Q[S_next,A] = 0.6513216                                    
 --> Reward: 0                                     
---> Target-Predict: 0.3606885                                     
+--> Target-Predict: 0.3211328                                     
 --> Q_target: 0.5861894                                     
---> Q_predict: 0.2255009                                     
+--> Q_predict: 0.2650566                                     
 ===========
-Update to ----O-T
---> Episode: 10                                    
---> Step: 8                                     
---> Next State: 4                                     
---> Chosen Action by current state: left                                     
---> MAX[S_next,A] = 0.2615698                                    
---> Reward: 0                                     
---> Target-Predict: 0.2247703                                     
---> Q_target: 0.2354128                                     
---> Q_predict: 0.0106425                                     
+Update to Terminal
+--> Episode: 10                                                        
+--> Step: 7                                                         
+--> Chosen Action by current state: right                                                         
+--> Reward: 1                                                         
+--> New Q[5,right] = 0.6861894                                                        
+--> Target-Predict: 0.3486784                                                         
+--> Q_target: 1.0000000                                                         
+--> Q_predict: 0.6513216                                                         
 ===========
-Update to -----OT
---> Episode: 10                                    
---> Step: 9                                     
---> Next State: 5                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.6513216                                    
---> Reward: 0                                     
---> Target-Predict: 0.3246196                                     
---> Q_target: 0.5861894                                     
---> Q_predict: 0.2615698                                     
-===========
-Update to ----O-T
+Update to ---O--T
 --> Episode: 11                                    
 --> Step: 1                                     
---> Next State: 4                                     
+--> Next State: 3                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.2940317                                    
+--> New Q[2,right] = 0.0222756                                    
+--> MAX Q[S_next,A] = 0.0839678                                    
 --> Reward: 0                                     
---> Target-Predict: 0.2076849                                     
---> Q_target: 0.2646286                                     
---> Q_predict: 0.0569437                                     
+--> Target-Predict: 0.0592171                                     
+--> Q_target: 0.0755710                                     
+--> Q_predict: 0.0163539                                     
 ===========
-Update to -----OT
+Update to ----O-T
 --> Episode: 11                                    
 --> Step: 2                                     
+--> Next State: 4                                     
+--> Chosen Action by current state: right                                     
+--> New Q[3,right] = 0.1023163                                    
+--> MAX Q[S_next,A] = 0.2971698                                    
+--> Reward: 0                                     
+--> Target-Predict: 0.1834851                                     
+--> Q_target: 0.2674529                                     
+--> Q_predict: 0.0839678                                     
+===========
+Update to -----OT
+--> Episode: 11                                    
+--> Step: 3                                     
 --> Next State: 5                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.6861894                                    
+--> New Q[4,right] = 0.3292099                                    
+--> MAX Q[S_next,A] = 0.6861894                                    
 --> Reward: 0                                     
---> Target-Predict: 0.3235387                                     
+--> Target-Predict: 0.3204006                                     
 --> Q_target: 0.6175705                                     
---> Q_predict: 0.2940317                                     
+--> Q_predict: 0.2971698                                     
 ===========
-Update to --O---T
---> Episode: 12                                    
---> Step: 1                                     
---> Next State: 2                                     
---> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0097464                                    
---> Reward: 0                                     
---> Target-Predict: 0.0084129                                     
---> Q_target: 0.0087717                                     
---> Q_predict: 0.0003588                                     
+Update to Terminal
+--> Episode: 11                                                        
+--> Step: 4                                                         
+--> Chosen Action by current state: right                                                         
+--> Reward: 1                                                         
+--> New Q[5,right] = 0.7175705                                                        
+--> Target-Predict: 0.3138106                                                         
+--> Q_target: 1.0000000                                                         
+--> Q_predict: 0.6861894                                                         
 ===========
 Update to ---O--T
 --> Episode: 12                                    
---> Step: 2                                     
+--> Step: 1                                     
 --> Next State: 3                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.0777122                                    
+--> New Q[2,right] = 0.0292565                                    
+--> MAX Q[S_next,A] = 0.1023163                                    
 --> Reward: 0                                     
---> Target-Predict: 0.0601946                                     
---> Q_target: 0.0699409                                     
---> Q_predict: 0.0097464                                     
+--> Target-Predict: 0.0698090                                     
+--> Q_target: 0.0920847                                     
+--> Q_predict: 0.0222756                                     
 ===========
 Update to ----O-T
 --> Episode: 12                                    
---> Step: 3                                     
+--> Step: 2                                     
 --> Next State: 4                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.3263856                                    
+--> New Q[3,right] = 0.1217136                                    
+--> MAX Q[S_next,A] = 0.3292099                                    
 --> Reward: 0                                     
---> Target-Predict: 0.2160349                                     
---> Q_target: 0.2937471                                     
---> Q_predict: 0.0777122                                     
+--> Target-Predict: 0.1939726                                     
+--> Q_target: 0.2962889                                     
+--> Q_predict: 0.1023163                                     
 ===========
 Update to -----OT
 --> Episode: 12                                    
---> Step: 4                                     
+--> Step: 3                                     
 --> Next State: 5                                     
 --> Chosen Action by current state: right                                     
---> MAX[S_next,A] = 0.7175705                                    
+--> New Q[4,right] = 0.3608703                                    
+--> MAX Q[S_next,A] = 0.7175705                                    
 --> Reward: 0                                     
---> Target-Predict: 0.3194278                                     
+--> Target-Predict: 0.3166035                                     
 --> Q_target: 0.6458134                                     
---> Q_predict: 0.3263856                                     
+--> Q_predict: 0.3292099                                     
+===========
+Update to Terminal
+--> Episode: 12                                                        
+--> Step: 4                                                         
+--> Chosen Action by current state: right                                                         
+--> Reward: 1                                                         
+--> New Q[5,right] = 0.7458134                                                        
+--> Target-Predict: 0.2824295                                                         
+--> Q_target: 1.0000000                                                         
+--> Q_predict: 0.7175705                                                         
 ===========
