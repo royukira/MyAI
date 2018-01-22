@@ -70,23 +70,48 @@ class QBrainSimply:
         Repeat the episode until S gets to the rightmost position (i.e. get the treasure)
         """
         for episode in range(self.Max_episode):  # training episode; a episode from initial S(i.e. State) to terminal S
+            """
+            Initial S
+            """
             step_count = 0  # count the #episode
             is_terminal = False  # ending signal
-            S = random.randint(0, self.numState-2)  # S不能等于5
-            update_env(S, episode, step_count, self.numState)  # update the environment / TODO
+            S = random.randint(0, self.numState-2)  # S不能等于treasure的position
+            update_env(S, episode, step_count, self.numState)  # update the environment /
 
+            """
+            Repeat (For each step of an episode)
+            """
             while not is_terminal:
+                """
+                Choose an action A
+                """
                 A = self.choose_action(state=S)
-                S_Next, R = get_env_feedback(S,A,self.numState)  # get the feedback from the environment/ TODO
+
+                """
+                Get feedback of action A with State S from the environment
+                Return next state and reward (i.e observe the next state and reward)
+                """
+                S_Next, R = get_env_feedback(S,A,self.numState)  # get the feedback from the environment/
+
+                """
+                Get the predict value (i.e old value of Q[S,A]) from Q table
+                """
                 q_predict = self.Q_table.loc[S,A]  # 估计的价值
 
+                """
+                Calculate the real value (q_target)
+                """
                 if S_Next is not "terminal":
                     q_target = R + self.discountFactor * self.Q_table.iloc[S_Next,:].max()  # 实际的价值
                 else:
-                    q_target = R  # 实际的价值
+                    q_target = R  # 实际的价值,terminal的action都为0
                     is_terminal = True
 
                 q_dis = q_target - q_predict
+
+                """
+                New Q[S,A] is updated
+                """
                 self.Q_table.loc[S,A] += self.learnRate * q_dis  # [S,A] in Q table is updated
                 S = S_Next
                 step_count += 1
