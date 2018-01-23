@@ -1,4 +1,4 @@
-from Q_learning.Q_Brain import QBrainSimply
+from Q_learning.Q_Brain_Simply import QBrainSimply
 
 if __name__ == "__main__":
 

@@ -13,6 +13,9 @@ import os
 
 
 class QBrainSimply:
+    """
+    For simply treasure game
+    """
 
     def __init__(self,numState,ActionSet,greedy,learnRate,discountFactor,Max_episode):
         """initial Value"""
@@ -62,8 +65,8 @@ class QBrainSimply:
         Create the learning log
         """
         now_time = time.strftime("%Y-%m-%d", time.localtime())
-        if not os.path.exists("./Log/%s_QBrainSimply_log.txt" % now_time):
-            f = open("./Log/%s_QBrainSimply_log.txt" % now_time,'w')
+        if not os.path.exists("../Log/%s_QBrainSimply_log.txt" % now_time):
+            f = open("../Log/%s_QBrainSimply_log.txt" % now_time,'w')
             f.close()
 
         """
@@ -123,7 +126,7 @@ class QBrainSimply:
                 Record Learning Process
                 """
                 if S != "terminal":
-                    train_log = open("./Log/%s_QBrainSimply_log.txt" % now_time, 'a+')
+                    train_log = open("../Log/%s_QBrainSimply_log.txt" % now_time, 'a+')
                     train_log.write("Update to " + str(interaction))
                     train_log.write("\n--> Episode: %s\
                                     \n--> Step: %s \
@@ -149,7 +152,7 @@ class QBrainSimply:
                                        q_predict))
                     train_log.close()
                 else:
-                    train_log = open("./Log/%s_QBrainSimply_log.txt" % now_time, 'a+')
+                    train_log = open("../Log/%s_QBrainSimply_log.txt" % now_time, 'a+')
                     train_log.write("Update to Terminal")
                     train_log.write("\n--> Episode: %s\
                                                         \n--> Step: %s \
