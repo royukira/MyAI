@@ -41,8 +41,9 @@ class Maze_env(tk.Tk, object):
         super(Maze_env, self).__init__()
         self.canvas = None
         self.title("Maze Game")  # the window's title
-        self.geometry('{0}x{1}'.format(width_pix*10, height_pix*10))  # The window's size: (4*40) * (4*40) pixels
+        self.geometry('{0}x{1}'.format(width_pix, height_pix))  # The window's size: (4*40) * (4*40) pixels
         self.actionSet = ("up", "down", "left", "right")  # The actions can be taken in this game
+        self.explorer = None
         self.create_env()
 
     def create_env(self):
@@ -91,13 +92,18 @@ class Maze_env(tk.Tk, object):
         Explorer (Randomly reset)
         """
         exp_loaction = self.reset_exp()
-        #print(exp_loaction)
+        print(exp_loaction)
+        print(exp_loaction[0],"    ",exp_loaction[1])
         """
         Pack all
         """
         self.canvas.pack()
 
     def reset_exp(self):
+        if self.explorer is not None:
+            self.update()
+            time.sleep(0.5)
+            self.canvas.delete(self.explorer)
         """
         Explorer : randomly put into the game
         """
@@ -128,21 +134,109 @@ class Maze_env(tk.Tk, object):
         return self.canvas.coords(self.explorer)
 
     def update_env(self,action):
-        self.canvas.move(self.explorer,0,80)
+        """
+        Update the environment
+        i.e. Move the explorer
+        :param action:
+        :return:
+        """
+        current_s = self.canvas.coords(self.explorer)
 
-    def feedback(self):
-        pass
-        #TODO
+        """
+        Unit = 80 pixels
+        Action:
+        -> Up: base_action = [0,-80]
+        -> Down: base_action = [0,80]
+        -> Left: base_action = [-80.0]
+        -> Right: base_action = [80,0]
+        """
+        base_action = np.array([0,0])  # initial base action
 
+        """
+        current_s[0] --> e1_x0  (比80的倍数多5)
+        current_s[1] --> e1_y0  (比80的倍数多5)
+        """
+        if action == "up":
+            if current_s[1] > unit:  # not on the top
+                base_action[1] -= unit
+        elif action == "down":
+            if current_s[1] < (maze_height-1) * unit:  # not on the bottom
+                base_action[1] += unit
+        elif action == "left":  # not on the leftmost
+            if current_s[0] > unit:
+                base_action[0] -= unit
+        elif action == "right":  # not on the rightmost
+            if current_s[0] < (maze_width-1) * unit:
+                base_action[0] += unit
+
+        """
+        Move the explorer
+        """
+        self.canvas.move(self.explorer, base_action[0], base_action[1])
+
+        """
+        Next state
+        """
+        next_s = self.canvas.coords(self.explorer)
+        return next_s
+
+    def feedback(self,next_s):
+        """
+        Get the feedback (reward) of moving explorer from current_s to next_s
+        :param next_s:
+        :return:
+        """
+
+        if next_s == self.canvas.coords(self.terminal):
+            """
+            If terminal
+            """
+            reward = 1
+            is_finish = True
+            _next_s_ = "Terminal"
+        elif next_s in [self.canvas.coords(self.hell1), self.canvas.coords(self.hell2), self.canvas.coords(self.hell3)]:
+            """
+            If hell
+            """
+            reward = -1
+            is_finish = True
+            _next_s_ = "Hell"
+        else:
+            """
+            Otherwise
+            """
+            reward = 0
+            is_finish = False
+            _next_s_ = str(next_s)
+
+        return reward, is_finish, _next_s_
+
+    def render(self):
+        time.sleep(0.9)
+        self.update()
 
 
 
 
 """ Testing """
 
+
+def update(env):
+    for t in range(10):
+        s = env.reset_exp()
+        while True:
+            env.render()
+            a = "left"
+            s = env.update_env(a)
+            reward, done,s_ = env.feedback(s)
+
+            if done:
+                break
+
+
 if __name__ == '__main__':
     env = Maze_env()
-    b = tk.Button(env, text='move', command=env.update_env(1)).pack()
+    env.after(100,update(env))
     env.mainloop()
 
 
