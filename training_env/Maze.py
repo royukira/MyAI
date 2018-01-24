@@ -69,16 +69,16 @@ class Maze_env(tk.Tk, object):
         """
         Hells
         """
-        h1_x0,h1_y0 = unit * 1, unit * 3
-        h1_x1,h1_y1 = unit * 2, unit * 4
+        h1_x0,h1_y0 = unit * 1 + 5, unit * 3 + 5
+        h1_x1,h1_y1 = unit * 2 - 5, unit * 4 - 5
         self.hell1 = self.canvas.create_rectangle(h1_x0,h1_y0,h1_x1,h1_y1,fill="black")
 
-        h2_x0,h2_y0 = unit * 2, unit * 2
-        h2_x1,h2_y1 = unit * 3, unit * 3
+        h2_x0,h2_y0 = unit * 2 + 5, unit * 2 + 5
+        h2_x1,h2_y1 = unit * 3 - 5, unit * 3 - 5
         self.hell2 = self.canvas.create_rectangle(h2_x0,h2_y0,h2_x1,h2_y1,fill="black")
 
-        h3_x0,h3_y0 = unit * 2, unit * 4
-        h3_x1,h3_y1 = unit * 3, unit * 5
+        h3_x0,h3_y0 = unit * 2 + 5, unit * 4 + 5
+        h3_x1,h3_y1 = unit * 3 - 5, unit * 5 - 5
         self.hell3 = self.canvas.create_rectangle(h3_x0, h3_y0, h3_x1, h3_y1, fill="black")
 
         """
@@ -87,13 +87,16 @@ class Maze_env(tk.Tk, object):
         t1_x0, t1_y0 = unit * 2 + 5, unit * 3 + 5
         t1_x1,  t1_y1 = unit * 3 - 5, unit * 4 - 5
         self.terminal = self.canvas.create_oval(t1_x0, t1_y0, t1_x1, t1_y1, fill="yellow")
+        self.text = self.canvas.create_text(t1_x0+35, t1_y0+30, text="詹文婷",fill="black")
+
 
         """
         Explorer (Randomly reset)
-        """
+        Only be created (reset) at the start of the game instead of creating the game environment
         exp_loaction = self.reset_exp()
         print(exp_loaction)
         print(exp_loaction[0],"    ",exp_loaction[1])
+        """
         """
         Pack all
         """
@@ -104,6 +107,7 @@ class Maze_env(tk.Tk, object):
             self.update()
             time.sleep(0.5)
             self.canvas.delete(self.explorer)
+            print("Old explorer has been deleted...")
         """
         Explorer : randomly put into the game
         """
@@ -113,8 +117,8 @@ class Maze_env(tk.Tk, object):
                                (unit * 3, unit * 5),
                                (unit * 2, unit * 3),
                                (unit * 3, unit * 4)]
-            horizontal_random_pos = np.random.randint(1, maze_width)  # random horizontal position
-            ver_random_pos = np.random.randint(1, maze_height)  # random vertical position
+            horizontal_random_pos = np.random.randint(0, maze_width)  # random horizontal position
+            ver_random_pos = np.random.randint(0, maze_height-2)  # random vertical position 在前3行进行random
 
             hrz_x0 = unit * horizontal_random_pos
             ver_y0 = unit * ver_random_pos
@@ -128,7 +132,7 @@ class Maze_env(tk.Tk, object):
                 continue  # avoiding the explorer is initially located at the hells or terminal
             else:
                 # print("{0} / {1} / {2} / {3}".format(hrz_x0,ver_y0,hrz_x1,ver_y1))
-                self.explorer = self.canvas.create_oval(e1_x0, e1_y0, e1_x1, e1_y1, fill="red")
+                self.explorer = self.canvas.create_oval(e1_x0, e1_y0, e1_x1, e1_y1, outline="black", fill="red")
                 break
 
         return self.canvas.coords(self.explorer)

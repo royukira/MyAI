@@ -1,7 +1,7 @@
 """
 MyAI Experience
 
-This is Q_learning package
+This is Q_learning simply version package
 
 Reference: https://morvanzhou.github.io/tutorials
 """
