@@ -9,9 +9,7 @@ Return: The machine's Q brain (Q table)
 
 import numpy as np
 import pandas as pd
-import random
-import time
-import os
+
 
 
 class Q_Brain:

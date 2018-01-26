@@ -87,7 +87,7 @@ class Maze_env(tk.Tk, object):
         t1_x0, t1_y0 = unit * 2 + 5, unit * 3 + 5
         t1_x1,  t1_y1 = unit * 3 - 5, unit * 4 - 5
         self.terminal = self.canvas.create_oval(t1_x0, t1_y0, t1_x1, t1_y1, fill="yellow")
-        self.text = self.canvas.create_text(t1_x0+35, t1_y0+30, text="詹文婷",fill="black")
+        self.text = self.canvas.create_text(t1_x0+35, t1_y0+30, text="Treasure",fill="black")
 
 
         """
@@ -216,7 +216,7 @@ class Maze_env(tk.Tk, object):
         return reward, is_finish, _next_s_
 
     def render(self):
-        time.sleep(0.9)
+        time.sleep(0.1)
         self.update()
 
 
