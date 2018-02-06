@@ -105,7 +105,8 @@ class DQN_st:
         lays_info = {}
         with tf.name_scope('Input_of_Q_net'):
             self.s = tf.placeholder(dtype=tf.float32,shape=[None, self.n_features], name="s")
-
+        with tf.name_scope("Target_value"):
+            self.target_value = tf.placeholder(tf.float32, [None, self.n_action], name='Q_target')  # for calculating loss
         with tf.name_scope("para_of_Q_net"):
             # The first layer
             w1 = tf.truncated_normal([2, n_hidden_units[0]], stddev=0.1)
@@ -172,16 +173,22 @@ class DQN_st:
                 target_lays_info.setdefault(3, ("Target_OutputLayer", w_3, b_3, tf.nn.relu))
 
         # Create the Target Neural Network
-        self.target_value = createLayer(self.s_, target_lays_info)
+        self.q_next = createLayer(self.s_, target_lays_info)
 
         # -------- Loss Function ------
         with tf.name_scope("The_mean-square_Loss_Function"):
-            loss = tf.reduce_mean(tf.squared_difference(self.predict_value,self.target_value))
+            loss = tf.reduce_mean(tf.squared_difference(self.target_value,self.predict_value))
             tf.summary.scalar('The_mean-square_Loss_Function', loss)
 
         # -------- Train (optimizer) ---------
         with tf.name_scope("Training"):
             self.optimizer = tf.train.RMSPropOptimizer(self.learnRate).minimize(loss)  # RMSprop
+            # RMSprop 是自适应学习率优化算法
+            # 其实RMSprop依然依赖于全局学习率
+            # 但对学习率有个约束作用
+            # 详细：https://zhuanlan.zhihu.com/p/22252270
+            #      http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf
+            #      http://ruder.io/optimizing-gradient-descent/index.html#rmsprop
 
     def store_exp(self,e):
         """
@@ -218,6 +225,25 @@ class DQN_st:
         :return:
         """
 
+        # check if update the parameter of target network with the old parameter of Q network
+        if self.total_learning_step % self.learnIter == 0:
+            self.sess.run(self.replace_target_op)
+            print("--> The parameter of target network is updated")
+
+        # pull out a batch of sample(i.e. experience) from memory set D
+        # Need to improve!!!! # TODO # To Research
+        if self.memory_counter < self.memory_size:
+            sample_index = np.random.choice(self.memory_counter,size=self.minibatch_size)
+        else:
+            sample_index = np.random.choice(self.memory_size,size=self.minibatch_size)
+        batch_sample = self.memory[sample_index,:]
+
+        q_next_max, predict_value = self.sess.run(
+            [self.q_next, self.predict_value],
+            feed_dict={
+                self.s_: batch_sample[:, -self.n_features:],  # fixed params
+                self.s: batch_sample[:, :self.n_features],  # newest params
+            })
 
 
 
