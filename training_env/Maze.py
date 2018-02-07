@@ -42,8 +42,11 @@ class Maze_env(tk.Tk, object):
         self.canvas = None
         self.title("Maze Game")  # the window's title
         self.geometry('{0}x{1}'.format(width_pix, height_pix))  # The window's size: (4*40) * (4*40) pixels
-        self.actionSet = ("up", "down", "left", "right")  # The actions can be taken in this game
+        self.actionSet = (0, 1, 2, 3)  # ("up", "down", "left", "right") The actions can be taken in this game
+        self.n_features = 2
         self.explorer = None
+        self.exp_coord = None
+        self.next_exp_coord = None
         self.create_env()
 
     def create_env(self):
@@ -135,7 +138,11 @@ class Maze_env(tk.Tk, object):
                 self.explorer = self.canvas.create_oval(e1_x0, e1_y0, e1_x1, e1_y1, outline="black", fill="red")
                 break
 
-        return self.canvas.coords(self.explorer)
+        self.exp_coord = self.canvas.coords(self.explorer)
+
+        observation = (np.array(self.canvas.coords(self.explorer)[:2]) - np.array(self.canvas.coords(self.terminal)[:2])) / (
+        maze_height * unit)
+        return observation
 
     def update_env(self,action):
         """
@@ -160,16 +167,16 @@ class Maze_env(tk.Tk, object):
         current_s[0] --> e1_x0  (比80的倍数多5)
         current_s[1] --> e1_y0  (比80的倍数多5)
         """
-        if action == "up":
+        if action == 0: # "up"
             if current_s[1] > unit:  # not on the top
                 base_action[1] -= unit
-        elif action == "down":
+        elif action == 1:  # "down"
             if current_s[1] < (maze_height-1) * unit:  # not on the bottom
                 base_action[1] += unit
-        elif action == "left":  # not on the leftmost
+        elif action == 2 :  # "left", not on the leftmost
             if current_s[0] > unit:
                 base_action[0] -= unit
-        elif action == "right":  # not on the rightmost
+        elif action == 3:  # "right", not on the rightmost
             if current_s[0] < (maze_width-1) * unit:
                 base_action[0] += unit
 
@@ -181,37 +188,42 @@ class Maze_env(tk.Tk, object):
         """
         Next state
         """
-        next_s = self.canvas.coords(self.explorer)
-        return next_s
+        self.next_exp_coord = self.canvas.coords(self.explorer)
+        next_s_ = (np.array(self.canvas.coords(self.explorer)[:2]) - np.array(
+            self.canvas.coords(self.terminal)[:2])) / (
+                      maze_height * unit)
+        return next_s_
 
-    def feedback(self,next_s):
+    def feedback(self):
         """
         Get the feedback (reward) of moving explorer from current_s to next_s
         :param next_s:
         :return:
         """
 
-        if next_s == self.canvas.coords(self.terminal):
+        if self.next_exp_coord == self.canvas.coords(self.terminal):
             """
             If terminal
             """
             reward = 1
             is_finish = True
-            _next_s_ = "Terminate"
-        elif next_s in [self.canvas.coords(self.hell1), self.canvas.coords(self.hell2), self.canvas.coords(self.hell3)]:
+            _next_s_ = np.array([None, None])
+        elif self.next_exp_coord in [self.canvas.coords(self.hell1), self.canvas.coords(self.hell2), self.canvas.coords(self.hell3)]:
             """
             If hell
             """
             reward = -1
             is_finish = True
-            _next_s_ = "Terminate"
+            _next_s_ = np.array([None, None])
         else:
             """
             Otherwise
             """
             reward = 0
             is_finish = False
-            _next_s_ = next_s
+            _next_s_ = (np.array(self.canvas.coords(self.explorer)[:2]) - np.array(
+                self.canvas.coords(self.terminal)[:2])) / (
+                          maze_height * unit)
 
         return reward, is_finish, _next_s_
 
@@ -232,7 +244,7 @@ def update(env):
             env.render()
             a = "left"
             s = env.update_env(a)
-            reward, done,s_ = env.feedback(s)
+            reward, done,s_ = env.feedback()
 
             if done:
                 break

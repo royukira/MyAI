@@ -23,19 +23,16 @@ def createLayer(tensor, lays_info):
         layerName = lays_info[i][0]
         with tf.name_scope(layerName):
             with tf.name_scope('Weights'):
-                weightSet = lays_info[i][1]
-                for p in weightSet:
-                    para_summaries(para=p, name=layerName + '/Weights')
+                weight = lays_info[i][1]
+                para_summaries(para=weight, name=layerName + '/Weights')
 
             with tf.name_scope('Biases'):
-                biaSet = lays_info[i][2]
-                for b in biaSet:
-                    para_summaries(para=b, name=biaSet + '/Biases')
+                bias = lays_info[i][2]
+                para_summaries(para=bias, name=layerName + '/Biases')
 
         with tf.name_scope('Weight_Sum'):
-            for wb in range(len(weightSet)):  # the number of weightSet is equal to #bias
-                Z = tf.matmul(tensor, weightSet[i]) + biaSet[i] # tensor is data X
-                tf.summary.histogram(layerName + '/Weight_sum', Z)
+            Z = tf.matmul(tensor, weight) + bias # tensor is data X
+            tf.summary.histogram(layerName + '/Weight_sum', Z)
 
         g = lays_info[i][3](Z)  # activation function
         tf.summary.histogram(layerName + '/Activation_function', g)

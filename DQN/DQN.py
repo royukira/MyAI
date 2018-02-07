@@ -20,11 +20,8 @@ class DQN_st:
                  discountFactor=0.9,
                  greedy_max=0.95,
                  memory_size=500,
-                 no_op_max = 200,
-                 learnIter=5,
-                 TN_learn_step = 10,
+                 TN_learn_step = 100,
                  minibatch_size = 32,
-                 episode_max = 1000,
                  greedy_increment = True):
         """
         Initialize the DQN Brain of the Agent
@@ -45,21 +42,22 @@ class DQN_st:
         :param episode_max:the maximum iteration of episode
         :param greedy_increment: is the greedy incremented according to the learning step
         """
+        # Counter
+        self.total_learning_step = 0
+        self.memory_counter = 0
+
+        # Config
         self.n_action = n_action
         self.n_features = n_features
         self.learnRate = learnRate
         self.discountFactor = discountFactor
-        self.greedy = greedy_max if greedy_increment is False else self.greedy_increment() #TODO
+        if greedy_increment is False:
+            self.greedy = greedy_max
+        else:
+            self.greedy_increment()
         self.memory_size = memory_size
-        self.no_op_max = no_op_max
-        self.learnIter = learnIter
         self.TN_learn_iter = TN_learn_step
         self.minibatch_size = minibatch_size
-        self.episode_max = episode_max
-
-        # Counter
-        self.total_learning_step = 0
-        self.memory_counter = 0
 
         # Initialization of memory
         # memory is a matrix [memory_size, exp_size]
@@ -68,8 +66,8 @@ class DQN_st:
         self.memory = np.zeros((self.memory_size, n_features*2+2))
 
         # Build the neural network
-        n_hidden_units = [4,4,4]
-        self._build_NN(n_hidden_units) # TODO
+        n_hidden_units = [10,10,4]
+        self._build_NN(n_hidden_units)
         t_para = tf.get_collection('target_net_params')
         q_para = tf.get_collection("q_net_params")
         self.replace_target_op = [tf.assign(t, e) for t, e in zip(t_para, q_para)]  # for t,e 把t_para赋值于t, e:= q_para
@@ -102,6 +100,8 @@ class DQN_st:
             self.greedy = greedy_max
 
     def _build_NN(self,n_hidden_units):
+        # import
+        from FastBuildNet.FBN import createLayer
         # ------------- Q-network ---------------
         lays_info = {}
         with tf.name_scope('Input_of_Q_net'):
@@ -110,66 +110,52 @@ class DQN_st:
             self.target_value = tf.placeholder(tf.float32, [None, self.n_action], name='Q_target')  # for calculating loss
         with tf.name_scope("para_of_Q_net"):
             # The first layer
-            w1 = tf.truncated_normal([2, n_hidden_units[0]], stddev=0.1)
-            b1 = tf.Variable(tf.zeros([n_hidden_units[0]]))
-            # collections is used later when assign to target net
-            tf.add_to_collection("q_net_params", w1)  # add w1 to the collection "q_net_para"
-            tf.add_to_collection("q_net_params", b1)  # add b1 to the collection "q_net_para"
+            c_names, w_initializer, b_initializer = \
+                ['q_net_params', tf.GraphKeys.GLOBAL_VARIABLES],\
+                tf.random_normal_initializer(0., 0.3), tf.constant_initializer(0.1)
+
+            w1 = tf.get_variable('w1', [self.n_features, n_hidden_units[0]], initializer=w_initializer, collections=c_names)
+            b1 = tf.get_variable('b1', [1, n_hidden_units[0]], initializer=b_initializer, collections=c_names)
             if (1 in lays_info) is False:
                 lays_info.setdefault(1, ("Layer1", w1, b1, tf.nn.relu))
 
             # The 2nd layer
-            w2 = tf.truncated_normal([n_hidden_units[0], n_hidden_units[1]], stddev=0.1)
-            b2 = tf.Variable(tf.zeros([n_hidden_units[1]]))
-            # collections is used later when assign to target net
-            tf.add_to_collection("q_net_params", w2)  # add w2 to the collection "q_net_para"
-            tf.add_to_collection("q_net_params", b2)  # add b2 to the collection "q_net_para"
+            w2 = tf.get_variable('w2', [n_hidden_units[0], n_hidden_units[1]], initializer=w_initializer, collections=c_names)
+            b2 = tf.get_variable('b2', [1, n_hidden_units[1]], initializer=b_initializer, collections=c_names)
             if (2 in lays_info) is False:
                 lays_info.setdefault(2, ("Layer2", w2, b2, tf.nn.relu))
 
             # The output layer
-            w3 = tf.truncated_normal([n_hidden_units[1], self.n_action], stddev=0.1)
-            b3 = tf.Variable(tf.zeros([self.n_action]))
-            # collections is used later when assign to target net
-            tf.add_to_collection("q_net_params", w3)  # add w3 to the collection "q_net_para"
-            tf.add_to_collection("q_net_params", b3)  # add b3 to the collection "q_net_para"
+            w3 = tf.get_variable('w3', [n_hidden_units[1], self.n_action], initializer=w_initializer, collections=c_names)
+            b3 = tf.get_variable('b3', [1, self.n_action], initializer=b_initializer, collections=c_names)
             if (3 in lays_info) is False:
                 lays_info.setdefault(3, ("OutputLayer", w3, b3, tf.nn.relu))
 
         # Create the Q Neural Network
-        from FastBuildNet.FBN import createLayer
         self.predict_value = createLayer(self.s, lays_info)
 
-        # ------------- Target-network ---------------
+        """"# ------------- Target-network ---------------"""
         target_lays_info = {}
         with tf.name_scope("Input_of_target_net"):
             self.s_ = tf.placeholder(tf.float32, [None, self.n_features], name="s_")
 
         with tf.name_scope("para_of_target_net"):
+            c_names = ['target_net_params', tf.GraphKeys.GLOBAL_VARIABLES]
             # The first layer
-            w_1 = tf.truncated_normal([2, n_hidden_units[0]], stddev=0.1)
-            b_1 = tf.Variable(tf.zeros([n_hidden_units[0]]))
-            # collections is used later when assign to target net
-            tf.add_to_collection("target_net_params", w_1)  # add w1 to the collection "q_net_para"
-            tf.add_to_collection("target_net_params", b_1)  # add b1 to the collection "q_net_para"
+            w_1 = tf.get_variable('w_1', [self.n_features, n_hidden_units[0]], initializer=w_initializer, collections=c_names)
+            b_1 = tf.get_variable('b_1', [1, n_hidden_units[0]], initializer=b_initializer, collections=c_names)
             if (1 in target_lays_info) is False:
                 target_lays_info.setdefault(1, ("Target_Layer1", w_1, b_1, tf.nn.relu))
 
             # The 2nd layer
-            w_2 = tf.truncated_normal([n_hidden_units[0], n_hidden_units[1]], stddev=0.1)
-            b_2 = tf.Variable(tf.zeros([n_hidden_units[1]]))
-            # collections is used later when assign to target net
-            tf.add_to_collection("target_net_params", w_2)  # add w2 to the collection "q_net_para"
-            tf.add_to_collection("target_net_params", b_2)  # add b2 to the collection "q_net_para"
+            w_2 = tf.get_variable('w_2', [n_hidden_units[0], n_hidden_units[1]], initializer=w_initializer, collections=c_names)
+            b_2 = tf.get_variable('b_2', [1, n_hidden_units[1]], initializer=b_initializer, collections=c_names)
             if (2 in target_lays_info) is False:
                 target_lays_info.setdefault(2, ("Target_Layer2", w_2, b_2, tf.nn.relu))
 
             # The output layer
-            w_3 = tf.truncated_normal([n_hidden_units[1], self.n_action], stddev=0.1)
-            b_3 = tf.Variable(tf.zeros([self.n_action]))
-            # collections is used later when assign to target net
-            tf.add_to_collection("target_net_params", w_3)  # add w3 to the collection "q_net_para"
-            tf.add_to_collection("target_net_params", b_3)  # add b3 to the collection "q_net_para"
+            w_3 = tf.get_variable('w_3', [n_hidden_units[1], self.n_action], initializer=w_initializer, collections=c_names)
+            b_3 = tf.get_variable('b_3', [1, self.n_action], initializer=b_initializer, collections=c_names)
             if (3 in target_lays_info) is False:
                 target_lays_info.setdefault(3, ("Target_OutputLayer", w_3, b_3, tf.nn.relu))
 
@@ -197,6 +183,9 @@ class DQN_st:
         :param e: e = (s,a,r,s_)
         :return: None
         """
+        if not hasattr(self, 'memory_counter'):
+            self.memory_counter = 0
+
         index = self.memory_counter % self.memory_size
         self.memory[index,:] = e
 
@@ -211,12 +200,15 @@ class DQN_st:
         observation = observation[np.newaxis, :]
 
         # forward feed the observation and get q value for every actions
-        if gv <= self.greedy:
+        if gv < self.greedy:
             # use NN to cal the action_value
             action_values = self.sess.run(self.predict_value,feed_dict={self.s:observation})
+            print(action_values)
             action = np.argmax(action_values)
+            print("--> Action: {0}".format(action))
         else:
-            action = np.random.randint(0, self.n_action)
+            action = np.random.randint(0, self.n_action)  # 0,1,2,3 注意 action最好从0设起 例如设1，2，3，4，4是无法选到#TODO#Notice
+            #print("--> Randomly Action")
 
         return action
 
@@ -225,9 +217,12 @@ class DQN_st:
         Train the Neural Network
         :return:
         """
-
+        print("\n=================================================================\n")
+        print("--> Current Learning step: {0}".format(self.total_learning_step))
+        print("--> Current greedy value: {0}".format(self.greedy))
+        print("\n=================================================================")
         # check if update the parameter of target network with the old parameter of Q network
-        if self.total_learning_step % self.learnIter == 0:
+        if self.total_learning_step % self.TN_learn_iter == 0:
             self.sess.run(self.replace_target_op)
             print("--> The parameter of target network is updated")
 
@@ -257,7 +252,7 @@ class DQN_st:
         reward = batch_sample[:, self.n_features+1]  # reward = [r0 r1 r2 ... ]
 
         # check if there are any terminates(terminates or hells)
-        terminates_index = np.where(batch_sample[:, -self.n_features:] == "Terminate")[0]
+        terminates_index = np.where(batch_sample[:, -self.n_features:] == None)[0]  # 不能用 is None
         ter_act = eval_act[terminates_index]  # the corresponding action with terminate
         ter_reward = reward[terminates_index]  # the corresponding reward with terminate
         # delete the terminates' indices from all samples' indices

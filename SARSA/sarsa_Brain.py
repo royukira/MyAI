@@ -72,7 +72,7 @@ class sarsa(Q_Brain):
                 # and get the coordinate of the next state
                 self.new_state(next_s)
 
-                reward, is_done, _next_s = env.feedback(next_s)  # get the feedback of the action
+                reward, is_done, _next_s = env.feedback()  # get the feedback of the action
                 # (i.e. according to the next state, feedback the reward)
 
                 
