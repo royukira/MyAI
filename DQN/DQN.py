@@ -18,14 +18,14 @@ class DQN_st:
                  n_features,
                  learnRate=0.01,
                  discountFactor=0.9,
-                 greedy_max=0.9,
+                 greedy_max=0.95,
                  memory_size=500,
                  no_op_max = 200,
                  learnIter=5,
-                 TN_learn_step = 50,
+                 TN_learn_step = 10,
                  minibatch_size = 32,
                  episode_max = 1000,
-                 greedy_increment = False):
+                 greedy_increment = True):
         """
         Initialize the DQN Brain of the Agent
           - initialize the hyperparameters
@@ -83,22 +83,23 @@ class DQN_st:
         # Log
         tf.summary.FileWriter("logs/", self.sess.graph)
 
-    def para_summaries(self, para, name):
+        # Cost
+        self.cost_his = []
+
+    def greedy_increment(self, incrementRate=0.001, greedy_max=0.95):
         """
-        Attach a lot of summaries to a Tensor.
-        --------------------------------------
-        :param para: Wi or Bi (ith layer)
-        :param name: Layer name + Parameter name
+        self-increment greeedy : epsilon += incrementRate / (epsilon + c)^2
+
+        :param incrementRate: global increment rate  /  default: 0.001
+        :param greedy_max: the max greedy  /  default: 0.95
+        :return: None
         """
-        with tf.name_scope('summaries'):
-            mean = tf.reduce_mean(para)
-            tf.summary.scalar('mean/' + name, mean)
-            with tf.name_scope('stddev'):
-                stddev = tf.sqrt(tf.reduce_sum(tf.square(para - mean)))
-            tf.summary.scalar('sttdev/' + name, stddev)
-            tf.summary.scalar('max/' + name, tf.reduce_max(para))
-            tf.summary.scalar('min/' + name, tf.reduce_min(para))
-            tf.summary.histogram(name, para)
+        if self.total_learning_step == 0:
+            self.greedy = 0.1
+        elif self.greedy < greedy_max:
+            self.greedy += incrementRate/np.square(self.greedy+0.00001)  # 0.00001 ensures the denominator will not be 0
+        else:
+            self.greedy = greedy_max
 
     def _build_NN(self,n_hidden_units):
         # ------------- Q-network ---------------
@@ -177,12 +178,12 @@ class DQN_st:
 
         # -------- Loss Function ------
         with tf.name_scope("The_mean-square_Loss_Function"):
-            loss = tf.reduce_mean(tf.squared_difference(self.target_value,self.predict_value))
-            tf.summary.scalar('The_mean-square_Loss_Function', loss)
+            self.loss = tf.reduce_mean(tf.squared_difference(self.target_value,self.predict_value))
+            tf.summary.scalar('The_mean-square_Loss_Function', self.loss)
 
         # -------- Train (optimizer) ---------
         with tf.name_scope("Training"):
-            self.optimizer = tf.train.RMSPropOptimizer(self.learnRate).minimize(loss)  # RMSprop
+            self.optimizer = tf.train.RMSPropOptimizer(self.learnRate).minimize(self.loss)  # RMSprop
             # RMSprop 是自适应学习率优化算法
             # 其实RMSprop依然依赖于全局学习率
             # 但对学习率有个约束作用
@@ -238,15 +239,56 @@ class DQN_st:
             sample_index = np.random.choice(self.memory_size,size=self.minibatch_size)
         batch_sample = self.memory[sample_index,:]
 
-        q_next_max, predict_value = self.sess.run(
+        q_next, predict_value = self.sess.run(
             [self.q_next, self.predict_value],
             feed_dict={
                 self.s_: batch_sample[:, -self.n_features:],  # fixed params
                 self.s: batch_sample[:, :self.n_features],  # newest params
             })
 
+        # copy the matrix of predict_value to target_value.
+        # bring the matrix of target value into correspondence with the one of predict_value
+        # so that change the target value w.r.t predict_value
+        target_value = predict_value.copy()
 
+        # retrieve action (a) and the reward (r) of state (s) from the experience (samples)
+        batch_sample_index =  np.arange(self.minibatch_size,dtype=np.int32)
+        eval_act = batch_sample[:, self.n_features].astype(int)  # eval_act = [a0 a1 a2 ...]
+        reward = batch_sample[:, self.n_features+1]  # reward = [r0 r1 r2 ... ]
 
+        # check if there are any terminates(terminates or hells)
+        terminates_index = np.where(batch_sample[:, -self.n_features:] == "Terminate")[0]
+        ter_act = eval_act[terminates_index]  # the corresponding action with terminate
+        ter_reward = reward[terminates_index]  # the corresponding reward with terminate
+        # delete the terminates' indices from all samples' indices
+        batch_sample_index = np.delete(batch_sample_index, terminates_index)
+        eval_act = np.delete(eval_act, terminates_index)
+        reward = np.delete(reward, terminates_index)
+
+        # Calculate Q-Target Value
+        # terminate
+        target_value[terminates_index, ter_act] = ter_reward
+        # NOT terminate
+        target_value[batch_sample_index,eval_act] = reward + self.greedy * np.max(q_next, axis=1)
+
+        # Loss function and optimization -- begin to study (update the weights)
+        opt, self.L = self.sess.run([self.optimizer, self.loss],
+                               feed_dict={
+                                   self.s: batch_sample[:, :self.n_features],
+                                   self.target_value: target_value
+                               })
+        self.cost_his.append(self.L)
+
+        # increasing greedy 如果放在探索step里增加效果？？
+        self.greedy_increment()
+        self.total_learning_step += 1
+
+    def plot_cost(self):
+        import matplotlib.pyplot as plt
+        plt.plot(np.arange(len(self.cost_his)), self.cost_his)
+        plt.ylabel('Cost')
+        plt.xlabel('training steps')
+        plt.show()
 
 
 if __name__ == '__main__':

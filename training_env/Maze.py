@@ -197,21 +197,21 @@ class Maze_env(tk.Tk, object):
             """
             reward = 1
             is_finish = True
-            _next_s_ = "Terminal"
+            _next_s_ = "Terminate"
         elif next_s in [self.canvas.coords(self.hell1), self.canvas.coords(self.hell2), self.canvas.coords(self.hell3)]:
             """
             If hell
             """
             reward = -1
             is_finish = True
-            _next_s_ = "Hell"
+            _next_s_ = "Terminate"
         else:
             """
             Otherwise
             """
             reward = 0
             is_finish = False
-            _next_s_ = str(next_s)
+            _next_s_ = next_s
 
         return reward, is_finish, _next_s_
 
