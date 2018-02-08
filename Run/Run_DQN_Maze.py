@@ -47,7 +47,7 @@ if __name__ == '__main__':
     env = Maze.Maze_env()
     n_action = len(env.actionSet)
     n_features = env.n_features
-    RL = DQN.DQN_st(n_action, n_features)
+    RL = DQN.DQN_st(n_action, n_features,minibatch_size=100)
     env.after(100, run_maze(env=env,brain=RL))
     env.mainloop()
     RL.plot_cost()

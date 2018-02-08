@@ -104,67 +104,82 @@ class DQN_st:
         from FastBuildNet.FBN import createLayer
         # ------------- Q-network ---------------
         lays_info = {}
-        with tf.name_scope('Input_of_Q_net'):
+        with tf.variable_scope('Input_of_Q_net'):
             self.s = tf.placeholder(dtype=tf.float32,shape=[None, self.n_features], name="s")
-        with tf.name_scope("Target_value"):
+        with tf.variable_scope("Target_value"):
             self.target_value = tf.placeholder(tf.float32, [None, self.n_action], name='Q_target')  # for calculating loss
-        with tf.name_scope("para_of_Q_net"):
-            # The first layer
+        with tf.variable_scope("Q_Network"):
             c_names, w_initializer, b_initializer = \
-                ['q_net_params', tf.GraphKeys.GLOBAL_VARIABLES],\
+                ['q_net_params', tf.GraphKeys.GLOBAL_VARIABLES], \
                 tf.random_normal_initializer(0., 0.3), tf.constant_initializer(0.1)
 
-            w1 = tf.get_variable('w1', [self.n_features, n_hidden_units[0]], initializer=w_initializer, collections=c_names)
-            b1 = tf.get_variable('b1', [1, n_hidden_units[0]], initializer=b_initializer, collections=c_names)
-            if (1 in lays_info) is False:
-                lays_info.setdefault(1, ("Layer1", w1, b1, tf.nn.relu))
+            # The first layer
+            with tf.variable_scope("layer1"):
+                w1 = tf.get_variable('w1', [self.n_features, n_hidden_units[0]], initializer=w_initializer,
+                                     collections=c_names)
+                b1 = tf.get_variable('b1', [1, n_hidden_units[0]], initializer=b_initializer, collections=c_names)
+                if (1 in lays_info) is False:
+                    lays_info.setdefault(1, ("Layer1", w1, b1, tf.nn.relu))
 
             # The 2nd layer
-            w2 = tf.get_variable('w2', [n_hidden_units[0], n_hidden_units[1]], initializer=w_initializer, collections=c_names)
-            b2 = tf.get_variable('b2', [1, n_hidden_units[1]], initializer=b_initializer, collections=c_names)
-            if (2 in lays_info) is False:
-                lays_info.setdefault(2, ("Layer2", w2, b2, tf.nn.relu))
+            with tf.variable_scope("layer2"):
+                w2 = tf.get_variable('w2', [n_hidden_units[0], n_hidden_units[1]], initializer=w_initializer,
+                                     collections=c_names)
+                b2 = tf.get_variable('b2', [1, n_hidden_units[1]], initializer=b_initializer, collections=c_names)
+                if (2 in lays_info) is False:
+                    lays_info.setdefault(2, ("Layer2", w2, b2, tf.nn.relu))
 
             # The output layer
-            w3 = tf.get_variable('w3', [n_hidden_units[1], self.n_action], initializer=w_initializer, collections=c_names)
-            b3 = tf.get_variable('b3', [1, self.n_action], initializer=b_initializer, collections=c_names)
-            if (3 in lays_info) is False:
-                lays_info.setdefault(3, ("OutputLayer", w3, b3, tf.nn.relu))
+            with tf.variable_scope("Output_Layer"):
+                w3 = tf.get_variable('w3', [n_hidden_units[1], self.n_action], initializer=w_initializer,
+                                     collections=c_names)
+                b3 = tf.get_variable('b3', [1, self.n_action], initializer=b_initializer, collections=c_names)
+                if (3 in lays_info) is False:
+                    lays_info.setdefault(3, ("OutputLayer", w3, b3, None))
 
         # Create the Q Neural Network
-        self.predict_value = createLayer(self.s, lays_info)
+            with tf.name_scope("Predict_value"):
+                self.predict_value = createLayer(self.s, lays_info)
 
         """"# ------------- Target-network ---------------"""
         target_lays_info = {}
-        with tf.name_scope("Input_of_target_net"):
+        with tf.variable_scope("Input_of_target_net"):
             self.s_ = tf.placeholder(tf.float32, [None, self.n_features], name="s_")
-
-        with tf.name_scope("para_of_target_net"):
+        with tf.variable_scope("Target_Network"):
             c_names = ['target_net_params', tf.GraphKeys.GLOBAL_VARIABLES]
+
             # The first layer
-            w_1 = tf.get_variable('w_1', [self.n_features, n_hidden_units[0]], initializer=w_initializer, collections=c_names)
-            b_1 = tf.get_variable('b_1', [1, n_hidden_units[0]], initializer=b_initializer, collections=c_names)
-            if (1 in target_lays_info) is False:
-                target_lays_info.setdefault(1, ("Target_Layer1", w_1, b_1, tf.nn.relu))
+            with tf.variable_scope("layer1"):
+                w_1 = tf.get_variable('w1', [self.n_features, n_hidden_units[0]], initializer=w_initializer,
+                                      collections=c_names)
+                b_1 = tf.get_variable('b1', [1, n_hidden_units[0]], initializer=b_initializer, collections=c_names)
+                if (1 in target_lays_info) is False:
+                    target_lays_info.setdefault(1, ("Target_Layer1", w_1, b_1, tf.nn.relu))
 
             # The 2nd layer
-            w_2 = tf.get_variable('w_2', [n_hidden_units[0], n_hidden_units[1]], initializer=w_initializer, collections=c_names)
-            b_2 = tf.get_variable('b_2', [1, n_hidden_units[1]], initializer=b_initializer, collections=c_names)
-            if (2 in target_lays_info) is False:
-                target_lays_info.setdefault(2, ("Target_Layer2", w_2, b_2, tf.nn.relu))
+            with tf.variable_scope("layer2"):
+                w_2 = tf.get_variable('w2', [n_hidden_units[0], n_hidden_units[1]], initializer=w_initializer,
+                                      collections=c_names)
+                b_2 = tf.get_variable('b2', [1, n_hidden_units[1]], initializer=b_initializer, collections=c_names)
+                if (2 in target_lays_info) is False:
+                    target_lays_info.setdefault(2, ("Target_Layer2", w_2, b_2, tf.nn.relu))
 
             # The output layer
-            w_3 = tf.get_variable('w_3', [n_hidden_units[1], self.n_action], initializer=w_initializer, collections=c_names)
-            b_3 = tf.get_variable('b_3', [1, self.n_action], initializer=b_initializer, collections=c_names)
-            if (3 in target_lays_info) is False:
-                target_lays_info.setdefault(3, ("Target_OutputLayer", w_3, b_3, tf.nn.relu))
+            with tf.variable_scope("Output_Layer"):
+                w_3 = tf.get_variable('w3', [n_hidden_units[1], self.n_action], initializer=w_initializer,
+                                      collections=c_names)
+                b_3 = tf.get_variable('b3', [1, self.n_action], initializer=b_initializer, collections=c_names)
+                if (3 in target_lays_info) is False:
+                    target_lays_info.setdefault(3, ("Target_OutputLayer", w_3, b_3, None))
 
         # Create the Target Neural Network
-        self.q_next = createLayer(self.s_, target_lays_info)
+            with tf.name_scope("q_next"):
+                self.q_next = createLayer(self.s_, target_lays_info)
 
         # -------- Loss Function ------
         with tf.name_scope("The_mean-square_Loss_Function"):
-            self.loss = tf.reduce_mean(tf.squared_difference(self.target_value,self.predict_value))
+            with tf.name_scope("Cost"):
+                self.loss = tf.reduce_mean(tf.squared_difference(self.target_value,self.predict_value))
             tf.summary.scalar('The_mean-square_Loss_Function', self.loss)
 
         # -------- Train (optimizer) ---------
@@ -252,19 +267,26 @@ class DQN_st:
         reward = batch_sample[:, self.n_features+1]  # reward = [r0 r1 r2 ... ]
 
         # check if there are any terminates(terminates or hells)
-        terminates_index = np.where(batch_sample[:, -self.n_features:] == None)[0]  # 不能用 is None
+        win = np.where(batch_sample[:, self.n_features+1] == 1.0)[0]   # win the game, s_ is terminate
+        fail = np.where(batch_sample[:, self.n_features+1] == -1.0)[0]  # lose the game, s_ is terminate
+        terminates_index = np.sort(np.append(win, fail)) # the index of the terminates
         ter_act = eval_act[terminates_index]  # the corresponding action with terminate
         ter_reward = reward[terminates_index]  # the corresponding reward with terminate
+
         # delete the terminates' indices from all samples' indices
         batch_sample_index = np.delete(batch_sample_index, terminates_index)
         eval_act = np.delete(eval_act, terminates_index)
         reward = np.delete(reward, terminates_index)
 
+        # retrieve the q_next state which is not terminate
+        q_next_not_ter = q_next[batch_sample_index, :]
+
         # Calculate Q-Target Value
         # terminate
-        target_value[terminates_index, ter_act] = ter_reward
+        if terminates_index.size != 0:
+            target_value[terminates_index, ter_act] = ter_reward
         # NOT terminate
-        target_value[batch_sample_index,eval_act] = reward + self.greedy * np.max(q_next, axis=1)
+        target_value[batch_sample_index,eval_act] = reward + self.greedy * np.max(q_next_not_ter, axis=1)
 
         # Loss function and optimization -- begin to study (update the weights)
         opt, self.L = self.sess.run([self.optimizer, self.loss],
@@ -273,7 +295,6 @@ class DQN_st:
                                    self.target_value: target_value
                                })
         self.cost_his.append(self.L)
-
         # increasing greedy 如果放在探索step里增加效果？？
         self.greedy_increment()
         self.total_learning_step += 1

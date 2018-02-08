@@ -33,10 +33,13 @@ def createLayer(tensor, lays_info):
         with tf.name_scope('Weight_Sum'):
             Z = tf.matmul(tensor, weight) + bias # tensor is data X
             tf.summary.histogram(layerName + '/Weight_sum', Z)
-
-        g = lays_info[i][3](Z)  # activation function
-        tf.summary.histogram(layerName + '/Activation_function', g)
-        tensor = g
+        if lays_info[i][3] is not None:
+            g = lays_info[i][3](Z)  # activation function
+            tf.summary.histogram(layerName + '/Activation_function', g)
+            tensor = g
+        else:
+            g = Z
+            tf.summary.histogram(layerName + '/Linear_Activation_Function', g)
     return g
 
 
