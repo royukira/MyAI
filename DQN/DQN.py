@@ -3,12 +3,11 @@ My AI experience: Maze Game
 
 This script is about training a machine through Deep Q-learning
 
-The Neural Network is included standard NN, CNN
+The Neural Network is included standard NN
 
 """
-
+import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
 import tensorflow as tf
 
 
@@ -18,10 +17,10 @@ class DQN_st:
                  n_features,
                  learnRate=0.01,
                  discountFactor=0.9,
-                 greedy_max=0.95,
-                 memory_size=500,
+                 greedy_max=0.9,
+                 memory_size=1000,
                  TN_learn_step = 100,
-                 minibatch_size = 32,
+                 minibatch_size = 100,
                  greedy_increment = True):
         """
         Initialize the DQN Brain of the Agent
@@ -81,10 +80,14 @@ class DQN_st:
         # Log
         tf.summary.FileWriter("logs/", self.sess.graph)
 
-        # Cost
+        # Cost (for plot)
         self.cost_his = []
 
-    def greedy_increment(self, incrementRate=0.001, greedy_max=0.95):
+        # Reward percentage (for plot)
+        self.Rmemory_plot = []
+        self.Rsample_plot = []
+
+    def greedy_increment(self, incrementRate=0.0003, greedy_max=0.9):
         """
         self-increment greeedy : epsilon += incrementRate / (epsilon + c)^2
 
@@ -135,7 +138,7 @@ class DQN_st:
                                      collections=c_names)
                 b3 = tf.get_variable('b3', [1, self.n_action], initializer=b_initializer, collections=c_names)
                 if (3 in lays_info) is False:
-                    lays_info.setdefault(3, ("OutputLayer", w3, b3, None))
+                    lays_info.setdefault(3, ("OutputLayer", w3, b3, tf.nn.softmax))
 
         # Create the Q Neural Network
             with tf.name_scope("Predict_value"):
@@ -170,7 +173,7 @@ class DQN_st:
                                       collections=c_names)
                 b_3 = tf.get_variable('b3', [1, self.n_action], initializer=b_initializer, collections=c_names)
                 if (3 in target_lays_info) is False:
-                    target_lays_info.setdefault(3, ("Target_OutputLayer", w_3, b_3, None))
+                    target_lays_info.setdefault(3, ("Target_OutputLayer", w_3, b_3, tf.nn.softmax))
 
         # Create the Target Neural Network
             with tf.name_scope("q_next"):
@@ -184,7 +187,7 @@ class DQN_st:
 
         # -------- Train (optimizer) ---------
         with tf.name_scope("Training"):
-            self.optimizer = tf.train.RMSPropOptimizer(self.learnRate).minimize(self.loss)  # RMSprop
+            self.optimizer = tf.train.AdadeltaOptimizer(self.learnRate).minimize(self.loss)  # RMSprop
             # RMSprop 是自适应学习率优化算法
             # 其实RMSprop依然依赖于全局学习率
             # 但对学习率有个约束作用
@@ -232,10 +235,12 @@ class DQN_st:
         Train the Neural Network
         :return:
         """
-        print("\n=================================================================\n")
         print("--> Current Learning step: {0}".format(self.total_learning_step))
         print("--> Current greedy value: {0}".format(self.greedy))
-        print("\n=================================================================")
+
+        # Calculate the number of the reward 1 in memory dataset
+        rewardNum_in_memory = len(np.where(self.memory[:, self.n_features+1] == 1)[0])
+
         # check if update the parameter of target network with the old parameter of Q network
         if self.total_learning_step % self.TN_learn_iter == 0:
             self.sess.run(self.replace_target_op)
@@ -244,10 +249,30 @@ class DQN_st:
         # pull out a batch of sample(i.e. experience) from memory set D
         # Need to improve!!!! # TODO # To Research
         if self.memory_counter < self.memory_size:
+            Rpercent_in_memory = (rewardNum_in_memory / self.memory_counter) * 100
+            print("--> reward 记忆占: {0}%".format(Rpercent_in_memory))
+
+            # 随机抽取batch sample
             sample_index = np.random.choice(self.memory_counter,size=self.minibatch_size)
         else:
+            Rpercent_in_memory = (rewardNum_in_memory / self.memory_size) * 100
+            print("--> reward 记忆占: {0}%".format(Rpercent_in_memory))
+
+            # 随机抽取batch sample
             sample_index = np.random.choice(self.memory_size,size=self.minibatch_size)
+
+        # 记录 方便画图
+        self.Rmemory_plot.append(Rpercent_in_memory)
+
         batch_sample = self.memory[sample_index,:]
+
+        print("\n=================================================================")
+
+        # Calculate the percentage of the reward 1 in sample dataset
+        rewardNum = len(np.where(batch_sample[:, self.n_features+1] == 1)[0])
+        Rpercent_in_sample = (rewardNum/self.minibatch_size)*100
+        print("--> reward 样本占: {0}%".format(Rpercent_in_sample))
+        self.Rsample_plot.append(Rpercent_in_sample)
 
         q_next, predict_value = self.sess.run(
             [self.q_next, self.predict_value],
@@ -274,9 +299,10 @@ class DQN_st:
         ter_reward = reward[terminates_index]  # the corresponding reward with terminate
 
         # delete the terminates' indices from all samples' indices
-        batch_sample_index = np.delete(batch_sample_index, terminates_index)
-        eval_act = np.delete(eval_act, terminates_index)
-        reward = np.delete(reward, terminates_index)
+        if terminates_index.size != 0:
+            batch_sample_index = np.delete(batch_sample_index, terminates_index)
+            eval_act = np.delete(eval_act, terminates_index)
+            reward = np.delete(reward, terminates_index)
 
         # retrieve the q_next state which is not terminate
         q_next_not_ter = q_next[batch_sample_index, :]
@@ -297,14 +323,33 @@ class DQN_st:
         self.cost_his.append(self.L)
         # increasing greedy 如果放在探索step里增加效果？？
         self.greedy_increment()
+        if (self.total_learning_step >= 100) and (self.total_learning_step % 100 == 0):
+            self.plot_Rp_memory()
+            self.plot_Rp_sample()
+            plt.show()
         self.total_learning_step += 1
 
     def plot_cost(self):
-        import matplotlib.pyplot as plt
         plt.plot(np.arange(len(self.cost_his)), self.cost_his)
         plt.ylabel('Cost')
         plt.xlabel('training steps')
         plt.show()
+
+    def plot_Rp_memory(self):
+        plt.figure()
+        plt.plot(len(self.Rmemory_plot), self.Rmemory_plot)
+        plt.title("Percentage of reward 1 in Memory")
+        plt.ylabel('Reward')
+        plt.xlabel('training steps')
+
+
+    def plot_Rp_sample(self):
+        plt.figure()
+        plt.plot(len(self.Rmemory_plot), self.Rmemory_plot)
+        plt.title("Percentage of reward 1 in Sample")
+        plt.ylabel('Reward')
+        plt.xlabel('training steps')
+
 
 
 if __name__ == '__main__':

@@ -1,7 +1,7 @@
 from DQN import DQN
 from training_env import Maze
 import numpy as np
-import time
+
 
 def run_maze(env, brain, no_op_max=300, episode_max=1000, iterStep=5):
     step = 0
@@ -22,10 +22,17 @@ def run_maze(env, brain, no_op_max=300, episode_max=1000, iterStep=5):
 
             # Experience Transition
             e = np.hstack((observation, [action, reward], observation_))
-            brain.store_exp(e)
+            if reward == 1:
+                for i in range(50):
+                    brain.store_exp(e)
+            elif reward == -1:
+                for ii in range(10):
+                    brain.store_exp(e)
+            else:
+                brain.store_exp(e)
 
             if (step > no_op_max) and (step % iterStep == 0):
-                print("--> Current Step: {0}".format(step))
+                print("\n=================================================================\n")
                 print("--> Start to Learn...")
                 brain.learn()
                 #time.sleep(2)
@@ -35,6 +42,7 @@ def run_maze(env, brain, no_op_max=300, episode_max=1000, iterStep=5):
 
             # break while loop when end of this episode
             if is_done:
+                #print("--> Number of Reward=1: {0}".format(len(np.where(brain.memory == 1)[0])))
                 break
             step += 1
 
