@@ -6,6 +6,8 @@ This script is about training a machine through Deep Q-learning
 The Neural Network is included standard NN
 
 """
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
@@ -20,7 +22,7 @@ class DQN_st:
                  greedy_max=0.9,
                  memory_size=1000,
                  TN_learn_step = 100,
-                 minibatch_size = 100,
+                 minibatch_size = 200,
                  greedy_increment = True):
         """
         Initialize the DQN Brain of the Agent
@@ -77,11 +79,11 @@ class DQN_st:
         # Initialize the hyper-parameters of the NN
         self.sess.run(tf.global_variables_initializer())
 
-        # Log
-        tf.summary.FileWriter("logs/", self.sess.graph)
-
-        # Cost (for plot)
-        self.cost_his = []
+        # LOG
+        self.loss_merged = tf.summary.merge([self.loss_scalar])
+        self.Qnetwork_merged = tf.summary.merge(self.Qpara_sum_list)
+        self.Tnetwork_merged = tf.summary.merge(self.TargetPara_sum_list)
+        self.train_writer = tf.summary.FileWriter('/Users/roy/Documents/GitHub/MyAI/DQN_LOG', self.sess.graph)
 
         # Reward percentage (for plot)
         self.Rmemory_plot = []
@@ -138,11 +140,11 @@ class DQN_st:
                                      collections=c_names)
                 b3 = tf.get_variable('b3', [1, self.n_action], initializer=b_initializer, collections=c_names)
                 if (3 in lays_info) is False:
-                    lays_info.setdefault(3, ("OutputLayer", w3, b3, tf.nn.softmax))
+                    lays_info.setdefault(3, ("OutputLayer", w3, b3, None))
 
         # Create the Q Neural Network
             with tf.name_scope("Predict_value"):
-                self.predict_value = createLayer(self.s, lays_info)
+                self.predict_value, self.Qpara_sum_list = createLayer(self.s, lays_info)
 
         """"# ------------- Target-network ---------------"""
         target_lays_info = {}
@@ -173,17 +175,17 @@ class DQN_st:
                                       collections=c_names)
                 b_3 = tf.get_variable('b3', [1, self.n_action], initializer=b_initializer, collections=c_names)
                 if (3 in target_lays_info) is False:
-                    target_lays_info.setdefault(3, ("Target_OutputLayer", w_3, b_3, tf.nn.softmax))
+                    target_lays_info.setdefault(3, ("Target_OutputLayer", w_3, b_3, None))
 
         # Create the Target Neural Network
             with tf.name_scope("q_next"):
-                self.q_next = createLayer(self.s_, target_lays_info)
+                self.q_next, self.TargetPara_sum_list = createLayer(self.s_, target_lays_info)
 
         # -------- Loss Function ------
         with tf.name_scope("The_mean-square_Loss_Function"):
             with tf.name_scope("Cost"):
                 self.loss = tf.reduce_mean(tf.squared_difference(self.target_value,self.predict_value))
-            tf.summary.scalar('The_mean-square_Loss_Function', self.loss)
+            self.loss_scalar = tf.summary.scalar('The_mean-square_Loss_Function', self.loss)
 
         # -------- Train (optimizer) ---------
         with tf.name_scope("Training"):
@@ -223,10 +225,10 @@ class DQN_st:
             action_values = self.sess.run(self.predict_value,feed_dict={self.s:observation})
             print(action_values)
             action = np.argmax(action_values)
-            print("--> Action: {0}".format(action))
+            print("--> Action of {0}: {1}".format(observation,action))
         else:
             action = np.random.randint(0, self.n_action)  # 0,1,2,3 注意 action最好从0设起 例如设1，2，3，4，4是无法选到#TODO#Notice
-            #print("--> Randomly Action")
+            print("--> Randomly Action")
 
         return action
 
@@ -274,13 +276,16 @@ class DQN_st:
         print("--> reward 样本占: {0}%".format(Rpercent_in_sample))
         self.Rsample_plot.append(Rpercent_in_sample)
 
-        q_next, predict_value = self.sess.run(
-            [self.q_next, self.predict_value],
+        q_summary, t_summary,q_next, predict_value = self.sess.run(
+            [self.Qnetwork_merged, self.Tnetwork_merged, self.q_next, self.predict_value],
             feed_dict={
                 self.s_: batch_sample[:, -self.n_features:],  # fixed params
                 self.s: batch_sample[:, :self.n_features],  # newest params
             })
+        self.train_writer.add_summary(q_summary, self.total_learning_step)
+        self.train_writer.add_summary(t_summary, self.total_learning_step)
 
+        # =======================================================
         # copy the matrix of predict_value to target_value.
         # bring the matrix of target value into correspondence with the one of predict_value
         # so that change the target value w.r.t predict_value
@@ -312,44 +317,39 @@ class DQN_st:
         if terminates_index.size != 0:
             target_value[terminates_index, ter_act] = ter_reward
         # NOT terminate
-        target_value[batch_sample_index,eval_act] = reward + self.greedy * np.max(q_next_not_ter, axis=1)
+        target_value[batch_sample_index,eval_act] = reward + self.discountFactor * np.max(q_next_not_ter, axis=1)
 
         # Loss function and optimization -- begin to study (update the weights)
-        opt, self.L = self.sess.run([self.optimizer, self.loss],
+        loss_summary, opt, self.L = self.sess.run([self.loss_merged, self.optimizer, self.loss],
                                feed_dict={
                                    self.s: batch_sample[:, :self.n_features],
-                                   self.target_value: target_value
+                                   self.target_value: target_value,
                                })
-        self.cost_his.append(self.L)
+        self.train_writer.add_summary(loss_summary,self.total_learning_step)
+
         # increasing greedy 如果放在探索step里增加效果？？
         self.greedy_increment()
         if (self.total_learning_step >= 100) and (self.total_learning_step % 100 == 0):
             self.plot_Rp_memory()
             self.plot_Rp_sample()
-            plt.show()
         self.total_learning_step += 1
-
-    def plot_cost(self):
-        plt.plot(np.arange(len(self.cost_his)), self.cost_his)
-        plt.ylabel('Cost')
-        plt.xlabel('training steps')
-        plt.show()
 
     def plot_Rp_memory(self):
         plt.figure()
-        plt.plot(len(self.Rmemory_plot), self.Rmemory_plot)
+        plt.plot(np.arange(len(self.Rmemory_plot)), self.Rmemory_plot)
         plt.title("Percentage of reward 1 in Memory")
         plt.ylabel('Reward')
         plt.xlabel('training steps')
+        plt.show()
 
 
     def plot_Rp_sample(self):
         plt.figure()
-        plt.plot(len(self.Rmemory_plot), self.Rmemory_plot)
+        plt.plot(np.arange(len(self.Rsample_plot)), self.Rsample_plot)
         plt.title("Percentage of reward 1 in Sample")
         plt.ylabel('Reward')
         plt.xlabel('training steps')
-
+        plt.show()
 
 
 if __name__ == '__main__':

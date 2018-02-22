@@ -19,16 +19,19 @@ def createLayer(tensor, lays_info):
     :return: Layer's activation function g(z)
     """
     global Z,g
+    para_sum_list = []
     for i in range(1, len(lays_info)+1):
         layerName = lays_info[i][0]
         with tf.name_scope(layerName):
             with tf.name_scope('Weights'):
                 weight = lays_info[i][1]
-                para_summaries(para=weight, name=layerName + '/Weights')
+                mean_plot, std_plot, max_plot, min_plot, para_plot = para_summaries(para=weight, name=layerName + '/Weights')
+                para_sum_list.extend([mean_plot, std_plot, max_plot, min_plot, para_plot])
 
             with tf.name_scope('Biases'):
                 bias = lays_info[i][2]
-                para_summaries(para=bias, name=layerName + '/Biases')
+                b_mean_plot, b_std_plot, b_max_plot, b_min_plot, b_para_plot = para_summaries(para=bias, name=layerName + '/Biases')
+                para_sum_list.extend([b_mean_plot, b_std_plot, b_max_plot, b_min_plot, b_para_plot])
 
         with tf.name_scope('Weight_Sum'):
             Z = tf.matmul(tensor, weight) + bias # tensor is data X
@@ -40,7 +43,7 @@ def createLayer(tensor, lays_info):
         else:
             g = Z
             tf.summary.histogram(layerName + '/Linear_Activation_Function', g)
-    return g
+    return g,para_sum_list
 
 
 def para_summaries(para, name):
@@ -52,13 +55,15 @@ def para_summaries(para, name):
     """
     with tf.name_scope('summaries'):
         mean = tf.reduce_mean(para)
-        tf.summary.scalar('mean/' + name, mean)
+        mean_plot = tf.summary.scalar('mean/' + name, mean)
         with tf.name_scope('stddev'):
             stddev = tf.sqrt(tf.reduce_sum(tf.square(para - mean)))
-        tf.summary.scalar('sttdev/' + name, stddev)
-        tf.summary.scalar('max/' + name, tf.reduce_max(para))
-        tf.summary.scalar('min/' + name, tf.reduce_min(para))
-        tf.summary.histogram(name, para)
+        std_plot = tf.summary.scalar('sttdev/' + name, stddev)
+        max_plot = tf.summary.scalar('max/' + name, tf.reduce_max(para))
+        min_plot = tf.summary.scalar('min/' + name, tf.reduce_min(para))
+        para_plot = tf.summary.histogram(name, para)
+
+    return mean_plot,std_plot,max_plot,min_plot,para_plot
 
 
 
