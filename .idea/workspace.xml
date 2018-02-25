@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c060b3e-e042-461f-a910-3c16a2c6ee53" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DQN_LOG/events.out.tfevents.1519280288.royde-MacBook-Pro.local" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FastBuildNet/FBN.py" afterPath="$PROJECT_DIR$/FastBuildNet/FBN.py" />
-    </list>
+    <list default="true" id="8c060b3e-e042-461f-a910-3c16a2c6ee53" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +48,7 @@
       <file leaf-file-name="DQN.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DQN/DQN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-266">
+            <state relative-caret-position="-173">
               <caret line="285" column="47" lean-forward="false" selection-start-line="285" selection-start-column="38" selection-end-line="285" selection-end-column="47" />
               <folding />
             </state>
@@ -758,7 +755,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DQN/DQN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-266">
+        <state relative-caret-position="-173">
           <caret line="285" column="47" lean-forward="false" selection-start-line="285" selection-start-column="38" selection-end-line="285" selection-end-column="47" />
           <folding />
         </state>
