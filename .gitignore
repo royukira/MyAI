@@ -102,3 +102,4 @@ ENV/
 
 # tensorflow log
 .local
+events.out.tfevents.
