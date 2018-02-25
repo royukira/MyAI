@@ -43,7 +43,7 @@ def createLayer(tensor, lays_info):
         else:
             g = Z
             tf.summary.histogram(layerName + '/Linear_Activation_Function', g)
-    return g,para_sum_list
+    return g, para_sum_list
 
 
 def para_summaries(para, name):
