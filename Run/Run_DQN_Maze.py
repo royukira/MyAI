@@ -3,7 +3,7 @@ from training_env import Maze
 import numpy as np
 
 
-def run_maze(env, brain, no_op_max=300, episode_max=1000, iterStep=5):
+def run_maze(env, brain, no_op_max=300, episode_max=10000000, iterStep=5):
     step = 0
     for episode in range(episode_max):
         # initial observation
@@ -48,6 +48,7 @@ def run_maze(env, brain, no_op_max=300, episode_max=1000, iterStep=5):
 
     # end of game
     print('game over')
+    brain.save_the_model(brain.sess)  # Save the model
     env.destroy()
 
 if __name__ == '__main__':
@@ -58,4 +59,3 @@ if __name__ == '__main__':
     RL = DQN.DQN_st(n_action, n_features,minibatch_size=100)
     env.after(100, run_maze(env=env,brain=RL))
     env.mainloop()
-    RL.plot_cost()

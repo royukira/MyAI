@@ -78,6 +78,7 @@ class DQN_st:
 
         # Initialize the hyper-parameters of the NN
         self.sess.run(tf.global_variables_initializer())
+        self.saver = tf.train.Saver()
 
         # LOG
         self.loss_merged = tf.summary.merge([self.loss_scalar])
@@ -89,7 +90,7 @@ class DQN_st:
         self.Rmemory_plot = []
         self.Rsample_plot = []
 
-    def greedy_increment(self, incrementRate=0.0003, greedy_max=0.9):
+    def greedy_increment(self, incrementRate=0.000003, greedy_max=0.9):
         """
         self-increment greeedy : epsilon += incrementRate / (epsilon + c)^2
 
@@ -103,6 +104,9 @@ class DQN_st:
             self.greedy += incrementRate/np.square(self.greedy+0.00001)  # 0.00001 ensures the denominator will not be 0
         else:
             self.greedy = greedy_max
+
+    def save_the_model(self,sess):
+        self.saver = (sess,'/Users/roy/Documents/GitHub/MyAI/DQN_MODEL')
 
     def _build_NN(self,n_hidden_units):
         # import
@@ -182,10 +186,10 @@ class DQN_st:
                 self.q_next, self.TargetPara_sum_list = createLayer(self.s_, target_lays_info)
 
         # -------- Loss Function ------
-        with tf.name_scope("The_mean-square_Loss_Function"):
+        with tf.name_scope("The_Temporal_difference_error"):
             with tf.name_scope("Cost"):
                 self.loss = tf.reduce_mean(tf.squared_difference(self.target_value,self.predict_value))
-            self.loss_scalar = tf.summary.scalar('The_mean-square_Loss_Function', self.loss)
+            self.loss_scalar = tf.summary.scalar('The_Temporal_difference_error', self.loss)
 
         # -------- Train (optimizer) ---------
         with tf.name_scope("Training"):
