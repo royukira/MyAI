@@ -90,7 +90,7 @@ class DQN_st:
         self.Rmemory_plot = []
         self.Rsample_plot = []
 
-    def greedy_increment(self, incrementRate=0.000003, greedy_max=0.9):
+    def greedy_increment(self, incrementRate=0.0000003, greedy_max=0.9):
         """
         self-increment greeedy : epsilon += incrementRate / (epsilon + c)^2
 
