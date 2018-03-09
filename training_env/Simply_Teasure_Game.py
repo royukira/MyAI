@@ -32,18 +32,21 @@ def get_env_feedback(S, A,numState):
     :return: Next state S_ (according to what Action it take), Reward R
     """
     # This is how agent will interact with the environment
-    if A == 'right':  # move right
+    if A == 1:  # right move
         if S == numState - 2:  # terminate; 因为 numState-1 是 Treasure 的 position
             S_ = 'terminal'    # 因此再向右移一个就是terminal
             R = 1              # 到达terminal即找到treasure，获得奖励 R=1
         else:
             S_ = S + 1         # 如果没到terminal，根据 Action 到 Next State ， 往右移
             R = 0              # 无奖励
-    else:  # move left
+    elif A==2:  # wrong move
         R = 0                  # 因为这个环境中 Treasure是在最右边 所以不管怎么往左移 都是无奖励 R=0
+        """
         if S == 0:
             S_ = S  # reach the wall
         else:
             S_ = S - 1         # 往左移
+        """
+        S_ = 0
 
     return S_, R
