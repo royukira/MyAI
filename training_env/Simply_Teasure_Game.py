@@ -8,14 +8,15 @@ The initial position is random in my version.
 Reference:  https://morvanzhou.github.io/tutorials
 """
 import time
+import random
 
 def update_env(S, episode, step_counter, numState):
-    env_list = ['-'] * (numState - 1) + ['T']  # example:'---------T' our environment
+    env_list = ['-'] * numState + ['T']  # example:'---------T' our environment
     if S == 'terminal':
         interaction = '==> Episode %s: total_steps = %s' % (episode + 1, step_counter)
         print('\r{}'.format(interaction), end='')
         time.sleep(2)
-        print('\r                                ', end='')
+        #print('\r                                ', end='')
     else:
         env_list[S] = 'O'
         interaction = ''.join(env_list)
@@ -33,8 +34,8 @@ def get_env_feedback(S, A,numState):
     """
     # This is how agent will interact with the environment
     if A == 1:  # right move
-        if S == numState - 2:  # terminate; 因为 numState-1 是 Treasure 的 position
-            S_ = 'terminal'    # 因此再向右移一个就是terminal
+        if S == numState - 1:  # terminate; 因为 numState-1 是 Treasure 的 position
+            S_ = -1    # 因此再向右移一个就是terminal = -1
             R = 1              # 到达terminal即找到treasure，获得奖励 R=1
         else:
             S_ = S + 1         # 如果没到terminal，根据 Action 到 Next State ， 往右移
@@ -47,6 +48,7 @@ def get_env_feedback(S, A,numState):
         else:
             S_ = S - 1         # 往左移
         """
-        S_ = 0
+        #S_ = random.randint(-1,S)
+        S_ = -1
 
     return S_, R

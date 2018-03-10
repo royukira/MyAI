@@ -104,3 +104,5 @@ ENV/
 .local
 events.out.tfevents.
 *.local
+*.png
+*.npy

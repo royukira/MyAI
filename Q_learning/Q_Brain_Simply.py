@@ -19,7 +19,7 @@ class QBrainSimply:
 
     def __init__(self,numState,ActionSet,greedy,learnRate,discountFactor,Max_episode):
         """initial Value"""
-        self.numState = numState
+        self.numState = numState - 1
         self.ActionSet = ActionSet
         self.greedy = greedy
         self.learnRate = learnRate
@@ -30,7 +30,7 @@ class QBrainSimply:
         self.Q_table = self.create_Q_table()
 
     def create_Q_table(self):
-        matrix = np.zeros((self.numState, len(self.ActionSet)))
+        matrix = np.random.uniform(size=(self.numState, len(self.ActionSet)))
         table = pd.DataFrame(matrix,  # q table's value(&size)
                              columns=self.ActionSet  # Actions' name
                              )
@@ -52,6 +52,11 @@ class QBrainSimply:
         if (random_choose < self.greedy) and (state_action.all() != 0):
             action = state_action.argmax()
             return action
+
+    def test_choose_action(self, table, s):
+        state_action = table.iloc[s,:]
+        action = state_action.argmax()
+        return action
 
     def train_brain(self):
 
@@ -105,7 +110,7 @@ class QBrainSimply:
                 """
                 Calculate the real value (q_target)
                 """
-                if S_Next is not "terminal":
+                if S_Next != -1 :
                     q_target = R + self.discountFactor * self.Q_table.iloc[S_Next,:].max()  # 实际的价值
                 else:
                     q_target = R  # 实际的价值,terminal的action都为0
@@ -182,11 +187,113 @@ class QBrainSimply:
         return self.Q_table
 
 
+    def batch_table_train(self, memory, batchSize, max_epoch):
+        """Training part"""
+
+        from Utility_tool.laplotter import LossAccPlotter
+        """
+        Repeat the episode until s gets to the rightmost position (i.e. get the treasure)
+        """
+        total_epoch = 1  # count the #episode
+        is_terminal = False  # ending signal
+        save_path = "/Users/roy/Documents/GitHub/MyAI/Log/BCW_loss/{0}_state_table.png".format(self.numState)
+        plotter = LossAccPlotter(title="Loss of Tabular Look-up Table with {0} states".format(self.numState),
+                                 save_to_filepath=None,
+                                 show_acc_plot=False,
+                                 show_plot_window=False,
+                                 show_regressions=False,
+                                 LearnType="table")
+
+        while is_terminal is False:  # training episode; a episode from initial s(i.e. State) to terminal s
+            """
+            Initial s
+            """
+            print("--> Epoch {0} Training... \n".format(total_epoch))
+            batchIndex = np.random.choice(memory.shape[0], size = batchSize)
+            batchSample = memory[batchIndex,:]
+            error = 0
+
+            for sample in batchSample:
+                s = int(sample[0])
+                a = int(sample[1])
+                r = int(sample[2])
+                s_ = int(sample[3])
+
+                q_predict = self.Q_table.loc[s, a]
+
+                """
+                Calculate the real value (q_target)
+                """
+                if s_ != -1:
+                    q_target = r + self.discountFactor * self.Q_table.iloc[s_, :].max()  # 实际的价值
+                else:
+                    q_target = r  # 实际的价值,terminal的action都为0
+
+                q_dis = q_target - q_predict
+
+                self.Q_table.loc[s, a] += self.learnRate * q_dis
+                error += np.square(q_dis)
+
+            norm_error = np.sqrt(error)
+            print("--> Epoch {0}'s error: {1}\n".format(total_epoch, norm_error))
+            print("==============================================\n")
+
+            plotter.add_values(total_epoch, loss_train=error)
+
+            if norm_error < 0.0001:
+                is_terminal = True
+            elif total_epoch > max_epoch:
+                is_terminal = True
+            else:
+                total_epoch += 1
+
+        print("--> Total learning step: {0}".format(total_epoch))
+        plotter.save_plot(save_path)
+        plotter.block()
+
+        return self.Q_table
+
+    def test_policy(self, table, episode):
+
+        from training_env.Simply_Teasure_Game import update_env, get_env_feedback
+
+        for episode in range(episode):  # training episode; a episode from initial s(i.e. State) to terminal s
+            """
+            Initial s
+            """
+            step_count = 0  # count the #episode
+            is_terminal = False  # ending signal
+            s = 0
+            update_env(s, episode, step_count, self.numState)  # update the environment
+            while is_terminal is False:
+                """
+                Choose an action a
+                """
+                a = self.test_choose_action(table, s)
+                # print("\n[s,a] = [{0},{1}]".format(s, a))
+
+                """
+                Get feedback of action a with State s from the environment
+                Return next state and reward (i.e observe the next state and reward)
+                """
+                S_Next, R = get_env_feedback(s, a, self.numState)  # get the feedback from the environment/
+
+                if S_Next == -1:
+                    is_terminal = True
+                else:
+                    s = S_Next
+                    step_count += 1
+                interaction = update_env(S_Next, episode, step_count, self.numState)
+
+
+
+
 class linear_Q(QBrainSimply):
+
     def __init__(self, numState,ActionSet,greedy,learnRate,discountFactor,Max_episode):
         super(linear_Q, self).__init__(numState,ActionSet,greedy,learnRate,discountFactor,Max_episode)
         """initial Value"""
-        self.numState = numState
+        self.numState = numState - 1  # 减去terminal
         self.ActionSet = ActionSet
         self.greedy = greedy
         self.learnRate = learnRate
@@ -229,38 +336,23 @@ class linear_Q(QBrainSimply):
             q, action = self.easy_find_max_q(state)
             return action
 
-    def find_max_q(self, S_next):
-        #TODO
+    def test_choose_action(self, w, S_next):
+        if S_next == 0:
+            w_ = w[0:len(self.ActionSet),:]
+        else:
+            w_ = w[S_next * len(self.ActionSet):S_next * len(self.ActionSet) + 2, :]
 
-        """
-        Find the max Q value function of state S_next
-        :param S_next:
-        :return:
-        """
+        maxQ = w_.max()
+        maxA = np.where(w_ == maxQ)[0][0]
+        maxA += 1
 
-        """
-        Get the phi(S_next,A)
-        """
-        pending = {}
-        index = S_next
-        for i in self.ActionSet:
-            if S_next == 0:
-                x = self.X_S_A[:, index][:, np.newaxis]
-            else:
-                x = self.X_S_A[:, index+1][:, np.newaxis]
-            y = np.dot(np.transpose(x), self.W)
-            pending.setdefault(y,i)
-
-        maxQ = max(pending)
-        maxA = pending[maxQ]
-
-        return maxQ,maxA
+        return maxA
 
     def easy_find_max_q(self,S_next):
         if S_next == 0:
             w = self.W[0:len(self.ActionSet),:]
         else:
-            w = self.W[S_next+1:S_next+1+len(self.ActionSet), :]
+            w = self.W[S_next*len(self.ActionSet):S_next*len(self.ActionSet)+2, :]
 
         maxQ = w.max()
         maxA = np.where(w == maxQ)[0][0]
@@ -287,7 +379,7 @@ class linear_Q(QBrainSimply):
             """
             step_count = 0  # count the #episode
             is_terminal = False  # ending signal
-            s = random.randint(0, self.numState-4)  # S不能等于treasure的position
+            s = 0
             update_env(s, episode, step_count, self.numState)  # update the environment
 
             while is_terminal is False:
@@ -309,10 +401,13 @@ class linear_Q(QBrainSimply):
                 if s == 0:
                     if a == 1:
                         x = self.X_S_A[:,s][:,np.newaxis]
-                    if a == 2:
+                    elif a == 2:
                         x = self.X_S_A[:,s+1][:,np.newaxis]
                 else:
-                    x = self.X_S_A[:,s*a+1][:,np.newaxis]   # the x's shape is (#states * #action+1, 1)
+                    if a == 1:
+                        x = self.X_S_A[:, s * len(self.ActionSet)][:, np.newaxis]  # the x's shape is (#states * #action+1, 1)
+                    elif a == 2:
+                        x = self.X_S_A[:, s * len(self.ActionSet) + 1][:, np.newaxis]  # the x's shape is (#states * #action+1, 1)
 
                 """
                 Calculate the predict
@@ -322,7 +417,7 @@ class linear_Q(QBrainSimply):
                 """
                 Calculate the target
                 """
-                if S_Next is "terminal":
+                if S_Next == -1:
                     self.target_error = R - q_predict
                 else:
                     max_Q, max_A = self.easy_find_max_q(S_Next)
@@ -333,7 +428,7 @@ class linear_Q(QBrainSimply):
                 """
                 self.W += self.learnRate * self.target_error  * x
 
-                if S_Next is "terminal":
+                if S_Next == -1:
                     is_terminal = True
                 else:
                     s = S_Next
@@ -348,17 +443,131 @@ class linear_Q(QBrainSimply):
 
         return self.W
 
+    def batch_linear_train(self, memory, batchSize, max_epoch):
+        """Training part"""
+
+        from Utility_tool.laplotter import LossAccPlotter
+        """
+        Repeat the episode until s gets to the rightmost position (i.e. get the treasure)
+        """
+        total_epoch = 1  # count the #episode
+        is_terminal = False  # ending signal
+        save_path = "/Users/roy/Documents/GitHub/MyAI/Log/BCW_loss/{0}_state_LFA.png".format(self.numState)
+        plotter = LossAccPlotter(title="Loss of Linear FA with {0} states".format(self.numState),
+                                 save_to_filepath=None,
+                                 show_acc_plot=False,
+                                 show_plot_window=False,
+                                 show_regressions=False,
+                                 LearnType="LFA"
+                                 )
+
+        while is_terminal is False:  # training episode; a episode from initial s(i.e. State) to terminal s
+            """
+            Initial s
+            """
+            print("--> Epoch {0} Training... \n".format(total_epoch))
+            batchIndex = np.random.choice(memory.shape[0], size = batchSize)
+            batchSample = memory[batchIndex,:]
+            w_increment = np.zeros((self.numState * len(self.ActionSet) + 1, 1))
+
+            for sample in batchSample:
+                s = int(sample[0])
+                a = int(sample[1])
+                r = int(sample[2])
+                s_ = int(sample[3])
+
+                if s == 0:
+                    if a == 1:
+                        x = self.X_S_A[:, s][:, np.newaxis]
+                    if a == 2:
+                        x = self.X_S_A[:, s + 1][:, np.newaxis]
+                else:
+                    if a == 1:
+                        x = self.X_S_A[:, s * len(self.ActionSet)][:, np.newaxis]  # the x's shape is (#states * #action+1, 1)
+                    elif a == 2:
+                        x = self.X_S_A[:, s * len(self.ActionSet) + 1][:, np.newaxis]  # the x's shape is (#states * #action+1, 1)
+
+
+                q_predict = np.dot(np.transpose(x), self.W)
+
+                """
+                Calculate the target
+                """
+                if s_ == -1:
+                    self.target_error = r - q_predict
+                else:
+                    max_Q, max_A = self.easy_find_max_q(s_)
+                    self.target_error = r + self.discountFactor * max_Q - q_predict
+
+                w_increment += self.target_error * x
+
+            """
+            update 
+            """
+            self.W += self.learnRate * w_increment
+
+            error = np.linalg.norm(w_increment)
+            print("--> Epoch {0}'s error: {1}\n".format(total_epoch, error))
+            print("==============================================\n")
+
+            plotter.add_values(total_epoch,loss_train=error)
+
+            if error < 0.00001:
+                is_terminal = True
+            elif total_epoch > max_epoch:
+                is_terminal = True
+            else:
+                total_epoch += 1
+
+
+        print("--> Total learning step: {0}".format(total_epoch))
+        plotter.save_plot(save_path)
+        plotter.block()
+        return self.W
+
+
+    def test_policy(self, w, episode):
+
+        from training_env.Simply_Teasure_Game import update_env, get_env_feedback
+
+        for episode in range(episode):  # training episode; a episode from initial s(i.e. State) to terminal s
+            """
+            Initial s
+            """
+            step_count = 0  # count the #episode
+            is_terminal = False  # ending signal
+            s = 0
+            update_env(s, episode, step_count, self.numState)  # update the environment
+            while is_terminal is False:
+                """
+                Choose an action a
+                """
+                a = self.test_choose_action(w=w, S_next=s)
+                # print("\n[s,a] = [{0},{1}]".format(s, a))
+
+                """
+                Get feedback of action a with State s from the environment
+                Return next state and reward (i.e observe the next state and reward)
+                """
+                S_Next, R = get_env_feedback(s, a, self.numState)  # get the feedback from the environment/
+
+                if S_Next == -1:
+                    is_terminal = True
+                else:
+                    s = S_Next
+                    step_count += 1
+                interaction = update_env(S_Next, episode, step_count, self.numState)
 
     # =========== Experience Replay ===============
     def create_memory(self, memory_size=20000):
-        memory = np.zeros(memory_size, 4)
+        memory = np.zeros((memory_size, 4))
         return memory
 
     def store(self,e, memory, index):
         memory[index, :] = e
         return memory
 
-    def collect_experience(self,iterNum=1000):
+    def collect_experience(self,iterNum=1000, threadID=None):
 
         """
         Import the environment
@@ -366,12 +575,15 @@ class linear_Q(QBrainSimply):
         from training_env.Simply_Teasure_Game import update_env, get_env_feedback
 
         step_count = 0
-        memory_size = 20000
+        memory_size = np.power(2, self.numState+1) - 2
+        print("\n---> {0}: memory size: {1}".format(threadID,memory_size))
         memory_count = 0
         memory = self.create_memory(memory_size)
+        check_dist = {}
 
         for i in range(iterNum):
-            s = random.randint(0, self.numState - 4)  # S不能等于treasure的position
+            print("\n--->{0}: iter: {1}".format(threadID,i))
+            s = random.randint(0, self.numState-1)  # S不能等于treasure的position
             update_env(s, i, step_count, self.numState)  # update the environment
             is_ter = False
 
@@ -380,15 +592,31 @@ class linear_Q(QBrainSimply):
 
                 S_Next, R = get_env_feedback(s, a, self.numState)
 
-                experience = np.hstack((s, a, R, S_Next))
+                exp_tuple = (s, a, R, S_Next)
 
-                index = memory_count % memory_size
+                experience = np.hstack(exp_tuple)
 
-                memory = self.store(experience, memory, index)
+                interaction = update_env(S_Next, i, step_count, self.numState)
 
-                memory_count += 1
+                if exp_tuple in check_dist:
+                    pass
+                else:
+                    index = memory_count % memory_size
 
-        return memory, memory_count
+                    memory = self.store(experience, memory, index)
+
+                    memory_count += 1
+
+                    check_dist.setdefault(exp_tuple,0)
+
+                if S_Next == -1:
+                    is_ter = True
+                else:
+                    s = S_Next
+        print("\n---> {0}: Total {1} transitions".format(threadID,len(check_dist)))
+
+        actual_memory = memory[:len(check_dist),:]  # 记忆矩阵中后面全0的都不要
+        return actual_memory, memory_count
 
 
 
