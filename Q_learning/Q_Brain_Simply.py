@@ -10,6 +10,8 @@ import pandas as pd
 import random
 import time
 import os
+import copy
+import pymysql as pms
 
 
 class QBrainSimply:
@@ -27,16 +29,21 @@ class QBrainSimply:
         self.Max_episode = Max_episode
 
         """Initial Q Table"""
-        self.Q_table = self.create_Q_table()
+        self.Q_table = None
 
-    def create_Q_table(self):
-        matrix = np.random.uniform(size=(self.numState, len(self.ActionSet)))
-        table = pd.DataFrame(matrix,  # q table's value(&size)
-                             columns=self.ActionSet  # Actions' name
-                             )
-        print(table)
+    def create_Q_table(self, mode):
+        if mode == "uniform":
+            matrix = np.random.uniform(size=(self.numState, len(self.ActionSet)))
+            table = pd.DataFrame(matrix,  # q table's value(&size)
+                                 columns=self.ActionSet  # Actions' name
+                                 )
+        elif mode == "zero":
+            matrix = np.zeros((self.numState, len(self.ActionSet)))
+            table = pd.DataFrame(matrix,  # q table's value(&size)
+                                 columns=self.ActionSet  # Actions' name
+                                 )
+        #print(table)
         return table  # return Q-Table
-
 
     def choose_action(self,state):
         state_action = self.Q_table.iloc[state,:]
@@ -58,10 +65,13 @@ class QBrainSimply:
         action = state_action.argmax()
         return action
 
-    def train_brain(self):
+    def train_brain(self,write=False):
 
         """Training part"""
-
+        """
+        Initial Q table
+        """
+        self.Q_table = self.create_Q_table("zero")
         """
         Import the environment
         """
@@ -84,7 +94,7 @@ class QBrainSimply:
             """
             step_count = 0  # count the #episode
             is_terminal = False  # ending signal
-            S = random.randint(0, self.numState-4)  # S不能等于treasure的position
+            S = 0 # S不能等于treasure的position
             update_env(S, episode, step_count, self.numState)  # update the environment /
             """
             Repeat (For each step of an episode)
@@ -94,7 +104,7 @@ class QBrainSimply:
                 Choose an action A
                 """
                 A = self.choose_action(state=S)
-                print("\n[S,A] = [{0},{1}]".format(S,A))
+                #print("\n[S,A] = [{0},{1}]".format(S,A))
 
                 """
                 Get feedback of action A with State S from the environment
@@ -131,7 +141,7 @@ class QBrainSimply:
                 """
                 Record Learning Process
                 """
-                if S != "terminal":
+                if S != -1 and write == True:
                     train_log = open("../Log/%s_QBrainSimply_log.txt" % now_time, 'a+')
                     train_log.write("Update to " + str(interaction))
                     train_log.write("\n--> Episode: %s\
@@ -180,15 +190,18 @@ class QBrainSimply:
                                     q_target,
                                     q_predict))
                     train_log.close()
-
-            print(self.Q_table)
-            time.sleep(1)
+            print("\n")
+            #print(self.Q_table)
+            #time.sleep(0.1)
 
         return self.Q_table
 
-
     def batch_table_train(self, memory, batchSize, max_epoch):
         """Training part"""
+        """
+        Initial Q table
+        """
+        self.Q_table = self.create_Q_table("uniform")
 
         from Utility_tool.laplotter import LossAccPlotter
         """
@@ -204,6 +217,7 @@ class QBrainSimply:
                                  show_regressions=False,
                                  LearnType="table")
 
+        error_buffer = copy.deepcopy(self.Q_table)
         while is_terminal is False:  # training episode; a episode from initial s(i.e. State) to terminal s
             """
             Initial s
@@ -231,18 +245,22 @@ class QBrainSimply:
 
                 q_dis = q_target - q_predict
 
-                self.Q_table.loc[s, a] += self.learnRate * q_dis
+                error_buffer.loc[s, a] += self.learnRate * q_dis
                 error += np.square(q_dis)
 
-            norm_error = np.sqrt(error)
-            print("--> Epoch {0}'s error: {1}\n".format(total_epoch, norm_error))
+            self.Q_table = copy.deepcopy(error_buffer)
+
+            mse = np.sqrt(error)/batchSize
+            print("--> Epoch {0}'s error: {1}\n".format(total_epoch, mse))
             print("==============================================\n")
 
-            plotter.add_values(total_epoch, loss_train=error)
+            plotter.add_values(total_epoch, loss_train=mse)
 
-            if norm_error < 0.0001:
+            """
+            if mse < 0.0001:
                 is_terminal = True
-            elif total_epoch > max_epoch:
+            """
+            if total_epoch > max_epoch:
                 is_terminal = True
             else:
                 total_epoch += 1
@@ -305,7 +323,6 @@ class linear_Q(QBrainSimply):
         self.target_error = 0
         """ parameter matrix """
         self.para_matrix = self.create_para_matrix()
-
 
     def create_para_matrix(self):
         para_matrix = pd.DataFrame(dtype=np.float64)
@@ -462,9 +479,7 @@ class linear_Q(QBrainSimply):
                                  )
 
         while is_terminal is False:  # training episode; a episode from initial s(i.e. State) to terminal s
-            """
-            Initial s
-            """
+
             print("--> Epoch {0} Training... \n".format(total_epoch))
             batchIndex = np.random.choice(memory.shape[0], size = batchSize)
             batchSample = memory[batchIndex,:]
@@ -506,15 +521,18 @@ class linear_Q(QBrainSimply):
             """
             self.W += self.learnRate * w_increment
 
-            error = np.linalg.norm(w_increment)
-            print("--> Epoch {0}'s error: {1}\n".format(total_epoch, error))
+            mse = np.linalg.norm(w_increment)/batchSize
+            print("--> Epoch {0}'s error: {1}\n".format(total_epoch, mse))
             print("==============================================\n")
 
-            plotter.add_values(total_epoch,loss_train=error)
+            plotter.add_values(total_epoch,loss_train=mse)
 
+            """
             if error < 0.00001:
                 is_terminal = True
-            elif total_epoch > max_epoch:
+                
+            """
+            if total_epoch > max_epoch:
                 is_terminal = True
             else:
                 total_epoch += 1
@@ -524,7 +542,6 @@ class linear_Q(QBrainSimply):
         plotter.save_plot(save_path)
         plotter.block()
         return self.W
-
 
     def test_policy(self, w, episode):
 
@@ -620,6 +637,198 @@ class linear_Q(QBrainSimply):
 
 
 
+
+class oracle_Q(linear_Q):
+
+    def __init__(self, numState, ActionSet, greedy, learnRate, discountFactor, Max_episode):
+        super(oracle_Q, self).__init__(numState, ActionSet, greedy, learnRate, discountFactor, Max_episode)
+        """initial Value"""
+        self.numState = numState - 1  # 减去terminal
+        self.ActionSet = ActionSet
+        self.greedy = greedy
+        self.learnRate = learnRate
+        self.discountFactor = discountFactor
+
+        self.db = self.connectSQL()
+        self.cursor = self.db.cursor()
+
+
+    def connectSQL(self):
+        db = pms.Connect("localhost", "root", "Zhang715", "BCW")
+        return db
+
+
+    def createPriorityTable(self, tableName):
+        sql = "CREATE TABLE {0}(\
+                STATE_ SMALLINT(5),\
+                ACTION_ SMALLINT(5),\
+                REWARD_ SMALLINT(5),\
+                STATE_NEXT SMALLINT(5),\
+                ERROR FLOAT )".format(tableName)
+        try:
+            self.cursor.execute(sql)
+            self.db.commit()
+            print("Already Create TABLE PRIORITY")
+        except:
+            print("CANNOT CREATE TABLE PRIORITY")
+            self.db.rollback()
+
+
+    def insertMemory(self, memory, tableName):
+        try:
+            for m in memory:
+                s = int(m[0])
+                a = int(m[1])
+                r = int(m[2])
+                s_ = int(m[3])
+
+                insert = "INSERT INTO %s(\
+                          STATE_,\
+                          ACTION_,\
+                          REWARD_,\
+                          STATE_NEXT,\
+                          ERROR)\
+                          VALUES ('%d','%d','%d','%d',5)" % (tableName,s, a, r, s_)
+                try:
+                    self.cursor.execute(insert)
+                    print("Already insert {0}".format(m))
+                except:
+                    print("CANNOT INSERT {0}".format(m))
+                    self.db.rollback()
+
+            self.db.commit()
+        except:
+            self.db.rollback()
+
+
+    def updateError(self,error, s, a, tableName):
+        error = error[0][0]
+        update = "UPDATE {0} SET ERROR = {1} WHERE STATE_ = {2} AND ACTION_ = {3}".format(tableName,error,s,a)
+
+        try:
+            self.cursor.execute(update)
+            self.db.commit()
+            print("Already Update ERROR of State:{0} ACTION:{1}".format(s, a))
+        except:
+            self.db.rollback()
+
+    def selectBatch(self,batchSize,tableName):
+        select = " SELECT STATE_, ACTION_, REWARD_, STATE_NEXT FROM {0} \
+                   ORDER BY ERROR DESC ".format(tableName)
+
+        try:
+            self.cursor.execute(select)
+            samples = self.cursor.fetchall()
+            batchSample = samples[0:batchSize + 1]
+            return batchSample  # Return a Tuple
+        except:
+            self.db.rollback()
+
+
+    def oracle_train(self,batchSize, max_epoch, tableName):
+        """Training part"""
+
+        from Utility_tool.laplotter import LossAccPlotter
+        """
+        Repeat the episode until s gets to the rightmost position (i.e. get the treasure)
+        """
+        total_epoch = 1  # count the #episode
+        is_terminal = False  # ending signal
+        save_path = "/Users/roy/Documents/GitHub/MyAI/Log/BCW_loss/{0}_state_oracle.png".format(self.numState)
+        plotter = LossAccPlotter(title="Loss of oracle memory with {0} states".format(self.numState),
+                                 save_to_filepath=None,
+                                 show_acc_plot=False,
+                                 show_plot_window=False,
+                                 show_regressions=False,
+                                 LearnType="LFA"
+                                )
+
+        while is_terminal is False:
+
+            print("--> Epoch {0} Training... \n".format(total_epoch))
+
+            batchSample = np.array(self.selectBatch(batchSize, tableName))
+            w_increment = np.zeros((self.numState * len(self.ActionSet) + 1, 1))
+
+            for sample in batchSample:
+                s = int(sample[0])
+                a = int(sample[1])
+                r = int(sample[2])
+                s_ = int(sample[3])
+
+                if s == 0:
+                    if a == 1:
+                        x = self.X_S_A[:, s][:, np.newaxis]
+                    if a == 2:
+                        x = self.X_S_A[:, s + 1][:, np.newaxis]
+                else:
+                    if a == 1:
+                        x = self.X_S_A[:, s * len(self.ActionSet)][:,
+                            np.newaxis]  # the x's shape is (#states * #action+1, 1)
+                    elif a == 2:
+                        x = self.X_S_A[:, s * len(self.ActionSet) + 1][:,
+                            np.newaxis]  # the x's shape is (#states * #action+1, 1)
+
+                q_predict = np.dot(np.transpose(x), self.W)
+
+                """
+                Calculate the target
+                """
+                if s_ == -1:
+                    self.target_error = r - q_predict
+                else:
+                    max_Q, max_A = self.easy_find_max_q(s_)
+                    self.target_error = r + self.discountFactor * max_Q - q_predict
+
+                w_increment += self.target_error * x
+
+                """
+                Update the error of state stored in the oracle
+                """
+                self.updateError(np.absolute(self.target_error), s, a, tableName)
+
+            """
+            update 
+            """
+            self.W += self.learnRate * w_increment
+
+            mse = np.linalg.norm(w_increment) / batchSize
+            print("--> Epoch {0}'s error: {1}\n".format(total_epoch, mse))
+            print("==============================================\n")
+
+            plotter.add_values(total_epoch, loss_train=mse)
+
+            """
+            if error < 0.00001:
+                is_terminal = True
+
+            """
+            if total_epoch > max_epoch:
+                is_terminal = True
+            else:
+                total_epoch += 1
+
+        print("--> Total learning step: {0}".format(total_epoch))
+        plotter.save_plot(save_path)
+        plotter.block()
+        return self.W
+
+
+if __name__ == '__main__':
+    N_STATES = 26  # the length of the 1 dimensional world
+    ACTIONS = [1, 2]  # available actions 1:right, 2:wrong
+    EPSILON = 0.9  # greedy police
+    ALPHA = 0.1  # learning rate
+    GAMMA = 1 - (1 / N_STATES - 1)  # discount factor
+    MAX_EPISODES = 100  # maximum episodes
+
+    test_db = oracle_Q(numState=N_STATES, ActionSet=ACTIONS, greedy=EPSILON, learnRate=ALPHA,
+                               discountFactor=GAMMA,
+                               Max_episode=MAX_EPISODES)
+
+    #test_db.createPriorityTable()
+    memory = np.load("/Users/roy/Documents/GitHub/MyAI/Run/blind_cliffwalk_experience/memory_4.npy")
+    test_db.insertMemory(memory)
 
 
 

@@ -12,10 +12,10 @@ import random
 
 def update_env(S, episode, step_counter, numState):
     env_list = ['-'] * numState + ['T']  # example:'---------T' our environment
-    if S == 'terminal':
+    if S == -1:
         interaction = '==> Episode %s: total_steps = %s' % (episode + 1, step_counter)
         print('\r{}'.format(interaction), end='')
-        time.sleep(2)
+        #time.sleep(2)
         #print('\r                                ', end='')
     else:
         env_list[S] = 'O'

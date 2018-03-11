@@ -2,8 +2,9 @@ import numpy as np
 
 if __name__ == '__main__':
     m = np.load("./memory_25.npy")
+
     print(m)
-    mm = m[:41,:]
+    mm = m[:,:]
     print(mm)
     print(mm.shape[0])
 
