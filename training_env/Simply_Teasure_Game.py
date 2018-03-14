@@ -37,9 +37,11 @@ def get_env_feedback(S, A,numState):
         if S == numState - 1:  # terminate; 因为 numState-1 是 Treasure 的 position
             S_ = -1    # 因此再向右移一个就是terminal = -1
             R = 1              # 到达terminal即找到treasure，获得奖励 R=1
+            return S_, R
         else:
             S_ = S + 1         # 如果没到terminal，根据 Action 到 Next State ， 往右移
             R = 0              # 无奖励
+            return S_, R
     elif A==2:  # wrong move
         R = 0                  # 因为这个环境中 Treasure是在最右边 所以不管怎么往左移 都是无奖励 R=0
         """
@@ -51,4 +53,4 @@ def get_env_feedback(S, A,numState):
         #S_ = random.randint(-1,S)
         S_ = -1
 
-    return S_, R
+        return S_, R

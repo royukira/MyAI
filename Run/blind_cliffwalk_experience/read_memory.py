@@ -11,6 +11,7 @@ if __name__ == '__main__':
     batchIndex = np.random.choice(mm.shape[0], size=10)
     batchSample = mm[batchIndex, :]
 
+
     for i in batchSample:
         a = i
 

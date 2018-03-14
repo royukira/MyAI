@@ -460,7 +460,7 @@ class linear_Q(QBrainSimply):
 
         return self.W
 
-    def batch_linear_train(self, memory, batchSize, max_epoch):
+    def batch_linear_train(self, memory, batchSize, max_epoch=50):
         """Training part"""
 
         from Utility_tool.laplotter import LossAccPlotter
@@ -470,6 +470,7 @@ class linear_Q(QBrainSimply):
         total_epoch = 1  # count the #episode
         is_terminal = False  # ending signal
         save_path = "/Users/roy/Documents/GitHub/MyAI/Log/BCW_loss/{0}_state_LFA.png".format(self.numState)
+        """
         plotter = LossAccPlotter(title="Loss of Linear FA with {0} states".format(self.numState),
                                  save_to_filepath=None,
                                  show_acc_plot=False,
@@ -477,6 +478,7 @@ class linear_Q(QBrainSimply):
                                  show_regressions=False,
                                  LearnType="LFA"
                                  )
+        """
 
         while is_terminal is False:  # training episode; a episode from initial s(i.e. State) to terminal s
 
@@ -525,13 +527,12 @@ class linear_Q(QBrainSimply):
             print("--> Epoch {0}'s error: {1}\n".format(total_epoch, mse))
             print("==============================================\n")
 
-            plotter.add_values(total_epoch,loss_train=mse)
+            #plotter.add_values(total_epoch,loss_train=mse)
 
-            """
-            if error < 0.00001:
+
+            if mse < 0.001:
                 is_terminal = True
-                
-            """
+
             if total_epoch > max_epoch:
                 is_terminal = True
             else:
@@ -539,8 +540,8 @@ class linear_Q(QBrainSimply):
 
 
         print("--> Total learning step: {0}".format(total_epoch))
-        plotter.save_plot(save_path)
-        plotter.block()
+        #plotter.save_plot(save_path)
+        #plotter.block()
         return self.W
 
     def test_policy(self, w, episode):
@@ -576,7 +577,8 @@ class linear_Q(QBrainSimply):
                 interaction = update_env(S_Next, episode, step_count, self.numState)
 
     # =========== Experience Replay ===============
-    def create_memory(self, memory_size=20000):
+
+    def create_memory(self, memory_size=2000):
         memory = np.zeros((memory_size, 4))
         return memory
 
@@ -592,7 +594,7 @@ class linear_Q(QBrainSimply):
         from training_env.Simply_Teasure_Game import update_env, get_env_feedback
 
         step_count = 0
-        memory_size = np.power(2, self.numState+1) - 2
+        memory_size = 2000  #np.power(2, self.numState+1) - 2
         print("\n---> {0}: memory size: {1}".format(threadID,memory_size))
         memory_count = 0
         memory = self.create_memory(memory_size)
@@ -782,6 +784,8 @@ class oracle_Q(linear_Q):
 
                 w_increment += self.target_error * x
 
+
+
                 """
                 Update the error of state stored in the oracle
                 """
@@ -793,6 +797,8 @@ class oracle_Q(linear_Q):
             self.W += self.learnRate * w_increment
 
             mse = np.linalg.norm(w_increment) / batchSize
+
+
             print("--> Epoch {0}'s error: {1}\n".format(total_epoch, mse))
             print("==============================================\n")
 
@@ -803,6 +809,11 @@ class oracle_Q(linear_Q):
                 is_terminal = True
 
             """
+            if total_epoch % 300 == 0:
+                save_path_100 = "/Users/roy/Documents/GitHub/MyAI/Log/BCW_loss/{0}_state_oracle.png".format(total_epoch)
+                plotter.save_plot(save_path_100)
+            if mse < 0.001:
+                is_terminal = True
             if total_epoch > max_epoch:
                 is_terminal = True
             else:
@@ -812,6 +823,27 @@ class oracle_Q(linear_Q):
         plotter.save_plot(save_path)
         plotter.block()
         return self.W
+
+
+class Memory:
+    def __init__(self,memorysize):
+        self.ms =memorysize
+        self.memory = np.zeros((self.ms, 4))
+        self.memory_counter = 0
+
+    def store_exp(self,e):
+        """
+        Store the experience into the memory D
+        :param e: e = (s,a,r,s_)
+        :return: None
+        """
+        if not hasattr(self, 'memory_counter'):
+            self.memory_counter = 0
+
+        index = self.memory_counter % self.ms
+        self.memory[index,:] = e
+
+        self.memory_counter += 1
 
 
 if __name__ == '__main__':
@@ -828,7 +860,7 @@ if __name__ == '__main__':
 
     #test_db.createPriorityTable()
     memory = np.load("/Users/roy/Documents/GitHub/MyAI/Run/blind_cliffwalk_experience/memory_4.npy")
-    test_db.insertMemory(memory)
+    #test_db.insertMemory(memory)
 
 
 

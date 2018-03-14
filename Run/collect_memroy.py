@@ -14,7 +14,7 @@ def collect(n_state, threadID=None):
     train_model = linear_Q(numState=n_state, ActionSet=ACTIONS, greedy=None, learnRate=None,
                            discountFactor=None,
                            Max_episode=None)
-    memory, memory_count = train_model.collect_experience(1000*n_state,threadID)
+    memory, memory_count = train_model.collect_experience(100*n_state,threadID)
     np.save("./blind_cliffwalk_experience/memory_{0}.npy".format(n_state-1), memory)
 
 
@@ -36,11 +36,11 @@ if __name__ == "__main__":
 
     N_STATES = [6, 11, 16, 21, 26]
 
-    thread5 = CollectThread("State {0} Thread".format(5), 6)
-    thread10 = CollectThread("State {0} Thread".format(10), 11)
-    thread15 = CollectThread("State {0} Thread".format(15), 16)
-    thread20 = CollectThread("State {0} Thread".format(20), 21)
-    thread25 = CollectThread("State {0} Thread".format(25), 26)
+    thread5 = CollectThread("State {0} Thread".format(100), 101)
+    thread10 = CollectThread("State {0} Thread".format(200), 201)
+    thread15 = CollectThread("State {0} Thread".format(300), 301)
+    thread20 = CollectThread("State {0} Thread".format(400), 401)
+    thread25 = CollectThread("State {0} Thread".format(500), 501)
 
     thread5.start()
     thread10.start()
