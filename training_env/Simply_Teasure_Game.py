@@ -44,13 +44,13 @@ def get_env_feedback(S, A,numState):
             return S_, R
     elif A==2:  # wrong move
         R = 0                  # 因为这个环境中 Treasure是在最右边 所以不管怎么往左移 都是无奖励 R=0
-        """
+
         if S == 0:
             S_ = S  # reach the wall
         else:
             S_ = S - 1         # 往左移
-        """
+
         #S_ = random.randint(-1,S)
-        S_ = -1
+        #S_ = -1
 
         return S_, R

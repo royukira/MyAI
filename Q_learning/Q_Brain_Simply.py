@@ -460,7 +460,7 @@ class linear_Q(QBrainSimply):
 
         return self.W
 
-    def batch_linear_train(self, memory, batchSize, max_epoch=50):
+    def batch_linear_train(self, memory, batchSize, max_epoch=100):
         """Training part"""
 
         from Utility_tool.laplotter import LossAccPlotter
@@ -469,7 +469,7 @@ class linear_Q(QBrainSimply):
         """
         total_epoch = 1  # count the #episode
         is_terminal = False  # ending signal
-        save_path = "/Users/roy/Documents/GitHub/MyAI/Log/BCW_loss/{0}_state_LFA.png".format(self.numState)
+        #save_path = "/Users/roy/Documents/GitHub/MyAI/Log/BCW_loss/{0}_state_LFA.png".format(self.numState)
         """
         plotter = LossAccPlotter(title="Loss of Linear FA with {0} states".format(self.numState),
                                  save_to_filepath=None,
@@ -482,7 +482,7 @@ class linear_Q(QBrainSimply):
 
         while is_terminal is False:  # training episode; a episode from initial s(i.e. State) to terminal s
 
-            print("--> Epoch {0} Training... \n".format(total_epoch))
+            print("--> Linear FA Epoch {0} Training... \n".format(total_epoch))
             batchIndex = np.random.choice(memory.shape[0], size = batchSize)
             batchSample = memory[batchIndex,:]
             w_increment = np.zeros((self.numState * len(self.ActionSet) + 1, 1))
@@ -524,7 +524,7 @@ class linear_Q(QBrainSimply):
             self.W += self.learnRate * w_increment
 
             mse = np.linalg.norm(w_increment)/batchSize
-            print("--> Epoch {0}'s error: {1}\n".format(total_epoch, mse))
+            print("--> Linear FA Epoch {0}'s error: {1}\n".format(total_epoch, mse))
             print("==============================================\n")
 
             #plotter.add_values(total_epoch,loss_train=mse)
@@ -539,7 +539,7 @@ class linear_Q(QBrainSimply):
                 total_epoch += 1
 
 
-        print("--> Total learning step: {0}".format(total_epoch))
+        print("--> Linear FA Total learning step: {0}".format(total_epoch))
         #plotter.save_plot(save_path)
         #plotter.block()
         return self.W

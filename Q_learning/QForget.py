@@ -134,12 +134,13 @@ class priority_train(linear_Q):
         self.discountFactor = discountFactor
         self.memorySize = memorySize
         self.memory = Memory(self.memorySize)
+        self.awc = 0
 
     def load_memory(self, InputMemory):
         for m in InputMemory:
             self.memory.store(m)
 
-    def priorityTrain(self,batchSize, max_epoch=50):
+    def priorityTrain(self,batchSize, max_epoch=1):
         """Training part"""
 
         from Utility_tool.laplotter import LossAccPlotter
@@ -195,7 +196,7 @@ class priority_train(linear_Q):
 
                 abs_error = np.absolute(self.target_error)
 
-                w_increment += self.target_error * x
+                w_increment += ISWeights[batchIndex] * self.target_error * x
 
                 abs_error_[batchIndex] = abs_error
 
@@ -206,13 +207,13 @@ class priority_train(linear_Q):
             """
             self.W += self.learnRate * w_increment
 
-            mse = np.linalg.norm(w_increment) / batchSize
-            print("--> Epoch {0}'s error: {1}\n".format(total_epoch, mse))
+            self.awc = np.linalg.norm(w_increment) / batchSize
+            print("--> Prioritized Epoch {0}'s error: {1}\n".format(total_epoch, self.awc))
             print("==============================================\n")
 
             #plotter.add_values(total_epoch, loss_train=mse)
 
-            if mse < 0.001:
+            if self.awc < 0.001:
                 is_terminal = True
             if total_epoch > max_epoch:
                 is_terminal = True
@@ -221,11 +222,11 @@ class priority_train(linear_Q):
 
 
 
-        #print("--> Total learning step: {0}".format(total_epoch))
+        print("--> Prioritized Total learning step: {0}".format(total_epoch))
         #plotter.save_plot(save_path)
         #plotter.block()
         #history = np.vstack((self.memorySize, total_epoch))
-        return self.W
+        return self.awc
 
     def plot(self,step):
         plt.plot(step[0, :], step[1, :] - step[1, 0], c='b', label='prioritized replay')
