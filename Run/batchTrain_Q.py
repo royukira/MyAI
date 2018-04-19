@@ -325,7 +325,7 @@ if __name__ == "__main__":
 
     plt.figure(1)
     plt.plot(step[0, :], step[1, :] - step[1, 0], c='r', label='Linear Q-learning with ER')
-    plt.plot(step2[0, :], step2[1, :], c='b', label='Linear Q-learning with pER')
+    plt.plot(step2[0, :], step2[1, :] - step2[1, 0], c='b', label='Linear Q-learning with pER')
     plt.legend(loc='best')
     plt.ylabel('Training step increment')
     plt.xlabel('Episode')
