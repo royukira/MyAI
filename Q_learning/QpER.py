@@ -124,7 +124,7 @@ class Memory(object):  # stored as ( s, a, r, s_ ) in SumTree
 
 class priority_train(linear_Q):
 
-    def __init__(self, numState, ActionSet, greedy, learnRate, discountFactor, Max_episode,memorySize):
+    def __init__(self, numState, ActionSet, greedy, learnRate, discountFactor, memorySize, Max_episode=None):
         super(priority_train, self).__init__(numState, ActionSet, greedy, learnRate, discountFactor, Max_episode)
         """initial Value"""
         self.numState = numState - 1  # 减去terminal
@@ -134,20 +134,19 @@ class priority_train(linear_Q):
         self.discountFactor = discountFactor
         self.memorySize = memorySize
         self.memory = Memory(self.memorySize)
-        self.awc = 0
+        self.gradient = 0
 
     def load_memory(self, InputMemory):
         for m in InputMemory:
             self.memory.store(m)
 
-    def priorityTrain(self,batchSize, max_epoch=1):
+    def priorityTrain(self,batchSize):
         """Training part"""
 
         from Utility_tool.laplotter import LossAccPlotter
         """
         Repeat the episode until s gets to the rightmost position (i.e. get the treasure)
         """
-        total_epoch = 1  # count the #episode
         is_terminal = False  # ending signal
         save_path = "/Users/roy/Documents/GitHub/MyAI/Log/BCW_loss/{0}_state_priority.png".format(self.numState)
         """
@@ -159,74 +158,60 @@ class priority_train(linear_Q):
                                  LearnType="LFA"
                                  )
         """
-        while is_terminal is False:
-            tree_idx, batch_memory, ISWeights = self.memory.sample(batchSize)
-            w_increment = np.zeros((self.numState * len(self.ActionSet) + 1, 1))
-            abs_error_ = np.zeros((batchSize, 1))
-            batchIndex = 0
 
-            for sample in batch_memory:
-                s = int(sample[0])
-                a = int(sample[1])
-                r = int(sample[2])
-                s_ = int(sample[3])
+        tree_idx, batch_memory, ISWeights = self.memory.sample(batchSize)
+        w_increment = np.zeros((self.numState * len(self.ActionSet) + 1, 1))
+        abs_error_ = np.zeros((batchSize, 1))
+        batchIndex = 0
 
-                if s == 0:
-                    if a == 1:
-                        x = self.X_S_A[:, s][:, np.newaxis]
-                    if a == 2:
-                        x = self.X_S_A[:, s + 1][:, np.newaxis]
-                else:
-                    if a == 1:
-                        x = self.X_S_A[:, s * len(self.ActionSet)][:, np.newaxis]  # the x's shape is (#states * #action+1, 1)
-                    elif a == 2:
-                        x = self.X_S_A[:, s * len(self.ActionSet) + 1][:, np.newaxis]  # the x's shape is (#states * #action+1, 1)
+        for sample in batch_memory:
+            s = int(sample[0])
+            a = int(sample[1])
+            r = int(sample[2])
+            s_ = int(sample[3])
 
-
-                q_predict = np.dot(np.transpose(x), self.W)
-
-                """
-                Calculate the target
-                """
-                if s_ == -1:
-                    self.target_error = r - q_predict
-                else:
-                    max_Q, max_A = self.easy_find_max_q(s_)
-                    self.target_error = r + self.discountFactor * max_Q - q_predict
-
-                abs_error = np.absolute(self.target_error)
-
-                w_increment += ISWeights[batchIndex] * self.target_error * x
-
-                abs_error_[batchIndex] = abs_error
-
-                batchIndex += 1
-
-            """
-            update 
-            """
-            self.W += self.learnRate * w_increment
-
-            self.awc = np.linalg.norm(w_increment) / batchSize
-            print("--> Prioritized Epoch {0}'s error: {1}\n".format(total_epoch, self.awc))
-            print("==============================================\n")
-
-            #plotter.add_values(total_epoch, loss_train=mse)
-
-            if self.awc < 0.001:
-                is_terminal = True
-            if total_epoch > max_epoch:
-                is_terminal = True
+            if s == 0:
+                if a == 1:
+                    x = self.X_S_A[:, s][:, np.newaxis]
+                if a == 2:
+                    x = self.X_S_A[:, s + 1][:, np.newaxis]
             else:
-                total_epoch += 1
+                if a == 1:
+                    x = self.X_S_A[:, s * len(self.ActionSet)][:,
+                        np.newaxis]  # the x's shape is (#states * #action+1, 1)
+                elif a == 2:
+                    x = self.X_S_A[:, s * len(self.ActionSet) + 1][:,
+                        np.newaxis]  # the x's shape is (#states * #action+1, 1)
 
+            q_predict = np.dot(np.transpose(x), self.W)
 
+            """
+            Calculate the target
+            """
+            if s_ == -1:
+                self.target_error = r - q_predict
+            else:
+                max_Q, max_A = self.easy_find_max_q(s_)
+                self.target_error = r + self.discountFactor * max_Q - q_predict
 
-        print("--> Prioritized Total learning step: {0}".format(total_epoch))
-        #plotter.save_plot(save_path)
-        #plotter.block()
-        #history = np.vstack((self.memorySize, total_epoch))
-        return self.awc
+            abs_error = np.absolute(self.target_error)
+
+            w_increment += ISWeights[batchIndex] * self.target_error * x
+
+            abs_error_[batchIndex] = abs_error
+
+            batchIndex += 1
+
+        """
+        update 
+        """
+        self.W += self.learnRate * w_increment
+
+        self.gradient = np.linalg.norm(w_increment) / batchSize  # gradient of one learning step
+        print("--> Linear Q-learning with Prioritized ER's gradient: {0}\n".format(self.gradient))
+        print("==============================================\n")
+
+        return self.W, self.gradient
 
     def plot(self,step):
         plt.plot(step[0, :], step[1, :] - step[1, 0], c='b', label='prioritized replay')

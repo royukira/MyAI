@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c060b3e-e042-461f-a910-3c16a2c6ee53" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/training_env/MountainCar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Q_learning/QlinearSearch.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Run/run_linearSearch.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/training_env/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/training_env/searchLinear.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Q_learning/QForget.py" afterPath="$PROJECT_DIR$/Q_learning/QpER.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Q_learning/QForget.py" afterPath="$PROJECT_DIR$/Q_learning/QForget.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py" afterPath="$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Run/batchTrain_Q.py" afterPath="$PROJECT_DIR$/Run/batchTrain_Q.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/training_env/Simply_Teasure_Game.py" afterPath="$PROJECT_DIR$/training_env/Simply_Teasure_Game.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,7 +30,7 @@
     <SUITE FILE_PATH="coverage/MyAI$run_linear_Q.coverage" NAME="run_linear_Q Coverage Results" MODIFIED="1520604948601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Run" />
     <SUITE FILE_PATH="coverage/MyAI$Run_QBrainSim.coverage" NAME="Run_QBrainSim Coverage Results" MODIFIED="1520746828573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Run" />
     <SUITE FILE_PATH="coverage/MyAI$DQN.coverage" NAME="DQN Coverage Results" MODIFIED="1517909291463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN" />
-    <SUITE FILE_PATH="coverage/MyAI$batchTrain_Q.coverage" NAME="batchTrain_Q Coverage Results" MODIFIED="1521480226166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Run" />
+    <SUITE FILE_PATH="coverage/MyAI$batchTrain_Q.coverage" NAME="batchTrain_Q Coverage Results" MODIFIED="1524047937215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Run" />
     <SUITE FILE_PATH="coverage/MyAI$QForget.coverage" NAME="QForget Coverage Results" MODIFIED="1520875902199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Q_learning" />
     <SUITE FILE_PATH="coverage/MyAI$test.coverage" NAME="test Coverage Results" MODIFIED="1516777796446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyAI$Maze.coverage" NAME="Maze Coverage Results" MODIFIED="1516781541291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/training_env" />
@@ -59,61 +61,32 @@
       <file leaf-file-name="Run_QBrainSim.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Run/Run_QBrainSim.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="0">
               <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MountainCar.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/training_env/MountainCar.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="batchTrain_Q.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="batchTrain_Q.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Run/batchTrain_Q.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="205" column="17" lean-forward="false" selection-start-line="205" selection-start-column="17" selection-end-line="205" selection-end-column="17" />
+            <state relative-caret-position="2667">
+              <caret line="343" column="17" lean-forward="false" selection-start-line="343" selection-start-column="16" selection-end-line="343" selection-end-column="17" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
-                <element signature="e#3011#3553#0" expanded="false" />
+                <element signature="e#974#3550#0" expanded="false" />
+                <element signature="e#3595#4087#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pydevd.py" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <file leaf-file-name="searchLinear.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/training_env/searchLinear.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="1598" column="0" lean-forward="false" selection-start-line="1598" selection-start-column="0" selection-end-line="1598" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DQN.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DQN/DQN.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2124">
-              <caret line="98" column="21" lean-forward="true" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Run_DQN_Maze.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Run/Run_DQN_Maze.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+            <state relative-caret-position="120">
+              <caret line="8" column="49" lean-forward="false" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -122,8 +95,8 @@
       <file leaf-file-name="Q_Brain_Simply.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1833">
-              <caret line="470" column="44" lean-forward="true" selection-start-line="470" selection-start-column="44" selection-end-line="470" selection-end-column="44" />
+            <state relative-caret-position="40">
+              <caret line="508" column="15" lean-forward="true" selection-start-line="508" selection-start-column="15" selection-end-line="508" selection-end-column="15" />
               <folding>
                 <element signature="e#118#136#0" expanded="true" />
                 <element signature="e#253#11896#0" expanded="false" />
@@ -132,38 +105,39 @@
                 <element signature="e#2080#2171#0" expanded="false" />
                 <element signature="e#7928#10614#0" expanded="false" />
                 <element signature="e#10668#11896#0" expanded="false" />
-                <element signature="e#12899#12970#0" expanded="false" />
-                <element signature="e#13007#13385#0" expanded="false" />
-                <element signature="e#13060#13385#0" expanded="false" />
-                <element signature="e#13430#13926#0" expanded="false" />
-                <element signature="e#13704#13771#0" expanded="false" />
-                <element signature="e#13981#14245#0" expanded="false" />
-                <element signature="e#14601#17609#0" expanded="false" />
-                <element signature="e#22431#24060#0" expanded="false" />
-                <element signature="e#24096#30469#0" expanded="false" />
-                <marker date="1521477351618" expanded="true" signature="24766:24819" ph="CREATE TABLE... PRIORITY" />
-                <marker date="1521477351618" expanded="true" signature="24766:24820" ph="CREATE TABLE... PRIORITY" />
-                <marker date="1521477351618" expanded="true" signature="24766:24858" ph="CREATE TABLE... PRIORITY" />
-                <marker date="1521477351618" expanded="true" signature="24766:24895" ph="CREATE TABLE... PRIORITY" />
-                <marker date="1521477351618" expanded="true" signature="24766:24896" ph="CREATE TABLE... PRIORITY" />
-                <marker date="1521477351618" expanded="true" signature="24766:24968" ph="CREATE TABLE... PRIORITY" />
-                <marker date="1521477351618" expanded="true" signature="25454:25614" ph="INSERT INTO PRIORITY... " />
-                <marker date="1521477351618" expanded="true" signature="25454:25707" ph="INSERT INTO PRIORIY... " />
-                <marker date="1521477351618" expanded="true" signature="26157:26199" ph="UPDATE PRIOR... " />
-                <marker date="1521477351618" expanded="true" signature="26157:26202" ph="UPDATE PRIOR... " />
-                <marker date="1521477351618" expanded="true" signature="26157:26217" ph="UPDATE missi... " />
-                <marker date="1521477351618" expanded="true" signature="26157:26220" ph="UPDATE missi... " />
-                <marker date="1521477351618" expanded="true" signature="26526:26619" ph="SELECT * FRO... PRIORITY" />
+                <element signature="e#12904#12975#0" expanded="false" />
+                <element signature="e#13012#13390#0" expanded="false" />
+                <element signature="e#13065#13390#0" expanded="false" />
+                <element signature="e#13435#13931#0" expanded="false" />
+                <element signature="e#13709#13776#0" expanded="false" />
+                <element signature="e#13986#14250#0" expanded="false" />
+                <element signature="e#14606#17614#0" expanded="false" />
+                <element signature="e#21682#23311#0" expanded="false" />
+                <element signature="e#23347#29720#0" expanded="false" />
+                <element signature="e#29741#30228#0" expanded="false" />
+                <marker date="1524042678299" expanded="true" signature="24017:24070" ph="CREATE TABLE... PRIORITY" />
+                <marker date="1524042678299" expanded="true" signature="24017:24071" ph="CREATE TABLE... PRIORITY" />
+                <marker date="1524042678299" expanded="true" signature="24017:24109" ph="CREATE TABLE... PRIORITY" />
+                <marker date="1524042678299" expanded="true" signature="24017:24146" ph="CREATE TABLE... PRIORITY" />
+                <marker date="1524042678299" expanded="true" signature="24017:24147" ph="CREATE TABLE... PRIORITY" />
+                <marker date="1524042678299" expanded="true" signature="24017:24219" ph="CREATE TABLE... PRIORITY" />
+                <marker date="1524042678299" expanded="true" signature="24705:24865" ph="INSERT INTO PRIORITY... " />
+                <marker date="1524042678299" expanded="true" signature="24705:24958" ph="INSERT INTO PRIORIY... " />
+                <marker date="1524042678299" expanded="true" signature="25408:25450" ph="UPDATE PRIOR... " />
+                <marker date="1524042678299" expanded="true" signature="25408:25453" ph="UPDATE PRIOR... " />
+                <marker date="1524042678299" expanded="true" signature="25408:25468" ph="UPDATE missi... " />
+                <marker date="1524042678299" expanded="true" signature="25408:25471" ph="UPDATE missi... " />
+                <marker date="1524042678299" expanded="true" signature="25777:25870" ph="SELECT * FRO... PRIORITY" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QForget.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Q_learning/QForget.py">
+      <file leaf-file-name="QpER.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Q_learning/QpER.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="194" column="0" lean-forward="false" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+            <state relative-caret-position="258">
+              <caret line="126" column="91" lean-forward="false" selection-start-line="126" selection-start-column="91" selection-end-line="126" selection-end-column="91" />
               <folding>
                 <element signature="e#182#200#0" expanded="true" />
               </folding>
@@ -171,11 +145,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="QlinearSearch.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Q_learning/QlinearSearch.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Simply_Teasure_Game.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/training_env/Simply_Teasure_Game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="42" column="36" lean-forward="true" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
+            <state relative-caret-position="630">
+              <caret line="42" column="36" lean-forward="false" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
               <folding>
                 <element signature="e#379#390#0" expanded="true" />
               </folding>
@@ -226,7 +210,6 @@
         <option value="$PROJECT_DIR$/Utility_tool/Record.py" />
         <option value="$PROJECT_DIR$/DQN/DQN_st.py" />
         <option value="$PROJECT_DIR$/Q_learning/Q_Brain_Maze.py" />
-        <option value="$PROJECT_DIR$/training_env/Maze.py" />
         <option value="$PROJECT_DIR$/Utility_tool/EasyPlot.py" />
         <option value="$PROJECT_DIR$/FastBuildNet/FBN.py" />
         <option value="$PROJECT_DIR$/Run/Run_DQN_Maze.py" />
@@ -240,8 +223,13 @@
         <option value="$PROJECT_DIR$/Run/collect_memroy.py" />
         <option value="$PROJECT_DIR$/training_env/MountainCar.py" />
         <option value="$PROJECT_DIR$/training_env/Simply_Teasure_Game.py" />
-        <option value="$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py" />
         <option value="$PROJECT_DIR$/Q_learning/QForget.py" />
+        <option value="$PROJECT_DIR$/training_env/Maze.py" />
+        <option value="$PROJECT_DIR$/training_env/searchLinear.py" />
+        <option value="$PROJECT_DIR$/Run/run_linearSearch.py" />
+        <option value="$PROJECT_DIR$/Q_learning/QlinearSearch.py" />
+        <option value="$PROJECT_DIR$/Q_learning/QpER.py" />
+        <option value="$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py" />
         <option value="$PROJECT_DIR$/Run/batchTrain_Q.py" />
       </list>
     </option>
@@ -317,6 +305,9 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/training_env" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Utility_tool" />
     </key>
@@ -347,7 +338,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MyAI" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Q_learning/QForget.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Q_learning/QpER.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -447,13 +438,13 @@
     <frame x="0" y="22" width="1440" height="878" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2167382" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22532189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3614304" sideWeight="0.5071531" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16237482" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.49703702" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39846742" sideWeight="0.49284694" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39846742" sideWeight="0.49284694" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3256705" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -600,37 +591,37 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py</url>
-          <line>631</line>
+          <line>613</line>
           <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py</url>
-          <line>630</line>
+          <line>612</line>
           <option name="timeStamp" value="112" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py</url>
-          <line>633</line>
+          <line>615</line>
           <option name="timeStamp" value="113" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py</url>
-          <line>619</line>
+          <line>601</line>
           <option name="timeStamp" value="114" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py</url>
-          <line>618</line>
+          <line>600</line>
           <option name="timeStamp" value="118" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py</url>
-          <line>622</line>
+          <line>604</line>
           <option name="timeStamp" value="119" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py</url>
-          <line>624</line>
+          <line>606</line>
           <option name="timeStamp" value="120" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -730,17 +721,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py</url>
-          <line>581</line>
+          <line>563</line>
           <option name="timeStamp" value="219" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py</url>
-          <line>582</line>
+          <line>564</line>
           <option name="timeStamp" value="220" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Run/batchTrain_Q.py</url>
-          <line>267</line>
+          <line>264</line>
           <option name="timeStamp" value="273" />
         </line-breakpoint>
       </breakpoints>
@@ -759,45 +750,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DQN/DQN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Run/Run_DQN_Maze.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="60" column="18" lean-forward="true" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../MNIST/goDeep.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
-          <caret line="156" column="29" lean-forward="false" selection-start-line="156" selection-start-column="29" selection-end-line="156" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FastBuildNet/FBN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="78" lean-forward="false" selection-start-line="41" selection-start-column="78" selection-end-line="41" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Q_learning/Q_Brain_Maze.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="68" column="16" lean-forward="false" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Run/Run_Q_Maze.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -849,7 +801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="41" column="78" lean-forward="true" selection-start-line="41" selection-start-column="78" selection-end-line="41" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -967,7 +918,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-699">
           <caret line="1469" column="0" lean-forward="false" selection-start-line="1469" selection-start-column="0" selection-end-line="1469" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -975,7 +925,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="45" lean-forward="false" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -990,16 +939,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3405">
           <caret line="227" column="23" lean-forward="false" selection-start-line="227" selection-start-column="19" selection-end-line="227" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/training_env/Maze.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="191" column="46" lean-forward="false" selection-start-line="191" selection-start-column="46" selection-end-line="191" selection-end-column="46" />
-          <folding>
-            <element signature="e#453#471#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1037,7 +976,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1045,7 +983,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="706">
           <caret line="429" column="49" lean-forward="false" selection-start-line="429" selection-start-column="49" selection-end-line="429" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1057,44 +994,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Run/run_linear_Q.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Run/Run_QBrainSim.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/training_env/Simply_Teasure_Game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="42" column="36" lean-forward="true" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
-          <folding>
-            <element signature="e#379#390#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DQN/DQN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2124">
-          <caret line="98" column="21" lean-forward="true" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
+        <state relative-caret-position="105">
+          <caret line="177" column="75" lean-forward="false" selection-start-line="177" selection-start-column="75" selection-end-line="177" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Run/Run_DQN_Maze.py">
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+        <state relative-caret-position="556">
+          <caret line="1598" column="0" lean-forward="false" selection-start-line="1598" selection-start-column="0" selection-end-line="1598" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Q_learning/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/training_env/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1103,14 +1028,72 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Run/Run_DQN_Maze.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Run/Run_QBrainSim.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/training_env/Maze.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2865">
+          <caret line="191" column="46" lean-forward="false" selection-start-line="191" selection-start-column="46" selection-end-line="191" selection-end-column="46" />
+          <folding>
+            <element signature="e#453#471#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Run/run_linear_Q.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Run/run_linearSearch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/training_env/searchLinear.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="49" lean-forward="false" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Q_learning/QpER.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="126" column="91" lean-forward="false" selection-start-line="126" selection-start-column="91" selection-end-line="126" selection-end-column="91" />
+          <folding>
+            <element signature="e#182#200#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1833">
-          <caret line="470" column="44" lean-forward="true" selection-start-line="470" selection-start-column="44" selection-end-line="470" selection-end-column="44" />
+        <state relative-caret-position="40">
+          <caret line="508" column="15" lean-forward="true" selection-start-line="508" selection-start-column="15" selection-end-line="508" selection-end-column="15" />
           <folding>
             <element signature="e#118#136#0" expanded="true" />
             <element signature="e#253#11896#0" expanded="false" />
@@ -1119,58 +1102,60 @@
             <element signature="e#2080#2171#0" expanded="false" />
             <element signature="e#7928#10614#0" expanded="false" />
             <element signature="e#10668#11896#0" expanded="false" />
-            <element signature="e#12899#12970#0" expanded="false" />
-            <element signature="e#13007#13385#0" expanded="false" />
-            <element signature="e#13060#13385#0" expanded="false" />
-            <element signature="e#13430#13926#0" expanded="false" />
-            <element signature="e#13704#13771#0" expanded="false" />
-            <element signature="e#13981#14245#0" expanded="false" />
-            <element signature="e#14601#17609#0" expanded="false" />
-            <element signature="e#22431#24060#0" expanded="false" />
-            <element signature="e#24096#30469#0" expanded="false" />
-            <marker date="1521477351618" expanded="true" signature="24766:24819" ph="CREATE TABLE... PRIORITY" />
-            <marker date="1521477351618" expanded="true" signature="24766:24820" ph="CREATE TABLE... PRIORITY" />
-            <marker date="1521477351618" expanded="true" signature="24766:24858" ph="CREATE TABLE... PRIORITY" />
-            <marker date="1521477351618" expanded="true" signature="24766:24895" ph="CREATE TABLE... PRIORITY" />
-            <marker date="1521477351618" expanded="true" signature="24766:24896" ph="CREATE TABLE... PRIORITY" />
-            <marker date="1521477351618" expanded="true" signature="24766:24968" ph="CREATE TABLE... PRIORITY" />
-            <marker date="1521477351618" expanded="true" signature="25454:25614" ph="INSERT INTO PRIORITY... " />
-            <marker date="1521477351618" expanded="true" signature="25454:25707" ph="INSERT INTO PRIORIY... " />
-            <marker date="1521477351618" expanded="true" signature="26157:26199" ph="UPDATE PRIOR... " />
-            <marker date="1521477351618" expanded="true" signature="26157:26202" ph="UPDATE PRIOR... " />
-            <marker date="1521477351618" expanded="true" signature="26157:26217" ph="UPDATE missi... " />
-            <marker date="1521477351618" expanded="true" signature="26157:26220" ph="UPDATE missi... " />
-            <marker date="1521477351618" expanded="true" signature="26526:26619" ph="SELECT * FRO... PRIORITY" />
+            <element signature="e#12904#12975#0" expanded="false" />
+            <element signature="e#13012#13390#0" expanded="false" />
+            <element signature="e#13065#13390#0" expanded="false" />
+            <element signature="e#13435#13931#0" expanded="false" />
+            <element signature="e#13709#13776#0" expanded="false" />
+            <element signature="e#13986#14250#0" expanded="false" />
+            <element signature="e#14606#17614#0" expanded="false" />
+            <element signature="e#21682#23311#0" expanded="false" />
+            <element signature="e#23347#29720#0" expanded="false" />
+            <element signature="e#29741#30228#0" expanded="false" />
+            <marker date="1524042678299" expanded="true" signature="24017:24070" ph="CREATE TABLE... PRIORITY" />
+            <marker date="1524042678299" expanded="true" signature="24017:24071" ph="CREATE TABLE... PRIORITY" />
+            <marker date="1524042678299" expanded="true" signature="24017:24109" ph="CREATE TABLE... PRIORITY" />
+            <marker date="1524042678299" expanded="true" signature="24017:24146" ph="CREATE TABLE... PRIORITY" />
+            <marker date="1524042678299" expanded="true" signature="24017:24147" ph="CREATE TABLE... PRIORITY" />
+            <marker date="1524042678299" expanded="true" signature="24017:24219" ph="CREATE TABLE... PRIORITY" />
+            <marker date="1524042678299" expanded="true" signature="24705:24865" ph="INSERT INTO PRIORITY... " />
+            <marker date="1524042678299" expanded="true" signature="24705:24958" ph="INSERT INTO PRIORIY... " />
+            <marker date="1524042678299" expanded="true" signature="25408:25450" ph="UPDATE PRIOR... " />
+            <marker date="1524042678299" expanded="true" signature="25408:25453" ph="UPDATE PRIOR... " />
+            <marker date="1524042678299" expanded="true" signature="25408:25468" ph="UPDATE missi... " />
+            <marker date="1524042678299" expanded="true" signature="25408:25471" ph="UPDATE missi... " />
+            <marker date="1524042678299" expanded="true" signature="25777:25870" ph="SELECT * FRO... PRIORITY" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Q_learning/QForget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="194" column="0" lean-forward="false" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
-          <folding>
-            <element signature="e#182#200#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="1598" column="0" lean-forward="false" selection-start-line="1598" selection-start-column="0" selection-end-line="1598" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Run/batchTrain_Q.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="205" column="17" lean-forward="false" selection-start-line="205" selection-start-column="17" selection-end-line="205" selection-end-column="17" />
+        <state relative-caret-position="2667">
+          <caret line="343" column="17" lean-forward="false" selection-start-line="343" selection-start-column="16" selection-end-line="343" selection-end-column="17" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
-            <element signature="e#3011#3553#0" expanded="false" />
+            <element signature="e#974#3550#0" expanded="false" />
+            <element signature="e#3595#4087#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/training_env/Simply_Teasure_Game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="36" lean-forward="false" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
+          <folding>
+            <element signature="e#379#390#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Q_learning/QlinearSearch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -308,7 +308,7 @@ class QBrainSimply:
 
 class linear_Q(QBrainSimply):
 
-    def __init__(self, numState,ActionSet,greedy,learnRate,discountFactor,Max_episode):
+    def __init__(self, numState,ActionSet,greedy,learnRate,discountFactor,Max_episode=None):
         super(linear_Q, self).__init__(numState,ActionSet,greedy,learnRate,discountFactor,Max_episode)
         """initial Value"""
         self.numState = numState - 1  # 减去terminal
@@ -460,15 +460,13 @@ class linear_Q(QBrainSimply):
 
         return self.W
 
-    def batch_linear_train(self, memory, batchSize, max_epoch=100):
+    def batch_linear_train(self, memory, batchSize):
         """Training part"""
 
         from Utility_tool.laplotter import LossAccPlotter
         """
         Repeat the episode until s gets to the rightmost position (i.e. get the treasure)
         """
-        total_epoch = 1  # count the #episode
-        is_terminal = False  # ending signal
         #save_path = "/Users/roy/Documents/GitHub/MyAI/Log/BCW_loss/{0}_state_LFA.png".format(self.numState)
         """
         plotter = LossAccPlotter(title="Loss of Linear FA with {0} states".format(self.numState),
@@ -480,69 +478,53 @@ class linear_Q(QBrainSimply):
                                  )
         """
 
-        while is_terminal is False:  # training episode; a episode from initial s(i.e. State) to terminal s
+        batchIndex = np.random.choice(memory.shape[0], size=batchSize)
+        batchSample = memory[batchIndex, :]
+        w_increment = np.zeros((self.numState * len(self.ActionSet) + 1, 1))
 
-            print("--> Linear FA Epoch {0} Training... \n".format(total_epoch))
-            batchIndex = np.random.choice(memory.shape[0], size = batchSize)
-            batchSample = memory[batchIndex,:]
-            w_increment = np.zeros((self.numState * len(self.ActionSet) + 1, 1))
+        for sample in batchSample:
+            x = 0
+            s = int(sample[0])
+            a = int(sample[1])
+            r = int(sample[2])
+            s_ = int(sample[3])
 
-            for sample in batchSample:
-                s = int(sample[0])
-                a = int(sample[1])
-                r = int(sample[2])
-                s_ = int(sample[3])
-
-                if s == 0:
-                    if a == 1:
-                        x = self.X_S_A[:, s][:, np.newaxis]
-                    if a == 2:
-                        x = self.X_S_A[:, s + 1][:, np.newaxis]
-                else:
-                    if a == 1:
-                        x = self.X_S_A[:, s * len(self.ActionSet)][:, np.newaxis]  # the x's shape is (#states * #action+1, 1)
-                    elif a == 2:
-                        x = self.X_S_A[:, s * len(self.ActionSet) + 1][:, np.newaxis]  # the x's shape is (#states * #action+1, 1)
-
-
-                q_predict = np.dot(np.transpose(x), self.W)
-
-                """
-                Calculate the target
-                """
-                if s_ == -1:
-                    self.target_error = r - q_predict
-                else:
-                    max_Q, max_A = self.easy_find_max_q(s_)
-                    self.target_error = r + self.discountFactor * max_Q - q_predict
-
-                w_increment += self.target_error * x
-
-            """
-            update 
-            """
-            self.W += self.learnRate * w_increment
-
-            mse = np.linalg.norm(w_increment)/batchSize
-            print("--> Linear FA Epoch {0}'s error: {1}\n".format(total_epoch, mse))
-            print("==============================================\n")
-
-            #plotter.add_values(total_epoch,loss_train=mse)
-
-
-            if mse < 0.001:
-                is_terminal = True
-
-            if total_epoch > max_epoch:
-                is_terminal = True
+            if s == 0:
+                if a == 1:
+                    x = self.X_S_A[:, s][:, np.newaxis]
+                if a == 2:
+                    x = self.X_S_A[:, s + 1][:, np.newaxis]
             else:
-                total_epoch += 1
+                if a == 1:
+                    x = self.X_S_A[:, s * len(self.ActionSet)][:,
+                        np.newaxis]  # the x's shape is (#states * #action+1, 1)
+                elif a == 2:
+                    x = self.X_S_A[:, s * len(self.ActionSet) + 1][:,
+                        np.newaxis]  # the x's shape is (#states * #action+1, 1)
 
+            q_predict = np.dot(np.transpose(x), self.W)
 
-        print("--> Linear FA Total learning step: {0}".format(total_epoch))
-        #plotter.save_plot(save_path)
-        #plotter.block()
-        return self.W
+            """
+            Calculate the target
+            """
+            if s_ == -1:
+                self.target_error = r - q_predict
+            else:
+                max_Q, max_A = self.easy_find_max_q(s_)
+                self.target_error = r + self.discountFactor * max_Q - q_predict
+
+            w_increment += self.target_error * x
+
+        """
+        update 
+        """
+        self.W += self.learnRate * w_increment
+
+        gradient = np.linalg.norm(w_increment) / batchSize
+        print("--> Linear Q-learning's gradient: {0}\n".format(gradient))
+        print("==============================================\n")
+
+        return self.W, gradient
 
     def test_policy(self, w, episode):
 
