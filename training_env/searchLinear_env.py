@@ -19,6 +19,8 @@ class searchLin_env:
         self.beta2 = beta2
 
     def nextState(self, s, a):
+        if s == 0 and a == -1:
+            return 0
         if s+a < self.terminate:
             return s + a
         else:

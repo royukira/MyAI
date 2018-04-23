@@ -125,6 +125,10 @@ def train_with_play(batchSize,numState,RL,ERmemorySize=100,mode=None):
     episodes = []
     gradient = []
     gdSteps = []
+    dws = []
+    dSteps = []
+    errors = []
+    eSteps = []
     memory = my(ERmemorySize)  # memory size for linear Q-learning with ER //
     # this is only for ER; pER has a specific memory(function) in priorityTrain()
     for i_episode in range(20):
@@ -149,17 +153,22 @@ def train_with_play(batchSize,numState,RL,ERmemorySize=100,mode=None):
 
             is_learn = total_steps % Cstep
 
-            if (total_steps > 200) and (is_learn == 0):
+            if (total_steps > ERmemorySize) and (is_learn == 0):
                 if mode == "p":
-                    print("--> Step {0} : Prioritized Learning...".format(total_steps))
+                    print("--> Step {0} : Prioritized experience replay...".format(total_steps))
                     _, gd = RL.priorityTrain(batchSize)
                     gradient.append(gd)
                     gdSteps.append(total_steps)
                 if mode == "l":
-                    print("--> Step {0} : Uniform Learning...".format(total_steps))
-                    _, gd = RL.batch_linear_train(memory.memory,batchSize)
+                    print("--> Step {0} : Standard Experience replay Learning...".format(total_steps))
+                    #param_dyn = RL.calDyn_ER(memory.memory, batchSize)
+                    #dws.append(param_dyn)
+                    #dSteps.append(total_steps)
+                    _, gd, td_error = RL.batch_linear_train(memory.memory, batchSize)
                     gradient.append(gd)
                     gdSteps.append(total_steps)
+                    errors.append(td_error)
+                    eSteps.append(total_steps)
 
 
             if R == 1:
@@ -175,6 +184,15 @@ def train_with_play(batchSize,numState,RL,ERmemorySize=100,mode=None):
 
     epi_step = np.vstack((episodes, steps))
     gradient_step = np.vstack((gdSteps, gradient))
+
+    if len(dws) != 0:  # TESTING
+        dw_step = np.vstack((dSteps, dws))
+        return epi_step, gradient_step, dw_step
+
+    if len(errors) !=0:
+        error_step = np.vstack((eSteps, errors))
+        return epi_step, gradient_step, error_step
+
     return epi_step, gradient_step
 
 
@@ -311,8 +329,8 @@ if __name__ == "__main__":
     plt.show()
     """
 
-    batchSize = 60
-    memorysize = 300
+    batchSize = 50
+    memorysize = 125
     er = linear_Q(numState=N_STATES, ActionSet=ACTIONS, greedy=EPSILON, learnRate=ALPHA,
                                   discountFactor=GAMMA)
 
@@ -320,9 +338,10 @@ if __name__ == "__main__":
                            discountFactor=GAMMA,
                            memorySize=memorysize)
 
-    step, gd = train_with_play(batchSize, N_STATES, RL=er, mode="l", ERmemorySize=memorysize)
+    step, gd, errors = train_with_play(batchSize, N_STATES, RL=er, mode="l", ERmemorySize=memorysize)
     step2, gd2 = train_with_play(batchSize, N_STATES, RL=per, mode="p")
 
+    """
     plt.figure(1)
     plt.plot(step[0, :], step[1, :] - step[1, 0], c='r', label='Linear Q-learning with ER')
     plt.plot(step2[0, :], step2[1, :] - step2[1, 0], c='b', label='Linear Q-learning with pER')
@@ -331,6 +350,8 @@ if __name__ == "__main__":
     plt.xlabel('Episode')
     plt.grid()
     plt.show()
+    plt.savefig("/Users/roy/Library/Mobile Documents/com~apple~CloudDocs/myStudy/GuidedStudy/ExpResult/CompareERandPER/increment_{0}_{1}.jpg".format(batchSize, memorysize))
+    """
 
     plt.figure(2)
     plt.plot(step[0, :], step[1, :], c='r', label='Linear Q-learning with ER')
@@ -339,14 +360,49 @@ if __name__ == "__main__":
     plt.ylabel('Total training step')
     plt.xlabel('Episode')
     plt.grid()
-    plt.show()
+    """
+    plt.savefig(
+        "/Users/roy/Library/Mobile Documents/com~apple~CloudDocs/myStudy/GuidedStudy/ExpResult/CompareERandPER/total_{0}_{1}.jpg".format(
+            batchSize, memorysize))
+    """
+    #plt.show()
 
     plt.figure(3)
     plt.plot(gd[0, :], gd[1, :], c='r', label='Linear Q-learning with ER')
+    plt.legend(loc='best')
+    plt.ylabel('Gradient')
+    plt.xlabel('Learning steps')
+    plt.ylim(0,0.08)
+    plt.grid()
+    """
+    plt.savefig(
+        "/Users/roy/Library/Mobile Documents/com~apple~CloudDocs/myStudy/GuidedStudy/ExpResult/CompareERandPER/Gradient_ER_{0}_{1}.jpg".format(
+            batchSize, memorysize))
+    """
+    #plt.show()
+
+    plt.figure(4)
     plt.plot(gd2[0, :], gd2[1, :], c='b', label='Linear Q-learning with pER')
     plt.legend(loc='best')
     plt.ylabel('Gradient')
     plt.xlabel('Learning steps')
-    #plt.ylim(0,1)
+    # plt.ylim(0,1)
     plt.grid()
+    """
+    plt.savefig(
+        "/Users/roy/Library/Mobile Documents/com~apple~CloudDocs/myStudy/GuidedStudy/ExpResult/CompareERandPER/Gradient_pER_{0}_{1}.jpg".format(
+            batchSize, memorysize))
+    """
+    #plt.show()
+
+
+    plt.figure(5)
+    plt.plot(errors[0, :], errors[1, :], c='r', label='Linear Q-learning with ER')
+    plt.legend(loc='best')
+    plt.ylabel('TD - Error')
+    plt.xlabel('Learning step')
+    plt.grid()
+    plt.savefig(
+        "/Users/roy/Library/Mobile Documents/com~apple~CloudDocs/myStudy/GuidedStudy/ExpResult/CompareERandPER/tdError_{0}_{1}.jpg".format(
+            batchSize, memorysize))
     plt.show()

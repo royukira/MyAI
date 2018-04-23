@@ -377,6 +377,136 @@ class linear_Q(QBrainSimply):
 
         return maxQ, maxA
 
+    def getIndicator(self, s, a):
+        """
+        Find the corresponding indicator from 1-hot matrix(X_S_A) according to the s and a
+        :param s: the state
+        :param a: the action
+        :return: an indicator
+        """
+        x = 0
+        if s == 0:
+            if a == 1:
+                x = self.X_S_A[:, s][:, np.newaxis]
+            if a == 2:
+                x = self.X_S_A[:, s + 1][:, np.newaxis]
+        else:
+            if a == 1:
+                x = self.X_S_A[:, s * len(self.ActionSet)][:,
+                    np.newaxis]  # the x's shape is (#states * #action+1, 1)
+            elif a == 2:
+                x = self.X_S_A[:, s * len(self.ActionSet) + 1][:,
+                    np.newaxis]  # the x's shape is (#states * #action+1, 1)
+
+        return x
+
+    def calDyn_ER(self, memory, batchSize):
+        """
+        Calculate the dynamics of the parameters of standard ER case
+        dw = m/N * alpha * integrate( td-error * gradient(Q) )
+        :param memory: the whole memory buffer
+        :param batchSize: the size of mini-batch memory
+        :return: the dynamics of parameters: dw
+        """
+        memory_size = memory.shape[0]
+        gdSum = 0
+
+        def tdTarget(self, s_, r):
+            if s_ == -1:
+                td_target = r
+            else:
+                max_Q, _ = self.easy_find_max_q(s_)
+                td_target = r + self.discountFactor * max_Q
+            return td_target
+
+        def dynFunction(self, t0):
+            transition0 = memory[t0, :]
+
+            # Transition 0
+            s0 = int(transition0[0])
+            a0 = int(transition0[1])
+            r0 = int(transition0[2])
+            s_0 = int(transition0[3])
+            x0 = self.getIndicator(s0, a0)
+
+            # Predicted Q-value
+            q0 = np.dot(np.transpose(x0), self.W)
+
+            # TD target
+            td_target0 = tdTarget(self, s_0, r0)
+
+            # TD error
+            td_error_0 = td_target0 - q0
+
+            return td_error_0
+
+        for i in range(memory_size):
+            gdSum += dynFunction(self, i)
+
+        dw = (memory_size / batchSize) * self.learnRate * gdSum
+        return dw[0][0]
+
+    def batch_linear_train(self, memory, batchSize):
+        """Training part"""
+
+        from Utility_tool.laplotter import LossAccPlotter
+        """
+        Repeat the episode until s gets to the rightmost position (i.e. get the treasure)
+        """
+        #save_path = "/Users/roy/Documents/GitHub/MyAI/Log/BCW_loss/{0}_state_LFA.png".format(self.numState)
+        """
+        plotter = LossAccPlotter(title="Loss of Linear FA with {0} states".format(self.numState),
+                                 save_to_filepath=None,
+                                 show_acc_plot=False,
+                                 show_plot_window=False,
+                                 show_regressions=False,
+                                 LearnType="LFA"
+                                 )
+        """
+
+        batchIndex = np.random.choice(memory.shape[0], size=batchSize)
+        batchSample = memory[batchIndex, :]
+        w_increment = np.zeros((self.numState * len(self.ActionSet) + 1, 1))
+        param_dynamics = 0
+        td_error = 0
+        for sample in batchSample:
+            x = 0
+            s = int(sample[0])
+            a = int(sample[1])
+            r = int(sample[2])
+            s_ = int(sample[3])
+
+            x = self.getIndicator(s, a)
+
+            q_predict = np.dot(np.transpose(x), self.W)
+
+            """
+            Calculate the target
+            """
+            if s_ == -1:
+                self.target_error = r - q_predict
+            else:
+                max_Q, max_A = self.easy_find_max_q(s_)
+                self.target_error = r + self.discountFactor * max_Q - q_predict
+            td_error += self.target_error
+            w_increment += self.target_error * x
+
+        """
+        update 
+        """
+        self.W += self.learnRate * w_increment
+
+        gradient = np.linalg.norm(w_increment) / batchSize
+        td_error = td_error / batchSize
+        print("--> Linear Q-learning's gradient: {0}\n".format(gradient))
+        print("==============================================\n")
+
+        return self.W, gradient, td_error[0][0]
+
+# ============================================ *********** =============================================================
+# ============================================ old version =============================================================
+# ============================================ *********** =============================================================
+
     def linear_train(self):
         """Training part"""
 
@@ -459,72 +589,6 @@ class linear_Q(QBrainSimply):
         print("--> Total learning step: {0}".format(total_step_count))
 
         return self.W
-
-    def batch_linear_train(self, memory, batchSize):
-        """Training part"""
-
-        from Utility_tool.laplotter import LossAccPlotter
-        """
-        Repeat the episode until s gets to the rightmost position (i.e. get the treasure)
-        """
-        #save_path = "/Users/roy/Documents/GitHub/MyAI/Log/BCW_loss/{0}_state_LFA.png".format(self.numState)
-        """
-        plotter = LossAccPlotter(title="Loss of Linear FA with {0} states".format(self.numState),
-                                 save_to_filepath=None,
-                                 show_acc_plot=False,
-                                 show_plot_window=False,
-                                 show_regressions=False,
-                                 LearnType="LFA"
-                                 )
-        """
-
-        batchIndex = np.random.choice(memory.shape[0], size=batchSize)
-        batchSample = memory[batchIndex, :]
-        w_increment = np.zeros((self.numState * len(self.ActionSet) + 1, 1))
-
-        for sample in batchSample:
-            x = 0
-            s = int(sample[0])
-            a = int(sample[1])
-            r = int(sample[2])
-            s_ = int(sample[3])
-
-            if s == 0:
-                if a == 1:
-                    x = self.X_S_A[:, s][:, np.newaxis]
-                if a == 2:
-                    x = self.X_S_A[:, s + 1][:, np.newaxis]
-            else:
-                if a == 1:
-                    x = self.X_S_A[:, s * len(self.ActionSet)][:,
-                        np.newaxis]  # the x's shape is (#states * #action+1, 1)
-                elif a == 2:
-                    x = self.X_S_A[:, s * len(self.ActionSet) + 1][:,
-                        np.newaxis]  # the x's shape is (#states * #action+1, 1)
-
-            q_predict = np.dot(np.transpose(x), self.W)
-
-            """
-            Calculate the target
-            """
-            if s_ == -1:
-                self.target_error = r - q_predict
-            else:
-                max_Q, max_A = self.easy_find_max_q(s_)
-                self.target_error = r + self.discountFactor * max_Q - q_predict
-
-            w_increment += self.target_error * x
-
-        """
-        update 
-        """
-        self.W += self.learnRate * w_increment
-
-        gradient = np.linalg.norm(w_increment) / batchSize
-        print("--> Linear Q-learning's gradient: {0}\n".format(gradient))
-        print("==============================================\n")
-
-        return self.W, gradient
 
     def test_policy(self, w, episode):
 
@@ -619,7 +683,25 @@ class linear_Q(QBrainSimply):
         actual_memory = memory[:len(check_dist),:]  # 记忆矩阵中后面全0的都不要
         return actual_memory, memory_count
 
+class Memory:
+    def __init__(self,memorysize):
+        self.ms =memorysize
+        self.memory = np.zeros((self.ms, 4))
+        self.memory_counter = 0
 
+    def store_exp(self,e):
+        """
+        Store the experience into the memory D
+        :param e: e = (s,a,r,s_)
+        :return: None
+        """
+        if not hasattr(self, 'memory_counter'):
+            self.memory_counter = 0
+
+        index = self.memory_counter % self.ms
+        self.memory[index,:] = e
+
+        self.memory_counter += 1
 
 
 class oracle_Q(linear_Q):
@@ -805,27 +887,6 @@ class oracle_Q(linear_Q):
         plotter.save_plot(save_path)
         plotter.block()
         return self.W
-
-
-class Memory:
-    def __init__(self,memorysize):
-        self.ms =memorysize
-        self.memory = np.zeros((self.ms, 4))
-        self.memory_counter = 0
-
-    def store_exp(self,e):
-        """
-        Store the experience into the memory D
-        :param e: e = (s,a,r,s_)
-        :return: None
-        """
-        if not hasattr(self, 'memory_counter'):
-            self.memory_counter = 0
-
-        index = self.memory_counter % self.ms
-        self.memory[index,:] = e
-
-        self.memory_counter += 1
 
 
 if __name__ == '__main__':
