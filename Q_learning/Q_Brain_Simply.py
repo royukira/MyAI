@@ -303,9 +303,6 @@ class QBrainSimply:
                     step_count += 1
                 interaction = update_env(S_Next, episode, step_count, self.numState)
 
-
-
-
 class linear_Q(QBrainSimply):
 
     def __init__(self, numState,ActionSet,greedy,learnRate,discountFactor,Max_episode=None):

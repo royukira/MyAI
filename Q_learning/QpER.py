@@ -208,6 +208,8 @@ class priority_train(linear_Q):
         self.W += self.learnRate * w_increment
 
         self.gradient = np.linalg.norm(w_increment) / batchSize  # gradient of one learning step
+        self.memory.batch_update(tree_idx, abs_error_)
+
         print("--> Linear Q-learning with Prioritized ER's gradient: {0}\n".format(self.gradient))
         print("==============================================\n")
 

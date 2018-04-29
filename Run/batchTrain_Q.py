@@ -329,8 +329,8 @@ if __name__ == "__main__":
     plt.show()
     """
 
-    batchSize = 50
-    memorysize = 125
+    batchSize = 60
+    memorysize = 150
     er = linear_Q(numState=N_STATES, ActionSet=ACTIONS, greedy=EPSILON, learnRate=ALPHA,
                                   discountFactor=GAMMA)
 

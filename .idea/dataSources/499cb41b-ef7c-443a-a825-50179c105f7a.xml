@@ -10,26 +10,38 @@
     <schema id="4" parent="1" name="mysql"/>
     <schema id="5" parent="1" name="performance_schema"/>
     <schema id="6" parent="1" name="sys"/>
-    <table id="7" parent="2" name="PRIORITY"/>
-    <column id="8" parent="7" name="STATE_">
+    <schema id="7" parent="1" name="priority"/>
+    <table id="8" parent="2" name="PRIORITY"/>
+    <column id="9" parent="8" name="ID">
       <Position>1</Position>
-      <DataType>int(5)|0</DataType>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="9" parent="7" name="ACTION_">
+    <column id="10" parent="8" name="STATE_">
       <Position>2</Position>
-      <DataType>int(5)|0</DataType>
+      <DataType>smallint(5)|0</DataType>
     </column>
-    <column id="10" parent="7" name="REWARD_">
+    <column id="11" parent="8" name="ACTION_">
       <Position>3</Position>
-      <DataType>int(5)|0</DataType>
+      <DataType>smallint(5)|0</DataType>
     </column>
-    <column id="11" parent="7" name="STATE_NEXT">
+    <column id="12" parent="8" name="REWARD_">
       <Position>4</Position>
-      <DataType>int(5)|0</DataType>
+      <DataType>smallint(5)|0</DataType>
     </column>
-    <column id="12" parent="7" name="ERROR">
+    <column id="13" parent="8" name="STATE_NEXT">
       <Position>5</Position>
+      <DataType>smallint(5)|0</DataType>
+    </column>
+    <column id="14" parent="8" name="PRIORITY">
+      <Position>6</Position>
       <DataType>float|0</DataType>
     </column>
+    <key id="15" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>
