@@ -38,7 +38,15 @@
       <Position>6</Position>
       <DataType>float|0</DataType>
     </column>
-    <key id="15" parent="8" name="PRIMARY">
+    <column id="15" parent="8" name="TIME_STEP">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="16" parent="8" name="IDX">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="17" parent="8" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>

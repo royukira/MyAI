@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c060b3e-e042-461f-a910-3c16a2c6ee53" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Memory/SumTreeV2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Memory/TimeTag.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Memory/sumTreeV2_1.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/oraSumTree.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/timeChain_test.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Run/run_apER.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/499cb41b-ef7c-443a-a825-50179c105f7a.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/499cb41b-ef7c-443a-a825-50179c105f7a.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py" afterPath="$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Q_learning/QpER.py" afterPath="$PROJECT_DIR$/Q_learning/QpER.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Memory/TimeTag.py" afterPath="$PROJECT_DIR$/Memory/TimeTag.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Memory/oraSumTree.py" afterPath="$PROJECT_DIR$/Memory/oraSumTree.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Q_learning/apER.py" afterPath="$PROJECT_DIR$/Q_learning/apER.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Run/batchTrain_Q.py" afterPath="$PROJECT_DIR$/Run/batchTrain_Q.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/sumTree_test.py" afterPath="$PROJECT_DIR$/test/sumTree_test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/oraSumTree.py" afterPath="$PROJECT_DIR$/test/oraSumTree.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,7 +20,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/MyAI$EasyPlot.coverage" NAME="EasyPlot Coverage Results" MODIFIED="1519228095366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Utility_tool" />
     <SUITE FILE_PATH="coverage/MyAI$run_linearSearch.coverage" NAME="run_linearSearch Coverage Results" MODIFIED="1524374482905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Run" />
-    <SUITE FILE_PATH="coverage/MyAI$timeChain_test.coverage" NAME="timeChain_test Coverage Results" MODIFIED="1525005680382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/MyAI$timeChain_test.coverage" NAME="timeChain_test Coverage Results" MODIFIED="1525074983589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/MyAI$Run_DQN_Maze.coverage" NAME="Run_DQN_Maze Coverage Results" MODIFIED="1519792033413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Run" />
     <SUITE FILE_PATH="coverage/MyAI$collect_memroy.coverage" NAME="collect_memroy Coverage Results" MODIFIED="1520882253947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Run" />
     <SUITE FILE_PATH="coverage/MyAI$Run_Q_Maze.coverage" NAME="Run_Q_Maze Coverage Results" MODIFIED="1517998297436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Run" />
@@ -38,10 +33,11 @@
     <SUITE FILE_PATH="coverage/MyAI$SumTreeV2.coverage" NAME="SumTreeV2 Coverage Results" MODIFIED="1524944912161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Memory" />
     <SUITE FILE_PATH="coverage/MyAI$DQN.coverage" NAME="DQN Coverage Results" MODIFIED="1517909291463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN" />
     <SUITE FILE_PATH="coverage/MyAI$batchTrain_Q.coverage" NAME="batchTrain_Q Coverage Results" MODIFIED="1524922418635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Run" />
+    <SUITE FILE_PATH="coverage/MyAI$run_apER.coverage" NAME="run_apER Coverage Results" MODIFIED="1525038166463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Run" />
     <SUITE FILE_PATH="coverage/MyAI$QForget.coverage" NAME="QForget Coverage Results" MODIFIED="1520875902199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Q_learning" />
     <SUITE FILE_PATH="coverage/MyAI$test.coverage" NAME="test Coverage Results" MODIFIED="1516777796446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyAI$Maze.coverage" NAME="Maze Coverage Results" MODIFIED="1516781541291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/training_env" />
-    <SUITE FILE_PATH="coverage/MyAI$oraSumTree.coverage" NAME="oraSumTree Coverage Results" MODIFIED="1524995360373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/MyAI$oraSumTree.coverage" NAME="oraSumTree Coverage Results" MODIFIED="1525030220536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Memory" />
     <SUITE FILE_PATH="coverage/MyAI$cifar10_train.coverage" NAME="cifar10_train Coverage Results" MODIFIED="1524220422925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Library/Mobile Documents/com~apple~CloudDocs/myStudy/Cloud/project/models/tutorials/image/cifar10" />
     <SUITE FILE_PATH="coverage/MyAI$sumTree_test.coverage" NAME="sumTree_test Coverage Results" MODIFIED="1524949031131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
   </component>
@@ -58,55 +54,18 @@
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
         <item name="BCW@localhost" type="e3449647:DbNodeDescriptor" />
       </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="BCW@localhost" type="e3449647:DbNodeDescriptor" />
-        <item name="BCW" type="e3449647:DbNodeDescriptor" />
-      </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="BCW@localhost" type="e3449647:DbNodeDescriptor" />
-        <item name="BCW" type="e3449647:DbNodeDescriptor" />
-        <item name="PRIORITY" type="e3449647:DbNodeDescriptor" />
-      </path>
     </expand>
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="MyAI" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Memory.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Memory/Memory.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="39" column="32" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="39" selection-end-column="32" />
-              <folding>
-                <element signature="e#1277#3837#0" expanded="false" />
-                <element signature="e#3909#5750#0" expanded="false" />
-                <element signature="e#4395#4424#0" expanded="false" />
-                <element signature="e#4467#4650#0" expanded="false" />
-                <element signature="e#4685#5440#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="batchTrain_Q.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Run/batchTrain_Q.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-              <folding>
-                <element signature="e#974#3550#0" expanded="false" />
-                <element signature="e#3595#4087#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="sumTree_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/sumTree_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1512">
+            <state relative-caret-position="1050">
               <caret line="70" column="34" lean-forward="false" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
               <folding>
                 <element signature="e#5908#8966#0" expanded="false" />
@@ -117,11 +76,48 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="batchTrain_Q.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Run/batchTrain_Q.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4125">
+              <caret line="360" column="25" lean-forward="false" selection-start-line="360" selection-start-column="25" selection-end-line="360" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+                <element signature="e#974#3550#0" expanded="false" />
+                <element signature="e#3595#4087#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TimeTag.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Memory/TimeTag.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4515">
+              <caret line="371" column="0" lean-forward="false" selection-start-line="371" selection-start-column="0" selection-end-line="371" selection-end-column="0" />
+              <folding>
+                <element signature="e#78#96#0" expanded="true" />
+                <element signature="e#438#454#0" expanded="false" />
+                <element signature="e#489#509#0" expanded="false" />
+                <element signature="e#558#716#0" expanded="false" />
+                <element signature="e#1257#1446#0" expanded="false" />
+                <element signature="e#1501#1814#0" expanded="false" />
+                <element signature="e#2097#2284#0" expanded="false" />
+                <element signature="e#5583#5922#0" expanded="false" />
+                <element signature="e#7486#7607#0" expanded="false" />
+                <element signature="e#8768#8804#0" expanded="false" />
+                <element signature="e#9263#10019#0" expanded="false" />
+                <element signature="e#11774#11944#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="timeChain_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/timeChain_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="40" column="33" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="40" selection-end-column="33" />
+            <state relative-caret-position="660">
+              <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding>
                 <element signature="e#1#19#0" expanded="true" />
                 <element signature="e#223#327#0" expanded="false" />
@@ -134,6 +130,7 @@
                 <element signature="e#1865#2052#0" expanded="false" />
                 <element signature="e#2109#2898#0" expanded="false" />
                 <element signature="e#2928#4604#0" expanded="false" />
+                <element signature="e#4636#7177#0" expanded="false" />
                 <element signature="e#8426#8462#0" expanded="false" />
                 <element signature="e#8517#8800#0" expanded="false" />
                 <element signature="e#8852#9608#0" expanded="false" />
@@ -144,39 +141,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TimeTag.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Memory/TimeTag.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2609">
-              <caret line="48" column="26" lean-forward="false" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
-              <folding>
-                <element signature="e#78#96#0" expanded="true" />
-                <element signature="e#438#454#0" expanded="false" />
-                <element signature="e#489#509#0" expanded="false" />
-                <element signature="e#558#716#0" expanded="false" />
-                <element signature="e#1195#1384#0" expanded="false" />
-                <element signature="e#1439#1711#0" expanded="false" />
-                <element signature="e#1754#1860#0" expanded="false" />
-                <element signature="e#1894#2081#0" expanded="false" />
-                <element signature="e#5380#5719#0" expanded="false" />
-                <element signature="e#7283#7404#0" expanded="false" />
-                <element signature="e#7457#8406#0" expanded="false" />
-                <element signature="e#8446#8482#0" expanded="false" />
-                <element signature="e#8537#8820#0" expanded="false" />
-                <element signature="e#8872#9628#0" expanded="false" />
-                <element signature="e#9679#10345#0" expanded="false" />
-                <element signature="e#10385#11045#0" expanded="false" />
-                <element signature="e#11328#11498#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Q_Brain_Simply.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="933">
-              <caret line="682" column="0" lean-forward="false" selection-start-line="682" selection-start-column="0" selection-end-line="682" selection-end-column="0" />
+            <state relative-caret-position="1845">
+              <caret line="682" column="6" lean-forward="false" selection-start-line="682" selection-start-column="6" selection-end-line="682" selection-end-column="6" />
               <folding>
                 <element signature="e#118#136#0" expanded="true" />
                 <element signature="e#253#11896#0" expanded="false" />
@@ -215,8 +184,8 @@
       <file leaf-file-name="QpER.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Q_learning/QpER.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1041">
-              <caret line="161" column="73" lean-forward="false" selection-start-line="161" selection-start-column="8" selection-end-line="161" selection-end-column="73" />
+            <state relative-caret-position="3195">
+              <caret line="215" column="36" lean-forward="false" selection-start-line="215" selection-start-column="36" selection-end-line="215" selection-end-column="36" />
               <folding>
                 <element signature="e#182#200#0" expanded="true" />
               </folding>
@@ -224,87 +193,77 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="apER.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PRIORITY" pinned="false" current-in-tab="false">
+        <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="apER.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Q_learning/apER.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="570">
+              <caret line="38" column="47" lean-forward="false" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
               <folding>
                 <element signature="e#81#99#0" expanded="true" />
-                <element signature="e#349#2298#0" expanded="false" />
-                <element signature="e#2352#3311#0" expanded="false" />
-                <element signature="e#3346#4270#0" expanded="false" />
-                <element signature="e#4314#4692#0" expanded="false" />
-                <element signature="e#4746#4990#0" expanded="false" />
-                <element signature="e#5026#5121#0" expanded="false" />
-                <element signature="e#5172#5369#0" expanded="false" />
-                <element signature="e#5420#5714#0" expanded="false" />
-                <element signature="e#5764#5996#0" expanded="false" />
-                <element signature="e#6590#7977#0" expanded="false" />
+                <element signature="e#4751#5216#0" expanded="false" />
+                <element signature="e#5891#6147#0" expanded="false" />
+                <element signature="e#6198#6492#0" expanded="false" />
+                <element signature="e#6542#6774#0" expanded="false" />
+                <element signature="e#6800#7365#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run_apER.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Run/run_apER.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="810">
+              <caret line="54" column="24" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#27#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="oraSumTree.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/oraSumTree.py">
+        <entry file="file://$PROJECT_DIR$/Memory/oraSumTree.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="266" column="0" lean-forward="false" selection-start-line="266" selection-start-column="0" selection-end-line="358" selection-end-column="30" />
+            <state relative-caret-position="3180">
+              <caret line="236" column="50" lean-forward="false" selection-start-line="236" selection-start-column="50" selection-end-line="236" selection-end-column="50" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#103#169#0" expanded="false" />
-                <element signature="e#205#279#0" expanded="false" />
-                <element signature="e#335#871#0" expanded="false" />
-                <element signature="e#936#1973#0" expanded="false" />
-                <element signature="e#2020#2243#0" expanded="false" />
-                <element signature="e#2311#3048#0" expanded="false" />
-                <element signature="e#3113#3441#0" expanded="false" />
-                <element signature="e#3489#3756#0" expanded="false" />
-                <element signature="e#3804#4071#0" expanded="false" />
-                <element signature="e#4124#4383#0" expanded="false" />
-                <element signature="e#4434#4680#0" expanded="false" />
-                <element signature="e#4511#4633#0" expanded="false" />
-                <element signature="e#4739#5044#0" expanded="false" />
-                <element signature="e#5088#5338#0" expanded="false" />
-                <element signature="e#5400#5572#0" expanded="false" />
-                <element signature="e#5615#5658#0" expanded="false" />
-                <element signature="e#6112#6146#0" expanded="false" />
-                <element signature="e#6192#6266#0" expanded="false" />
-                <element signature="e#6304#6346#0" expanded="false" />
-                <element signature="e#6386#6808#0" expanded="false" />
-                <element signature="e#6858#7037#0" expanded="false" />
-                <element signature="e#7074#8178#0" expanded="false" />
-                <element signature="e#8211#8349#0" expanded="false" />
-                <element signature="e#8385#8458#0" expanded="false" />
-                <element signature="e#8492#12502#0" expanded="false" />
-                <element signature="e#12559#13024#0" expanded="false" />
-                <element signature="e#13030#13448#1" expanded="false" />
-                <element signature="e#13453#13775#1" expanded="false" />
-                <element signature="e#13780#13889#1" expanded="false" />
-                <element signature="e#13894#14029#1" expanded="false" />
-                <element signature="e#14034#14208#1" expanded="false" />
-                <element signature="e#14213#14376#1" expanded="false" />
-                <marker date="1524998184759" expanded="true" signature="342:608" ph="CREATE TABLE... missing_value" />
-                <marker date="1524998184759" expanded="true" signature="342:624" ph="CREATE TABLE... missing_value" />
-                <marker date="1524998184759" expanded="true" signature="1341:1618" ph="INSERT INTO missing_value... " />
-                <marker date="1524998184759" expanded="true" signature="2027:2052" ph="DELETE FROM " />
-                <marker date="1524998184759" expanded="true" signature="2443:2761" ph="UPDATE missi... " />
-                <marker date="1524998184759" expanded="true" signature="3123:3159" ph="UPDATE missi... " />
-                <marker date="1524998184759" expanded="true" signature="3123:3163" ph="UPDATE missi... " />
-                <marker date="1524998184759" expanded="true" signature="3123:3164" ph="UPDATE missi... " />
-                <marker date="1524998184759" expanded="true" signature="3496:3522" ph="SELECT SUM(P... missing_value" />
-                <marker date="1524998184759" expanded="true" signature="3496:3525" ph="SELECT SUM(P... " />
-                <marker date="1524998184759" expanded="true" signature="3811:3837" ph="SELECT MAX(P... missing_value" />
-                <marker date="1524998184759" expanded="true" signature="3811:3840" ph="SELECT MAX(P... " />
-                <marker date="1524998184759" expanded="true" signature="4131:4156" ph="SELECT PRIOR... missing_value" />
-                <marker date="1524998184759" expanded="true" signature="4131:4159" ph="SELECT PRIOR... " />
-                <marker date="1524998184759" expanded="true" signature="4441:4462" ph="SELECT COUNT... missing_value" />
-                <marker date="1524998184759" expanded="true" signature="4441:4465" ph="SELECT COUNT... " />
-                <marker date="1524998184759" expanded="true" signature="4746:4810" ph="SELECT STATE... missing_value" />
-                <marker date="1524998184759" expanded="true" signature="4746:4813" ph="SELECT STATE... ID" />
-                <marker date="1524998184759" expanded="true" signature="5095:5115" ph="SELECT MIN(I... missing_value" />
-                <marker date="1524998184759" expanded="true" signature="5095:5118" ph="SELECT MIN(I... " />
+                <element signature="e#6332#6504#0" expanded="false" />
+                <element signature="e#6547#6590#0" expanded="false" />
+                <element signature="e#6643#7072#0" expanded="false" />
+                <element signature="e#7108#7142#0" expanded="false" />
+                <element signature="e#7189#7237#0" expanded="false" />
+                <element signature="e#7283#7357#0" expanded="false" />
+                <element signature="e#7408#7456#0" expanded="false" />
+                <element signature="e#7494#7536#0" expanded="false" />
+                <element signature="e#7576#7998#0" expanded="false" />
+                <element signature="e#8048#8227#0" expanded="false" />
+                <element signature="e#8264#9368#0" expanded="false" />
+                <element signature="e#9401#9539#0" expanded="false" />
+                <element signature="e#9575#9648#0" expanded="false" />
+                <element signature="e#9682#12393#0" expanded="false" />
+                <marker date="1525034375480" expanded="true" signature="342:681" ph="CREATE TABLE... missing_value" />
+                <marker date="1525034375480" expanded="true" signature="1460:1823" ph="INSERT INTO missing_value... " />
+                <marker date="1525034375480" expanded="true" signature="2238:2263" ph="DELETE FROM " />
+                <marker date="1525034375480" expanded="true" signature="2524:2568" ph="DELETE FROM " />
+                <marker date="1525034375480" expanded="true" signature="3030:3269" ph="UPDATE missi... " />
+                <marker date="1525034375480" expanded="true" signature="3639:3680" ph="UPDATE missi... " />
+                <marker date="1525034375480" expanded="true" signature="4028:4079" ph="UPDATE missi... " />
+                <marker date="1525034375480" expanded="true" signature="4412:4438" ph="SELECT SUM(P... missing_value" />
+                <marker date="1525034375480" expanded="true" signature="4727:4753" ph="SELECT MAX(P... missing_value" />
+                <marker date="1525034375480" expanded="true" signature="5047:5072" ph="SELECT ID, P... missing_value" />
+                <marker date="1525034375480" expanded="true" signature="5357:5378" ph="SELECT COUNT... missing_value" />
+                <marker date="1525034375480" expanded="true" signature="5662:5742" ph="SELECT STATE... missing_value" />
+                <marker date="1525034375480" expanded="true" signature="6027:6047" ph="SELECT MIN(I... missing_value" />
               </folding>
             </state>
           </provider>
@@ -341,6 +300,7 @@
       <find>batch_update</find>
       <find>last_capacity</find>
       <find>tree</find>
+      <find>IDX</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -387,11 +347,13 @@
         <option value="$PROJECT_DIR$/Memory/sumTreeV2_1.py" />
         <option value="$PROJECT_DIR$/Memory/SumTreeV2.py" />
         <option value="$PROJECT_DIR$/test/sumTree_test.py" />
-        <option value="$PROJECT_DIR$/test/oraSumTree.py" />
         <option value="$PROJECT_DIR$/test/timeChain_test.py" />
-        <option value="$PROJECT_DIR$/Memory/TimeTag.py" />
-        <option value="$PROJECT_DIR$/Q_learning/apER.py" />
         <option value="$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py" />
+        <option value="$PROJECT_DIR$/test/oraSumTree.py" />
+        <option value="$PROJECT_DIR$/Memory/TimeTag.py" />
+        <option value="$PROJECT_DIR$/Memory/oraSumTree.py" />
+        <option value="$PROJECT_DIR$/Run/run_apER.py" />
+        <option value="$PROJECT_DIR$/Q_learning/apER.py" />
       </list>
     </option>
   </component>
@@ -424,7 +386,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -435,13 +397,18 @@
             <path>
               <item name="MyAI" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyAI" type="462c0819:PsiDirectoryNode" />
-              <item name="Memory" type="462c0819:PsiDirectoryNode" />
+              <item name="Q_learning" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyAI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyAI" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -472,7 +439,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.timeChain_test">
-    <configuration name="SumTreeV2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="oraSumTree" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -485,43 +452,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MyAI" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Memory/SumTreeV2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Memory/oraSumTree.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="oraSumTree" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="run_apER" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Run" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MyAI" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/oraSumTree.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="sumTree_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="MyAI" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/sumTree_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Run/run_apER.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -544,18 +493,16 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Python.SumTreeV2" />
-      <item index="1" class="java.lang.String" itemvalue="Python.sumTree_test" />
-      <item index="2" class="java.lang.String" itemvalue="Python.oraSumTree" />
-      <item index="3" class="java.lang.String" itemvalue="Python.timeChain_test" />
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Python.oraSumTree" />
+      <item index="1" class="java.lang.String" itemvalue="Python.run_apER" />
+      <item index="2" class="java.lang.String" itemvalue="Python.timeChain_test" />
     </list>
     <recent_temporary>
-      <list size="4">
+      <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Python.timeChain_test" />
-        <item index="1" class="java.lang.String" itemvalue="Python.oraSumTree" />
-        <item index="2" class="java.lang.String" itemvalue="Python.sumTree_test" />
-        <item index="3" class="java.lang.String" itemvalue="Python.SumTreeV2" />
+        <item index="1" class="java.lang.String" itemvalue="Python.run_apER" />
+        <item index="2" class="java.lang.String" itemvalue="Python.oraSumTree" />
       </list>
     </recent_temporary>
   </component>
@@ -585,25 +532,26 @@
     <frame x="0" y="22" width="1440" height="878" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1881259" sideWeight="0.49042144" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39846742" sideWeight="0.51287556" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16237482" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2899106" sideWeight="0.48640916" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33461046" sideWeight="0.49284694" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3256705" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18168813" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16237482" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46998724" sideWeight="0.48712447" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3256705" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18168813" sideWeight="0.5095785" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.96168584" sideWeight="0.48712447" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55293274" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1098,9 +1046,129 @@
           <option name="timeStamp" value="590" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py</url>
-          <line>682</line>
-          <option name="timeStamp" value="592" />
+          <url>file://$PROJECT_DIR$/Run/run_apER.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="603" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Q_learning/apER.py</url>
+          <line>147</line>
+          <option name="timeStamp" value="609" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Q_learning/apER.py</url>
+          <line>149</line>
+          <option name="timeStamp" value="610" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Q_learning/apER.py</url>
+          <line>154</line>
+          <option name="timeStamp" value="633" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Q_learning/apER.py</url>
+          <line>155</line>
+          <option name="timeStamp" value="634" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
+          <line>384</line>
+          <option name="timeStamp" value="639" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
+          <line>395</line>
+          <option name="timeStamp" value="640" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
+          <line>397</line>
+          <option name="timeStamp" value="641" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
+          <line>398</line>
+          <option name="timeStamp" value="642" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
+          <line>400</line>
+          <option name="timeStamp" value="643" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
+          <line>402</line>
+          <option name="timeStamp" value="644" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
+          <line>404</line>
+          <option name="timeStamp" value="645" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
+          <line>405</line>
+          <option name="timeStamp" value="646" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
+          <line>407</line>
+          <option name="timeStamp" value="647" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
+          <line>117</line>
+          <option name="timeStamp" value="648" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
+          <line>371</line>
+          <option name="timeStamp" value="649" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Q_learning/apER.py</url>
+          <line>314</line>
+          <option name="timeStamp" value="659" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Q_learning/apER.py</url>
+          <line>327</line>
+          <option name="timeStamp" value="661" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Q_learning/apER.py</url>
+          <line>336</line>
+          <option name="timeStamp" value="662" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Q_learning/apER.py</url>
+          <line>270</line>
+          <option name="timeStamp" value="663" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Q_learning/apER.py</url>
+          <line>130</line>
+          <option name="timeStamp" value="664" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Q_learning/apER.py</url>
+          <line>333</line>
+          <option name="timeStamp" value="665" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Run/run_apER.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="666" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Run/run_apER.py</url>
+          <line>26</line>
+          <option name="timeStamp" value="668" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Run/run_apER.py</url>
+          <line>54</line>
+          <option name="timeStamp" value="669" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -1113,7 +1181,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="593" />
+      <option name="time" value="670" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1195,12 +1263,215 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Q_learning/QpER.py">
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Run/run_apER.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1041">
-          <caret line="161" column="73" lean-forward="false" selection-start-line="161" selection-start-column="8" selection-end-line="161" selection-end-column="73" />
+        <state relative-caret-position="810">
+          <caret line="54" column="24" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
           <folding>
-            <element signature="e#182#200#0" expanded="true" />
+            <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1216,278 +1487,13 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/oraSumTree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="266" column="0" lean-forward="false" selection-start-line="266" selection-start-column="0" selection-end-line="358" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#103#169#0" expanded="false" />
-            <element signature="e#205#279#0" expanded="false" />
-            <element signature="e#335#871#0" expanded="false" />
-            <element signature="e#936#1973#0" expanded="false" />
-            <element signature="e#2020#2243#0" expanded="false" />
-            <element signature="e#2311#3048#0" expanded="false" />
-            <element signature="e#3113#3441#0" expanded="false" />
-            <element signature="e#3489#3756#0" expanded="false" />
-            <element signature="e#3804#4071#0" expanded="false" />
-            <element signature="e#4124#4383#0" expanded="false" />
-            <element signature="e#4434#4680#0" expanded="false" />
-            <element signature="e#4511#4633#0" expanded="false" />
-            <element signature="e#4739#5044#0" expanded="false" />
-            <element signature="e#5088#5338#0" expanded="false" />
-            <element signature="e#5400#5572#0" expanded="false" />
-            <element signature="e#5615#5658#0" expanded="false" />
-            <element signature="e#6112#6146#0" expanded="false" />
-            <element signature="e#6192#6266#0" expanded="false" />
-            <element signature="e#6304#6346#0" expanded="false" />
-            <element signature="e#6386#6808#0" expanded="false" />
-            <element signature="e#6858#7037#0" expanded="false" />
-            <element signature="e#7074#8178#0" expanded="false" />
-            <element signature="e#8211#8349#0" expanded="false" />
-            <element signature="e#8385#8458#0" expanded="false" />
-            <element signature="e#8492#12502#0" expanded="false" />
-            <element signature="e#12559#13024#0" expanded="false" />
-            <element signature="e#13030#13448#1" expanded="false" />
-            <element signature="e#13453#13775#1" expanded="false" />
-            <element signature="e#13780#13889#1" expanded="false" />
-            <element signature="e#13894#14029#1" expanded="false" />
-            <element signature="e#14034#14208#1" expanded="false" />
-            <element signature="e#14213#14376#1" expanded="false" />
-            <marker date="1524998184759" expanded="true" signature="342:608" ph="CREATE TABLE... missing_value" />
-            <marker date="1524998184759" expanded="true" signature="342:624" ph="CREATE TABLE... missing_value" />
-            <marker date="1524998184759" expanded="true" signature="1341:1618" ph="INSERT INTO missing_value... " />
-            <marker date="1524998184759" expanded="true" signature="2027:2052" ph="DELETE FROM " />
-            <marker date="1524998184759" expanded="true" signature="2443:2761" ph="UPDATE missi... " />
-            <marker date="1524998184759" expanded="true" signature="3123:3159" ph="UPDATE missi... " />
-            <marker date="1524998184759" expanded="true" signature="3123:3163" ph="UPDATE missi... " />
-            <marker date="1524998184759" expanded="true" signature="3123:3164" ph="UPDATE missi... " />
-            <marker date="1524998184759" expanded="true" signature="3496:3522" ph="SELECT SUM(P... missing_value" />
-            <marker date="1524998184759" expanded="true" signature="3496:3525" ph="SELECT SUM(P... " />
-            <marker date="1524998184759" expanded="true" signature="3811:3837" ph="SELECT MAX(P... missing_value" />
-            <marker date="1524998184759" expanded="true" signature="3811:3840" ph="SELECT MAX(P... " />
-            <marker date="1524998184759" expanded="true" signature="4131:4156" ph="SELECT PRIOR... missing_value" />
-            <marker date="1524998184759" expanded="true" signature="4131:4159" ph="SELECT PRIOR... " />
-            <marker date="1524998184759" expanded="true" signature="4441:4462" ph="SELECT COUNT... missing_value" />
-            <marker date="1524998184759" expanded="true" signature="4441:4465" ph="SELECT COUNT... " />
-            <marker date="1524998184759" expanded="true" signature="4746:4810" ph="SELECT STATE... missing_value" />
-            <marker date="1524998184759" expanded="true" signature="4746:4813" ph="SELECT STATE... ID" />
-            <marker date="1524998184759" expanded="true" signature="5095:5115" ph="SELECT MIN(I... missing_value" />
-            <marker date="1524998184759" expanded="true" signature="5095:5118" ph="SELECT MIN(I... " />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/timeChain_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="40" column="33" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="40" selection-end-column="33" />
+        <state relative-caret-position="660">
+          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding>
             <element signature="e#1#19#0" expanded="true" />
             <element signature="e#223#327#0" expanded="false" />
@@ -1500,6 +1506,7 @@
             <element signature="e#1865#2052#0" expanded="false" />
             <element signature="e#2109#2898#0" expanded="false" />
             <element signature="e#2928#4604#0" expanded="false" />
+            <element signature="e#4636#7177#0" expanded="false" />
             <element signature="e#8426#8462#0" expanded="false" />
             <element signature="e#8517#8800#0" expanded="false" />
             <element signature="e#8852#9608#0" expanded="false" />
@@ -1509,73 +1516,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Memory/TimeTag.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2609">
-          <caret line="48" column="26" lean-forward="false" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
-          <folding>
-            <element signature="e#78#96#0" expanded="true" />
-            <element signature="e#438#454#0" expanded="false" />
-            <element signature="e#489#509#0" expanded="false" />
-            <element signature="e#558#716#0" expanded="false" />
-            <element signature="e#1195#1384#0" expanded="false" />
-            <element signature="e#1439#1711#0" expanded="false" />
-            <element signature="e#1754#1860#0" expanded="false" />
-            <element signature="e#1894#2081#0" expanded="false" />
-            <element signature="e#5380#5719#0" expanded="false" />
-            <element signature="e#7283#7404#0" expanded="false" />
-            <element signature="e#7457#8406#0" expanded="false" />
-            <element signature="e#8446#8482#0" expanded="false" />
-            <element signature="e#8537#8820#0" expanded="false" />
-            <element signature="e#8872#9628#0" expanded="false" />
-            <element signature="e#9679#10345#0" expanded="false" />
-            <element signature="e#10385#11045#0" expanded="false" />
-            <element signature="e#11328#11498#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/sumTree_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1512">
-          <caret line="70" column="34" lean-forward="false" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
-          <folding>
-            <element signature="e#5908#8966#0" expanded="false" />
-            <element signature="e#9003#10418#0" expanded="false" />
-            <marker date="1524949030735" expanded="false" signature="10884:12836" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Memory/Memory.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="39" column="32" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="39" selection-end-column="32" />
-          <folding>
-            <element signature="e#1277#3837#0" expanded="false" />
-            <element signature="e#3909#5750#0" expanded="false" />
-            <element signature="e#4395#4424#0" expanded="false" />
-            <element signature="e#4467#4650#0" expanded="false" />
-            <element signature="e#4685#5440#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Run/batchTrain_Q.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-          <folding>
-            <element signature="e#974#3550#0" expanded="false" />
-            <element signature="e#3595#4087#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="933">
-          <caret line="682" column="0" lean-forward="false" selection-start-line="682" selection-start-column="0" selection-end-line="682" selection-end-column="0" />
+        <state relative-caret-position="1845">
+          <caret line="682" column="6" lean-forward="false" selection-start-line="682" selection-start-column="6" selection-end-line="682" selection-end-column="6" />
           <folding>
             <element signature="e#118#136#0" expanded="true" />
             <element signature="e#253#11896#0" expanded="false" />
@@ -1610,22 +1554,103 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Run/batchTrain_Q.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4125">
+          <caret line="360" column="25" lean-forward="false" selection-start-line="360" selection-start-column="25" selection-end-line="360" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+            <element signature="e#974#3550#0" expanded="false" />
+            <element signature="e#3595#4087#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Memory/oraSumTree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3180">
+          <caret line="236" column="50" lean-forward="false" selection-start-line="236" selection-start-column="50" selection-end-line="236" selection-end-column="50" />
+          <folding>
+            <element signature="e#6332#6504#0" expanded="false" />
+            <element signature="e#6547#6590#0" expanded="false" />
+            <element signature="e#6643#7072#0" expanded="false" />
+            <element signature="e#7108#7142#0" expanded="false" />
+            <element signature="e#7189#7237#0" expanded="false" />
+            <element signature="e#7283#7357#0" expanded="false" />
+            <element signature="e#7408#7456#0" expanded="false" />
+            <element signature="e#7494#7536#0" expanded="false" />
+            <element signature="e#7576#7998#0" expanded="false" />
+            <element signature="e#8048#8227#0" expanded="false" />
+            <element signature="e#8264#9368#0" expanded="false" />
+            <element signature="e#9401#9539#0" expanded="false" />
+            <element signature="e#9575#9648#0" expanded="false" />
+            <element signature="e#9682#12393#0" expanded="false" />
+            <marker date="1525034375480" expanded="true" signature="342:681" ph="CREATE TABLE... missing_value" />
+            <marker date="1525034375480" expanded="true" signature="1460:1823" ph="INSERT INTO missing_value... " />
+            <marker date="1525034375480" expanded="true" signature="2238:2263" ph="DELETE FROM " />
+            <marker date="1525034375480" expanded="true" signature="2524:2568" ph="DELETE FROM " />
+            <marker date="1525034375480" expanded="true" signature="3030:3269" ph="UPDATE missi... " />
+            <marker date="1525034375480" expanded="true" signature="3639:3680" ph="UPDATE missi... " />
+            <marker date="1525034375480" expanded="true" signature="4028:4079" ph="UPDATE missi... " />
+            <marker date="1525034375480" expanded="true" signature="4412:4438" ph="SELECT SUM(P... missing_value" />
+            <marker date="1525034375480" expanded="true" signature="4727:4753" ph="SELECT MAX(P... missing_value" />
+            <marker date="1525034375480" expanded="true" signature="5047:5072" ph="SELECT ID, P... missing_value" />
+            <marker date="1525034375480" expanded="true" signature="5357:5378" ph="SELECT COUNT... missing_value" />
+            <marker date="1525034375480" expanded="true" signature="5662:5742" ph="SELECT STATE... missing_value" />
+            <marker date="1525034375480" expanded="true" signature="6027:6047" ph="SELECT MIN(I... missing_value" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Q_learning/apER.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="570">
+          <caret line="38" column="47" lean-forward="false" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
           <folding>
             <element signature="e#81#99#0" expanded="true" />
-            <element signature="e#349#2298#0" expanded="false" />
-            <element signature="e#2352#3311#0" expanded="false" />
-            <element signature="e#3346#4270#0" expanded="false" />
-            <element signature="e#4314#4692#0" expanded="false" />
-            <element signature="e#4746#4990#0" expanded="false" />
-            <element signature="e#5026#5121#0" expanded="false" />
-            <element signature="e#5172#5369#0" expanded="false" />
-            <element signature="e#5420#5714#0" expanded="false" />
-            <element signature="e#5764#5996#0" expanded="false" />
-            <element signature="e#6590#7977#0" expanded="false" />
+            <element signature="e#4751#5216#0" expanded="false" />
+            <element signature="e#5891#6147#0" expanded="false" />
+            <element signature="e#6198#6492#0" expanded="false" />
+            <element signature="e#6542#6774#0" expanded="false" />
+            <element signature="e#6800#7365#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Q_learning/QpER.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3195">
+          <caret line="215" column="36" lean-forward="false" selection-start-line="215" selection-start-column="36" selection-end-line="215" selection-end-column="36" />
+          <folding>
+            <element signature="e#182#200#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Memory/TimeTag.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4515">
+          <caret line="371" column="0" lean-forward="false" selection-start-line="371" selection-start-column="0" selection-end-line="371" selection-end-column="0" />
+          <folding>
+            <element signature="e#78#96#0" expanded="true" />
+            <element signature="e#438#454#0" expanded="false" />
+            <element signature="e#489#509#0" expanded="false" />
+            <element signature="e#558#716#0" expanded="false" />
+            <element signature="e#1257#1446#0" expanded="false" />
+            <element signature="e#1501#1814#0" expanded="false" />
+            <element signature="e#2097#2284#0" expanded="false" />
+            <element signature="e#5583#5922#0" expanded="false" />
+            <element signature="e#7486#7607#0" expanded="false" />
+            <element signature="e#8768#8804#0" expanded="false" />
+            <element signature="e#9263#10019#0" expanded="false" />
+            <element signature="e#11774#11944#0" expanded="false" />
           </folding>
         </state>
       </provider>

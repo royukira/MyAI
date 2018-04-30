@@ -42,11 +42,14 @@ class TimeNode(object):
         :param k:
         :return: a list of transitions
         """
-        transitions = []
-        for i in range(k):
-            t = self.transitions.pop(random.randrange(len(self.transitions)))  # the sampled transitions must be pop out
-            transitions.append(t)
-        return transitions
+        tmp = []
+        for i in self.transitions:
+            if i is not None:
+                tmp.append(i)
+        t = random.sample(tmp, k)
+        # do not need to be pop; since do not do any update for them
+        # just sample for calculating the k-oldest target error
+        return t
 
     def delete_transition(self, idx):
         """
@@ -65,7 +68,8 @@ class TimeNode(object):
         :return:
         """
         Tid = [self.time, len(self.transitions)]  # the time tag
-        transition = np.append(transition, Tid)
+        if transition.shape[0] == 4:
+            transition = np.append(transition, Tid)
         self.transitions.append(transition)
         return transition
 
@@ -74,7 +78,12 @@ class TimeNode(object):
         get the length of transition
         :return:
         """
-        return len(self.transitions)
+        tmp = []
+        for i in self.transitions:
+            if i is not None:
+                tmp.append(i)
+
+        return len(tmp)
 
     def is_empty(self):
         """
@@ -292,9 +301,10 @@ class timeTag(object):
         :return:
         """
         # Preprocess -- assign the Time ID
-        for t in range(len(transitions)):
-            tid = [time, t]
-            transitions[t] = np.append(transitions[t], tid)
+        if transitions[0].shape[0] == 4:
+            for t in range(len(transitions)):
+                tid = [time, t]
+                transitions[t] = np.append(transitions[t], tid)
 
         new_node = TimeNode(time)
         new_node.transitions = transitions
@@ -311,6 +321,8 @@ class timeTag(object):
 
         self.length += 1
 
+        return transitions  # return the time-marked transitions
+
     def get_node(self, time):
         return self.timeTable.get_node(time)
 
@@ -321,6 +333,7 @@ class timeTag(object):
         :param transition:
         :return:
         """
+        # this function has already assign a time tag for transition
         transition = self.current.insert_transition(transition)
         return transition
 
@@ -355,14 +368,17 @@ class timeTag(object):
         :param idx: the index of transition stored at the T time node
         :return: None
         """
+        if self.timeTable.maps.is_transition_empty(T):
+            return
+
         if T == self.current.time:
-            self.current.delete_transition(idx)
+            self.current.transitions[idx] = None
         else:
             T_node = self.timeTable.get_node(T)
             if T_node is False:
                 print('Cannot find the time node of T')
-            #T_node.delete_transition(idx)
-            T_node.transitions[idx] = None
+            else:
+                T_node.transitions[idx] = None
 
         # check whether the transition is all None
         if self.timeTable.maps.is_transition_empty(T):

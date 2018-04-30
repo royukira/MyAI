@@ -190,7 +190,7 @@ class easySumTree(object):
         if id is None:
             self.db.insert(transition=transition, priority=p, tableName=self.tableName)
         else:
-            self.db.cover()
+            self.db.cover(transition=transition,priority=p,id=id, tablename=self.tableName)
 
     def remove(self, id):
         self.db.remove(self.tableName, id)

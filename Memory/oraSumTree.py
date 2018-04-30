@@ -18,7 +18,9 @@ class oraDataFrame(object):
                 ACTION_ SMALLINT(5),\
                 REWARD_ SMALLINT(5),\
                 STATE_NEXT SMALLINT(5),\
-                PRIORITY FLOAT )AUTO_INCREMENT=1".format(tableName)
+                PRIORITY FLOAT,\
+                TIME_STEP INT,\
+                IDX INT)AUTO_INCREMENT=1".format(tableName)
         try:
             self.cursor.execute(sql)
             self.db.commit()
@@ -41,14 +43,18 @@ class oraDataFrame(object):
                 a = int(m[1])
                 r = int(m[2])
                 s_ = int(m[3])
+                T = int(m[4])
+                idx = int(m[5])
 
                 insert = "INSERT INTO %s(\
                              STATE_,\
                              ACTION_,\
                              REWARD_,\
                              STATE_NEXT,\
-                             PRIORITY)\
-                             VALUES ('%d','%d','%d','%d','%d')" % (tableName, s, a, r, s_,p)
+                             PRIORITY,\
+                             TIME_STEP,\
+                             IDX)\
+                             VALUES ('%d','%d','%d','%d','%d','%d','%d')" % (tableName, s, a, r, s_,p,T,idx)
                 try:
                     self.cursor.execute(insert)
                     #print("Already insert {0}".format(m))
@@ -70,18 +76,31 @@ class oraDataFrame(object):
             self.db.rollback()
             print("Cannot delete...")
 
+    def remove_time_idx(self, tablename, time, idx):
+        sql = "DELETE FROM {0} WHERE TIME_STEP={1} AND IDX={2}".format(tablename, time, idx)
+        try:
+            self.cursor.execute(sql)
+            self.db.commit()
+        except:
+            self.db.rollback()
+            print("Cannot delete...")
+
     def cover(self, tablename, id, transition, priority):
         s = int(transition[0])
         a = int(transition[1])
         r = int(transition[2])
         s_ = int(transition[3])
+        T = int(transition[4])
+        idx = int(transition[5])
+
         sql = "UPDATE {0} \
-                                  SET STATE_ = {1},  \
-                                  ACTION_ = {2},\
-                                  REWARD_ = {3},\
-                                  STATE_NEXT = {4}, \
-                                  PRIORITY = {5} \
-                                  WHERE ID = {6}".format(tablename, s, a, r, s_, priority, id)
+              SET STATE_ = {1},\
+              ACTION_ = {2},\
+              REWARD_ = {3},\
+              STATE_NEXT = {4}, \
+              PRIORITY = {5}, \
+              TIME_STEP = {6},\
+              IDX = {7} WHERE ID = {8}".format(tablename, s, a, r, s_, priority, T, idx, id)
         try:
             self.cursor.execute(sql)
             self.db.commit()
@@ -97,6 +116,16 @@ class oraDataFrame(object):
             self.cursor.execute(update)
             self.db.commit()
             #print("Already Update PRIORITY of {0} transition".format(ID))
+        except:
+            self.db.rollback()
+            print("Update Failed!")
+
+    def updateTid(self, ID, time, idx, tablename):
+        update = "UPDATE {0} SET TIME_STEP = {1}, IDX={2} WHERE ID = {3}".format(tablename, time, idx, ID)
+        try:
+            self.cursor.execute(update)
+            self.db.commit()
+            # print("Already Update PRIORITY of {0} transition".format(ID))
         except:
             self.db.rollback()
             print("Update Failed!")
@@ -146,7 +175,7 @@ class oraDataFrame(object):
             self.db.rollback()
 
     def extract_transition(self, tablename, id):
-        sql = "SELECT STATE_, ACTION_, REWARD_, STATE_NEXT FROM {0} WHERE ID = {1}".format(tablename, id)
+        sql = "SELECT STATE_, ACTION_, REWARD_, STATE_NEXT, TIME_STEP, IDX FROM {0} WHERE ID = {1}".format(tablename, id)
 
         try:
             self.cursor.execute(sql)
@@ -190,13 +219,19 @@ class easySumTree(object):
         if id is None:
             self.db.insert(transition=transition, priority=p, tableName=self.tableName)
         else:
-            self.db.cover()
+            self.db.cover(transition=transition,priority=p,id=id, tablename=self.tableName)
 
     def remove(self, id):
         self.db.remove(self.tableName, id)
 
+    def remove_tid(self, time, idx):
+        self.db.remove_time_idx(self.tableName,time,idx)
+
     def update(self, id, priority):
         self.db.updatePriority(priority=priority, ID=id, tableName=self.tableName)
+
+    def update_tid(self, id, time, idx):
+        self.db.updateTid(id, time, idx, self.tableName)
 
     def max_priority(self):
         return self.db.maxPriority(self.tableName)
@@ -355,12 +390,12 @@ if __name__ == '__main__':
             priorities.append(i)
         return transitions, priorities
 
-    """ 
-    oraDataFrame -- all pass
-    db = oraDataFrame()
 
-    db.createPriorityTable('test')
+    #oraDataFrame -- all pass
+    #db = oraDataFrame()
 
+    #db.createPriorityTable('test')
+    """
     transition,ps = gen_t(20)
     db.insertMemory(transition, ps,'test')
 
@@ -418,7 +453,7 @@ if __name__ == '__main__':
     print(db.min_idx('PRIORITY'))
     print()
     """
-
+    """
     memory = pER_Memory(30)
     transition, ps = gen_t(35)
     for t in transition:
@@ -436,4 +471,6 @@ if __name__ == '__main__':
         memory.store(ttt)
 
     print()
-
+    """
+    db = oraDataFrame()
+    db.updatePriority(0.12,23,'PRIORITY')
