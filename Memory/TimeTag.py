@@ -36,6 +36,17 @@ class TimeNode(object):
         """
         return self.transitions[idx]
 
+    def extract_first_k(self, k):
+        tmp = []
+        count = 0
+        for i in self.transitions:
+            if count >= k:
+                break
+            if i is not None:
+                tmp.append(i)
+                count += 1
+        return tmp
+
     def random_extract(self, k):
         """
         Randomly extract k transitions that is stored in the stack of transitions
@@ -215,8 +226,8 @@ class timeTable(object):
         return self.maps.get(time)
 
     def add(self, time, node):
-        if self.num == len(self.maps.hmaps):
-            self.resize()
+        if time == len(self.maps.hmaps):
+            self.resize(time)
 
         self.maps.add(time, node)
         self.num += 1
@@ -225,8 +236,8 @@ class timeTable(object):
         self.maps.remove(time)
         self.num -= 1
 
-    def resize(self):
-        new_maps = hashMap(self.num * 2)
+    def resize(self, new_size):
+        new_maps = hashMap(new_size * 2)
 
         for m in self.maps.hmaps:
             for k, v in m.items:
@@ -254,6 +265,9 @@ class timeTable(object):
         oldest_time_node = None
 
         oldest_item = self.find_oldest()
+
+        if oldest_item is None:
+            print()
         for kk, v in oldest_item.items:
             _ = kk  # the time id; useless for now
             oldest_time_node = v
@@ -262,24 +276,35 @@ class timeTable(object):
 
         if transition_length >= k:
             # we can sample k oldest transitions in one time node
-            oldest_transitions = oldest_time_node.random_extract(k)
+            #oldest_transitions = oldest_time_node.random_extract(k)
+            oldest_transitions = oldest_time_node.extract_first_k(k)
         else:
             rest = k - transition_length
-            oldest_transitions = oldest_time_node.random_extract(transition_length)
+            #oldest_transitions = oldest_time_node.random_extract(transition_length)
+            oldest_transitions = oldest_time_node.extract_first_k(transition_length)
             # Find the rest transitions in the next time node
             # 一直搜索到够k个为止
             rest_transitions = []
             while True:
                 next_time_node = oldest_time_node.nextTime  # next time node
+                if next_time_node is None:
+                    print()
                 next_t_length = next_time_node.transition_length()  # the length of transition set in the next time node
                 if next_t_length >= rest:
-                    rest_transitions = next_time_node.random_extract(rest)
+                    tmp = next_time_node.extract_first_k(rest)
+                    for i in tmp:
+                        rest_transitions.append(i)
+                    #rest_transitions = next_time_node.extract_first_k(rest)
                     for r in rest_transitions:
                         oldest_transitions.append(r)
                     break
                 else:
-                    rest_transitions.append(next_time_node.random_extract(next_t_length))
+                    tmp = next_time_node.extract_first_k(next_t_length)
+                    for i in tmp:
+                        rest_transitions.append(i)
                     rest -= next_t_length
+
+                oldest_time_node = next_time_node
 
         return oldest_transitions
 
@@ -351,15 +376,17 @@ class timeTag(object):
         """
         if T == self.current.time:
             transition = self.current.extract_transition(idx)
+            return transition
         else:
             T_node = self.timeTable.get_node(T)
 
             if T_node is False:
-                print('Cannot find the time node of T')
-                return
-
-            transition = T_node.extract_transition(idx)
-        return transition
+                print('The time node of T has already been deleted')
+                is_none = None
+                return is_none
+            else:
+                transition = T_node.extract_transition(idx)
+                return transition
 
     def remove_transition(self, T, idx):
         """

@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c060b3e-e042-461f-a910-3c16a2c6ee53" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Run/run_apER.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/499cb41b-ef7c-443a-a825-50179c105f7a.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/499cb41b-ef7c-443a-a825-50179c105f7a.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Q_learning/aER.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Run/run_aER.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/delete_test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Memory/TimeTag.py" afterPath="$PROJECT_DIR$/Memory/TimeTag.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Memory/oraSumTree.py" afterPath="$PROJECT_DIR$/Memory/oraSumTree.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Q_learning/apER.py" afterPath="$PROJECT_DIR$/Q_learning/apER.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/oraSumTree.py" afterPath="$PROJECT_DIR$/test/oraSumTree.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,10 +29,12 @@
     <SUITE FILE_PATH="coverage/MyAI$Run_SARSA.coverage" NAME="Run_SARSA Coverage Results" MODIFIED="1519802656045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Run" />
     <SUITE FILE_PATH="coverage/MyAI$run_linear_Q.coverage" NAME="run_linear_Q Coverage Results" MODIFIED="1520604948601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Run" />
     <SUITE FILE_PATH="coverage/MyAI$Run_QBrainSim.coverage" NAME="Run_QBrainSim Coverage Results" MODIFIED="1520746828573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Run" />
+    <SUITE FILE_PATH="coverage/MyAI$delete_test.coverage" NAME="delete_test Coverage Results" MODIFIED="1525797726948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/MyAI$SumTreeV2.coverage" NAME="SumTreeV2 Coverage Results" MODIFIED="1524944912161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Memory" />
     <SUITE FILE_PATH="coverage/MyAI$DQN.coverage" NAME="DQN Coverage Results" MODIFIED="1517909291463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DQN" />
     <SUITE FILE_PATH="coverage/MyAI$batchTrain_Q.coverage" NAME="batchTrain_Q Coverage Results" MODIFIED="1524922418635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Run" />
     <SUITE FILE_PATH="coverage/MyAI$run_apER.coverage" NAME="run_apER Coverage Results" MODIFIED="1525038166463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Run" />
+    <SUITE FILE_PATH="coverage/MyAI$run_aER.coverage" NAME="run_aER Coverage Results" MODIFIED="1525859460077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Run" />
     <SUITE FILE_PATH="coverage/MyAI$QForget.coverage" NAME="QForget Coverage Results" MODIFIED="1520875902199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Q_learning" />
     <SUITE FILE_PATH="coverage/MyAI$test.coverage" NAME="test Coverage Results" MODIFIED="1516777796446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyAI$Maze.coverage" NAME="Maze Coverage Results" MODIFIED="1516781541291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/training_env" />
@@ -62,25 +63,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sumTree_test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/sumTree_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
-              <caret line="70" column="34" lean-forward="false" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
-              <folding>
-                <element signature="e#5908#8966#0" expanded="false" />
-                <element signature="e#9003#10418#0" expanded="false" />
-                <marker date="1524949030735" expanded="false" signature="10884:12836" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="batchTrain_Q.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Run/batchTrain_Q.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4125">
-              <caret line="360" column="25" lean-forward="false" selection-start-line="360" selection-start-column="25" selection-end-line="360" selection-end-column="25" />
+            <state relative-caret-position="290">
+              <caret line="375" column="14" lean-forward="true" selection-start-line="369" selection-start-column="4" selection-end-line="375" selection-end-column="14" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
                 <element signature="e#974#3550#0" expanded="false" />
@@ -90,52 +77,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TimeTag.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TimeTag.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Memory/TimeTag.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4515">
-              <caret line="371" column="0" lean-forward="false" selection-start-line="371" selection-start-column="0" selection-end-line="371" selection-end-column="0" />
+            <state relative-caret-position="106">
+              <caret line="245" column="0" lean-forward="false" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
               <folding>
                 <element signature="e#78#96#0" expanded="true" />
                 <element signature="e#438#454#0" expanded="false" />
                 <element signature="e#489#509#0" expanded="false" />
                 <element signature="e#558#716#0" expanded="false" />
-                <element signature="e#1257#1446#0" expanded="false" />
-                <element signature="e#1501#1814#0" expanded="false" />
-                <element signature="e#2097#2284#0" expanded="false" />
-                <element signature="e#5583#5922#0" expanded="false" />
-                <element signature="e#7486#7607#0" expanded="false" />
-                <element signature="e#8768#8804#0" expanded="false" />
-                <element signature="e#9263#10019#0" expanded="false" />
-                <element signature="e#11774#11944#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="timeChain_test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/timeChain_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-              <folding>
-                <element signature="e#1#19#0" expanded="true" />
-                <element signature="e#223#327#0" expanded="false" />
-                <element signature="e#361#377#0" expanded="false" />
-                <element signature="e#412#432#0" expanded="false" />
-                <element signature="e#481#639#0" expanded="false" />
-                <element signature="e#1166#1355#0" expanded="false" />
-                <element signature="e#1410#1682#0" expanded="false" />
-                <element signature="e#1725#1831#0" expanded="false" />
-                <element signature="e#1865#2052#0" expanded="false" />
-                <element signature="e#2109#2898#0" expanded="false" />
-                <element signature="e#2928#4604#0" expanded="false" />
-                <element signature="e#4636#7177#0" expanded="false" />
-                <element signature="e#8426#8462#0" expanded="false" />
-                <element signature="e#8517#8800#0" expanded="false" />
-                <element signature="e#8852#9608#0" expanded="false" />
-                <element signature="e#9659#10186#0" expanded="false" />
-                <element signature="e#10226#10886#0" expanded="false" />
+                <element signature="e#1517#1706#0" expanded="false" />
+                <element signature="e#2357#2544#0" expanded="false" />
+                <element signature="e#3572#3752#0" expanded="false" />
+                <element signature="e#3793#3982#0" expanded="false" />
+                <element signature="e#4020#4449#0" expanded="false" />
+                <element signature="e#4498#4615#0" expanded="false" />
+                <element signature="e#4650#4812#0" expanded="false" />
+                <element signature="e#4863#5105#0" expanded="false" />
+                <element signature="e#5853#6192#0" expanded="false" />
+                <element signature="e#8304#8425#0" expanded="false" />
+                <element signature="e#12703#12873#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -144,8 +106,8 @@
       <file leaf-file-name="Q_Brain_Simply.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1845">
-              <caret line="682" column="6" lean-forward="false" selection-start-line="682" selection-start-column="6" selection-end-line="682" selection-end-column="6" />
+            <state relative-caret-position="-401">
+              <caret line="470" column="30" lean-forward="true" selection-start-line="470" selection-start-column="30" selection-end-line="470" selection-end-column="30" />
               <folding>
                 <element signature="e#118#136#0" expanded="true" />
                 <element signature="e#253#11896#0" expanded="false" />
@@ -181,89 +143,86 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QpER.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Q_learning/QpER.py">
+      <file leaf-file-name="timeChain_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/timeChain_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3195">
-              <caret line="215" column="36" lean-forward="false" selection-start-line="215" selection-start-column="36" selection-end-line="215" selection-end-column="36" />
+            <state relative-caret-position="126">
+              <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
               <folding>
-                <element signature="e#182#200#0" expanded="true" />
+                <element signature="e#1#19#0" expanded="true" />
+                <element signature="e#223#327#0" expanded="false" />
+                <element signature="e#361#377#0" expanded="false" />
+                <element signature="e#412#432#0" expanded="false" />
+                <element signature="e#481#639#0" expanded="false" />
+                <element signature="e#1166#1355#0" expanded="false" />
+                <element signature="e#1410#1682#0" expanded="false" />
+                <element signature="e#1725#1831#0" expanded="false" />
+                <element signature="e#1865#2052#0" expanded="false" />
+                <element signature="e#2109#2898#0" expanded="false" />
+                <element signature="e#8426#8462#0" expanded="false" />
+                <element signature="e#8517#8800#0" expanded="false" />
+                <element signature="e#8852#9608#0" expanded="false" />
+                <element signature="e#9659#10186#0" expanded="false" />
+                <element signature="e#10226#10886#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PRIORITY" pinned="false" current-in-tab="false">
-        <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="apER.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="apER.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Q_learning/apER.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" column="47" lean-forward="false" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+            <state relative-caret-position="4320">
+              <caret line="312" column="11" lean-forward="false" selection-start-line="312" selection-start-column="11" selection-end-line="312" selection-end-column="11" />
               <folding>
                 <element signature="e#81#99#0" expanded="true" />
-                <element signature="e#4751#5216#0" expanded="false" />
-                <element signature="e#5891#6147#0" expanded="false" />
-                <element signature="e#6198#6492#0" expanded="false" />
-                <element signature="e#6542#6774#0" expanded="false" />
-                <element signature="e#6800#7365#0" expanded="false" />
+                <element signature="e#6519#7084#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run_apER.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Run/run_apER.py">
+      <file leaf-file-name="delete_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/delete_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="54" column="24" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+            <state relative-caret-position="180">
+              <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="13" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aER.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Q_learning/aER.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1979">
+              <caret line="255" column="0" lean-forward="false" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
               <folding>
-                <element signature="e#0#27#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#3034#3078#0" expanded="false" />
+                <element signature="e#3174#3641#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="oraSumTree.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Memory/oraSumTree.py">
+      <file leaf-file-name="pydevd.py" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3180">
-              <caret line="236" column="50" lean-forward="false" selection-start-line="236" selection-start-column="50" selection-end-line="236" selection-end-column="50" />
+            <state relative-caret-position="223">
+              <caret line="1598" column="0" lean-forward="false" selection-start-line="1598" selection-start-column="0" selection-end-line="1598" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run_aER.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Run/run_aER.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2040">
+              <caret line="136" column="14" lean-forward="true" selection-start-line="136" selection-start-column="14" selection-end-line="136" selection-end-column="14" />
               <folding>
-                <element signature="e#6332#6504#0" expanded="false" />
-                <element signature="e#6547#6590#0" expanded="false" />
-                <element signature="e#6643#7072#0" expanded="false" />
-                <element signature="e#7108#7142#0" expanded="false" />
-                <element signature="e#7189#7237#0" expanded="false" />
-                <element signature="e#7283#7357#0" expanded="false" />
-                <element signature="e#7408#7456#0" expanded="false" />
-                <element signature="e#7494#7536#0" expanded="false" />
-                <element signature="e#7576#7998#0" expanded="false" />
-                <element signature="e#8048#8227#0" expanded="false" />
-                <element signature="e#8264#9368#0" expanded="false" />
-                <element signature="e#9401#9539#0" expanded="false" />
-                <element signature="e#9575#9648#0" expanded="false" />
-                <element signature="e#9682#12393#0" expanded="false" />
-                <marker date="1525034375480" expanded="true" signature="342:681" ph="CREATE TABLE... missing_value" />
-                <marker date="1525034375480" expanded="true" signature="1460:1823" ph="INSERT INTO missing_value... " />
-                <marker date="1525034375480" expanded="true" signature="2238:2263" ph="DELETE FROM " />
-                <marker date="1525034375480" expanded="true" signature="2524:2568" ph="DELETE FROM " />
-                <marker date="1525034375480" expanded="true" signature="3030:3269" ph="UPDATE missi... " />
-                <marker date="1525034375480" expanded="true" signature="3639:3680" ph="UPDATE missi... " />
-                <marker date="1525034375480" expanded="true" signature="4028:4079" ph="UPDATE missi... " />
-                <marker date="1525034375480" expanded="true" signature="4412:4438" ph="SELECT SUM(P... missing_value" />
-                <marker date="1525034375480" expanded="true" signature="4727:4753" ph="SELECT MAX(P... missing_value" />
-                <marker date="1525034375480" expanded="true" signature="5047:5072" ph="SELECT ID, P... missing_value" />
-                <marker date="1525034375480" expanded="true" signature="5357:5378" ph="SELECT COUNT... missing_value" />
-                <marker date="1525034375480" expanded="true" signature="5662:5742" ph="SELECT STATE... missing_value" />
-                <marker date="1525034375480" expanded="true" signature="6027:6047" ph="SELECT MIN(I... missing_value" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -301,6 +260,9 @@
       <find>last_capacity</find>
       <find>tree</find>
       <find>IDX</find>
+      <find>tid_update</find>
+      <find>tt_insert</find>
+      <find>resize</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -350,10 +312,13 @@
         <option value="$PROJECT_DIR$/test/timeChain_test.py" />
         <option value="$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py" />
         <option value="$PROJECT_DIR$/test/oraSumTree.py" />
-        <option value="$PROJECT_DIR$/Memory/TimeTag.py" />
         <option value="$PROJECT_DIR$/Memory/oraSumTree.py" />
         <option value="$PROJECT_DIR$/Run/run_apER.py" />
+        <option value="$PROJECT_DIR$/test/delete_test.py" />
         <option value="$PROJECT_DIR$/Q_learning/apER.py" />
+        <option value="$PROJECT_DIR$/Memory/TimeTag.py" />
+        <option value="$PROJECT_DIR$/Q_learning/aER.py" />
+        <option value="$PROJECT_DIR$/Run/run_aER.py" />
       </list>
     </option>
   </component>
@@ -386,7 +351,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -402,12 +366,18 @@
             <path>
               <item name="MyAI" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyAI" type="462c0819:PsiDirectoryNode" />
+              <item name="Run" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyAI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyAI" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -438,7 +408,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.timeChain_test">
+  <component name="RunManager" selected="Python.run_aER">
+    <configuration name="delete_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MyAI" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/delete_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="oraSumTree" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -453,6 +441,24 @@
       <module name="MyAI" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Memory/oraSumTree.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="run_aER" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Run" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MyAI" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Run/run_aER.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -493,16 +499,20 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <list size="3">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.oraSumTree" />
       <item index="1" class="java.lang.String" itemvalue="Python.run_apER" />
       <item index="2" class="java.lang.String" itemvalue="Python.timeChain_test" />
+      <item index="3" class="java.lang.String" itemvalue="Python.delete_test" />
+      <item index="4" class="java.lang.String" itemvalue="Python.run_aER" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.timeChain_test" />
-        <item index="1" class="java.lang.String" itemvalue="Python.run_apER" />
-        <item index="2" class="java.lang.String" itemvalue="Python.oraSumTree" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.run_aER" />
+        <item index="1" class="java.lang.String" itemvalue="Python.delete_test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.timeChain_test" />
+        <item index="3" class="java.lang.String" itemvalue="Python.run_apER" />
+        <item index="4" class="java.lang.String" itemvalue="Python.oraSumTree" />
       </list>
     </recent_temporary>
   </component>
@@ -532,18 +542,18 @@
     <frame x="0" y="22" width="1440" height="878" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1881259" sideWeight="0.49042144" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1881259" sideWeight="0.49042144" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39846742" sideWeight="0.51287556" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16237482" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16237482" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2899106" sideWeight="0.48640916" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33461046" sideWeight="0.49284694" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38825032" sideWeight="0.49284694" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3256705" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18168813" sideWeight="0.5095785" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.96168584" sideWeight="0.48712447" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55293274" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.48712447" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44635195" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1071,78 +1081,18 @@
           <option name="timeStamp" value="634" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
-          <line>384</line>
-          <option name="timeStamp" value="639" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
-          <line>395</line>
-          <option name="timeStamp" value="640" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
-          <line>397</line>
-          <option name="timeStamp" value="641" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
-          <line>398</line>
-          <option name="timeStamp" value="642" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
-          <line>400</line>
-          <option name="timeStamp" value="643" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
-          <line>402</line>
-          <option name="timeStamp" value="644" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
-          <line>404</line>
-          <option name="timeStamp" value="645" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
-          <line>405</line>
-          <option name="timeStamp" value="646" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
-          <line>407</line>
-          <option name="timeStamp" value="647" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
-          <line>117</line>
-          <option name="timeStamp" value="648" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
-          <line>371</line>
-          <option name="timeStamp" value="649" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Q_learning/apER.py</url>
-          <line>314</line>
-          <option name="timeStamp" value="659" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Q_learning/apER.py</url>
-          <line>327</line>
+          <line>322</line>
           <option name="timeStamp" value="661" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Q_learning/apER.py</url>
-          <line>336</line>
+          <line>331</line>
           <option name="timeStamp" value="662" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Q_learning/apER.py</url>
-          <line>270</line>
+          <line>265</line>
           <option name="timeStamp" value="663" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1152,7 +1102,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Q_learning/apER.py</url>
-          <line>333</line>
+          <line>328</line>
           <option name="timeStamp" value="665" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1170,6 +1120,71 @@
           <line>54</line>
           <option name="timeStamp" value="669" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Q_learning/apER.py</url>
+          <line>110</line>
+          <option name="timeStamp" value="670" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/delete_test.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="674" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/delete_test.py</url>
+          <line>6</line>
+          <option name="timeStamp" value="675" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/delete_test.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="676" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
+          <line>405</line>
+          <option name="timeStamp" value="692" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/timeChain_test.py</url>
+          <line>213</line>
+          <option name="timeStamp" value="696" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/timeChain_test.py</url>
+          <line>219</line>
+          <option name="timeStamp" value="697" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
+          <line>269</line>
+          <option name="timeStamp" value="775" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
+          <line>290</line>
+          <option name="timeStamp" value="777" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
+          <line>229</line>
+          <option name="timeStamp" value="782" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
+          <line>239</line>
+          <option name="timeStamp" value="783" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Memory/TimeTag.py</url>
+          <line>245</line>
+          <option name="timeStamp" value="786" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Q_learning/aER.py</url>
+          <line>255</line>
+          <option name="timeStamp" value="788" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -1181,7 +1196,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="670" />
+      <option name="time" value="789" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1438,134 +1453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Run/run_apER.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="54" column="24" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/82612940/499cb41b-ef7c-443a-a825-50179c105f7a/BCW.PRIORITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/timeChain_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding>
-            <element signature="e#1#19#0" expanded="true" />
-            <element signature="e#223#327#0" expanded="false" />
-            <element signature="e#361#377#0" expanded="false" />
-            <element signature="e#412#432#0" expanded="false" />
-            <element signature="e#481#639#0" expanded="false" />
-            <element signature="e#1166#1355#0" expanded="false" />
-            <element signature="e#1410#1682#0" expanded="false" />
-            <element signature="e#1725#1831#0" expanded="false" />
-            <element signature="e#1865#2052#0" expanded="false" />
-            <element signature="e#2109#2898#0" expanded="false" />
-            <element signature="e#2928#4604#0" expanded="false" />
-            <element signature="e#4636#7177#0" expanded="false" />
-            <element signature="e#8426#8462#0" expanded="false" />
-            <element signature="e#8517#8800#0" expanded="false" />
-            <element signature="e#8852#9608#0" expanded="false" />
-            <element signature="e#9659#10186#0" expanded="false" />
-            <element signature="e#10226#10886#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1845">
-          <caret line="682" column="6" lean-forward="false" selection-start-line="682" selection-start-column="6" selection-end-line="682" selection-end-column="6" />
-          <folding>
-            <element signature="e#118#136#0" expanded="true" />
-            <element signature="e#253#11896#0" expanded="false" />
-            <element signature="e#390#688#0" expanded="false" />
-            <element signature="e#1390#2026#0" expanded="false" />
-            <element signature="e#2080#2171#0" expanded="false" />
-            <element signature="e#2221#7855#0" expanded="false" />
-            <element signature="e#7928#10614#0" expanded="false" />
-            <element signature="e#10668#11896#0" expanded="false" />
-            <element signature="e#12901#12972#0" expanded="false" />
-            <element signature="e#13009#13387#0" expanded="false" />
-            <element signature="e#13062#13387#0" expanded="false" />
-            <element signature="e#13432#13928#0" expanded="false" />
-            <element signature="e#13706#13773#0" expanded="false" />
-            <element signature="e#13983#14247#0" expanded="false" />
-            <element signature="e#14295#14565#0" expanded="false" />
-            <element signature="e#14609#15351#0" expanded="false" />
-            <element signature="e#15405#16727#0" expanded="false" />
-            <element signature="e#15808#16009#0" expanded="false" />
-            <element signature="e#19203#22211#0" expanded="false" />
-            <element signature="e#22261#23500#0" expanded="false" />
-            <element signature="e#23604#23661#0" expanded="false" />
-            <element signature="e#23709#23751#0" expanded="false" />
-            <element signature="e#23824#25453#0" expanded="false" />
-            <element signature="e#25994#32367#0" expanded="false" />
-            <element signature="e#28854#32367#0" expanded="false" />
-            <marker date="1525006590742" expanded="true" signature="26664:26866" ph="CREATE TABLE... missing_value" />
-            <marker date="1525006590742" expanded="true" signature="27352:27605" ph="INSERT INTO missing_value... " />
-            <marker date="1525006590742" expanded="true" signature="28055:28115" ph="UPDATE missi... " />
-            <marker date="1525006590742" expanded="true" signature="28424:28517" ph="SELECT STATE... missing_value" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Run/batchTrain_Q.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4125">
-          <caret line="360" column="25" lean-forward="false" selection-start-line="360" selection-start-column="25" selection-end-line="360" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-            <element signature="e#974#3550#0" expanded="false" />
-            <element signature="e#3595#4087#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Memory/oraSumTree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3180">
@@ -1602,27 +1489,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Q_learning/apER.py">
+    <entry file="file://$PROJECT_DIR$/test/sumTree_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="47" lean-forward="false" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+        <state relative-caret-position="1050">
+          <caret line="70" column="34" lean-forward="false" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
           <folding>
-            <element signature="e#81#99#0" expanded="true" />
-            <element signature="e#4751#5216#0" expanded="false" />
-            <element signature="e#5891#6147#0" expanded="false" />
-            <element signature="e#6198#6492#0" expanded="false" />
-            <element signature="e#6542#6774#0" expanded="false" />
-            <element signature="e#6800#7365#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Q_learning/QpER.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3195">
-          <caret line="215" column="36" lean-forward="false" selection-start-line="215" selection-start-column="36" selection-end-line="215" selection-end-column="36" />
-          <folding>
-            <element signature="e#182#200#0" expanded="true" />
+            <element signature="e#5908#8966#0" expanded="false" />
+            <element signature="e#9003#10418#0" expanded="false" />
+            <marker date="1524949030735" expanded="false" signature="10884:12836" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1634,23 +1508,177 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Q_learning/QpER.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="215" column="36" lean-forward="false" selection-start-line="215" selection-start-column="36" selection-end-line="215" selection-end-column="36" />
+          <folding>
+            <element signature="e#182#200#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/timeChain_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#19#0" expanded="true" />
+            <element signature="e#223#327#0" expanded="false" />
+            <element signature="e#361#377#0" expanded="false" />
+            <element signature="e#412#432#0" expanded="false" />
+            <element signature="e#481#639#0" expanded="false" />
+            <element signature="e#1166#1355#0" expanded="false" />
+            <element signature="e#1410#1682#0" expanded="false" />
+            <element signature="e#1725#1831#0" expanded="false" />
+            <element signature="e#1865#2052#0" expanded="false" />
+            <element signature="e#2109#2898#0" expanded="false" />
+            <element signature="e#8426#8462#0" expanded="false" />
+            <element signature="e#8517#8800#0" expanded="false" />
+            <element signature="e#8852#9608#0" expanded="false" />
+            <element signature="e#9659#10186#0" expanded="false" />
+            <element signature="e#10226#10886#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Q_learning/Q_Brain_Simply.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-401">
+          <caret line="470" column="30" lean-forward="true" selection-start-line="470" selection-start-column="30" selection-end-line="470" selection-end-column="30" />
+          <folding>
+            <element signature="e#118#136#0" expanded="true" />
+            <element signature="e#253#11896#0" expanded="false" />
+            <element signature="e#390#688#0" expanded="false" />
+            <element signature="e#1390#2026#0" expanded="false" />
+            <element signature="e#2080#2171#0" expanded="false" />
+            <element signature="e#2221#7855#0" expanded="false" />
+            <element signature="e#7928#10614#0" expanded="false" />
+            <element signature="e#10668#11896#0" expanded="false" />
+            <element signature="e#12901#12972#0" expanded="false" />
+            <element signature="e#13009#13387#0" expanded="false" />
+            <element signature="e#13062#13387#0" expanded="false" />
+            <element signature="e#13432#13928#0" expanded="false" />
+            <element signature="e#13706#13773#0" expanded="false" />
+            <element signature="e#13983#14247#0" expanded="false" />
+            <element signature="e#14295#14565#0" expanded="false" />
+            <element signature="e#14609#15351#0" expanded="false" />
+            <element signature="e#15405#16727#0" expanded="false" />
+            <element signature="e#15808#16009#0" expanded="false" />
+            <element signature="e#19203#22211#0" expanded="false" />
+            <element signature="e#22261#23500#0" expanded="false" />
+            <element signature="e#23604#23661#0" expanded="false" />
+            <element signature="e#23709#23751#0" expanded="false" />
+            <element signature="e#23824#25453#0" expanded="false" />
+            <element signature="e#25994#32367#0" expanded="false" />
+            <element signature="e#28854#32367#0" expanded="false" />
+            <marker date="1525006590742" expanded="true" signature="26664:26866" ph="CREATE TABLE... missing_value" />
+            <marker date="1525006590742" expanded="true" signature="27352:27605" ph="INSERT INTO missing_value... " />
+            <marker date="1525006590742" expanded="true" signature="28055:28115" ph="UPDATE missi... " />
+            <marker date="1525006590742" expanded="true" signature="28424:28517" ph="SELECT STATE... missing_value" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="1598" column="0" lean-forward="false" selection-start-line="1598" selection-start-column="0" selection-end-line="1598" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Run/run_apER.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="121" column="14" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="121" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Memory/TimeTag.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4515">
-          <caret line="371" column="0" lean-forward="false" selection-start-line="371" selection-start-column="0" selection-end-line="371" selection-end-column="0" />
+        <state relative-caret-position="106">
+          <caret line="245" column="0" lean-forward="false" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
           <folding>
             <element signature="e#78#96#0" expanded="true" />
             <element signature="e#438#454#0" expanded="false" />
             <element signature="e#489#509#0" expanded="false" />
             <element signature="e#558#716#0" expanded="false" />
-            <element signature="e#1257#1446#0" expanded="false" />
-            <element signature="e#1501#1814#0" expanded="false" />
-            <element signature="e#2097#2284#0" expanded="false" />
-            <element signature="e#5583#5922#0" expanded="false" />
-            <element signature="e#7486#7607#0" expanded="false" />
-            <element signature="e#8768#8804#0" expanded="false" />
-            <element signature="e#9263#10019#0" expanded="false" />
-            <element signature="e#11774#11944#0" expanded="false" />
+            <element signature="e#1517#1706#0" expanded="false" />
+            <element signature="e#2357#2544#0" expanded="false" />
+            <element signature="e#3572#3752#0" expanded="false" />
+            <element signature="e#3793#3982#0" expanded="false" />
+            <element signature="e#4020#4449#0" expanded="false" />
+            <element signature="e#4498#4615#0" expanded="false" />
+            <element signature="e#4650#4812#0" expanded="false" />
+            <element signature="e#4863#5105#0" expanded="false" />
+            <element signature="e#5853#6192#0" expanded="false" />
+            <element signature="e#8304#8425#0" expanded="false" />
+            <element signature="e#12703#12873#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Run/batchTrain_Q.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="375" column="14" lean-forward="true" selection-start-line="369" selection-start-column="4" selection-end-line="375" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+            <element signature="e#974#3550#0" expanded="false" />
+            <element signature="e#3595#4087#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Q_learning/aER.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1979">
+          <caret line="255" column="0" lean-forward="false" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#3034#3078#0" expanded="false" />
+            <element signature="e#3174#3641#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/delete_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="13" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Run/run_aER.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2040">
+          <caret line="136" column="14" lean-forward="true" selection-start-line="136" selection-start-column="14" selection-end-line="136" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Q_learning/apER.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4320">
+          <caret line="312" column="11" lean-forward="false" selection-start-line="312" selection-start-column="11" selection-end-line="312" selection-end-column="11" />
+          <folding>
+            <element signature="e#81#99#0" expanded="true" />
+            <element signature="e#6519#7084#0" expanded="false" />
           </folding>
         </state>
       </provider>

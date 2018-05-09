@@ -158,11 +158,6 @@ class apER_Memory(object):
                 # if all transition in the time node have been deleted (i.e. all are None)
                 # it will automatically delete the time node, but the sub-map is reserved
 
-    def tt_insert(self, tt_transtions):
-        # after using the sampled transitions, the transitions must be inserted to the latest time node
-        # except those transitions that need to be deleted
-        for t in tt_transtions:
-            self.timetag.insert_transition(t)
 
 
 class aER_Memory:
