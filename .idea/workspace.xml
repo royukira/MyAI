@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c060b3e-e042-461f-a910-3c16a2c6ee53" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Q_learning/aER.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Run/run_aER.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/delete_test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Memory/TimeTag.py" afterPath="$PROJECT_DIR$/Memory/TimeTag.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Q_learning/apER.py" afterPath="$PROJECT_DIR$/Q_learning/apER.py" />
-    </list>
+    <list default="true" id="8c060b3e-e042-461f-a910-3c16a2c6ee53" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
